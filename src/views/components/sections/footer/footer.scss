@@ -1,0 +1,39 @@
+@use "src/styles/shared" as *;
+
+.footer {
+  //margin-top: 68px;
+  padding-bottom: 28px;
+
+  &Container {
+    @include container;
+  }
+
+  &Main {
+    display: flex;
+
+    &Col {
+      font-size: 12px;
+      line-height: 1.0;
+      display: grid;
+      // font-family: HeliosExt;
+      text-transform: uppercase;
+      // font-weight: 400;
+      grid-template-columns: 1fr;
+      row-gap: 21px;
+      //text-align: left;
+    }
+  }
+
+  &Bottom {
+    // font-family: TT Commons;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: calc(17 / 12);
+    //text-align: left;
+    color: rgba(black, 0.5);
+  }
+
+  &Copyright {
+    margin-bottom: 14px;
+  }
+}

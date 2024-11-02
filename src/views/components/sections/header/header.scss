@@ -1,0 +1,97 @@
+@use "src/styles/shared" as *;
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+
+  &Top, &Bottom {
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+
+  &Top {
+    @include flex(center, space-between);
+    padding: 20px 0;
+  }
+
+  &Contacts {
+    &Tel {
+      //font-family: HeliosExtC;
+      font-size: 16px;
+      // font-weight: 400;
+      line-height: calc(20 / 16);
+      display: block;
+      // text-align: left;
+
+    }
+
+    &Label {
+      // font-family: TT Commons;
+      font-size: 12px;
+      // font-weight: 400;
+      line-height: calc(16 / 12);
+      display: block;
+
+      text-align: left;
+      text-transform: uppercase;
+      color: rgba(#111111, 0.5);
+    }
+  }
+
+  &Actions {
+  }
+
+  &Profile {
+  }
+
+  &Fav, &Cart {
+    color: #000000;
+
+    &Quantity {
+      // font-family: HeliosExtC;
+      font-size: 10px;
+      // font-weight: 400;
+      line-height: calc(16 / 10);
+      // text-align: left;
+
+    }
+  }
+
+  &Cart {
+    &Quanity {
+
+    }
+  }
+
+  &Shops {
+    //font-family: TT Commons;
+    font-size: 12px;
+    //font-weight: 400;
+    line-height: calc(16 / 12);
+    //text-align: left;
+
+    text-transform: uppercase;
+    color: rgba(#111111, 0.5);
+  }
+
+  &Bottom {
+    @include flex(center, center);
+    padding: 14px 0;
+    border-top: 1px solid rgba(#111111, 0.1);
+    column-gap: 28px;
+  }
+
+  &Button {
+    //font-family: HeliosExt;
+    font-size: 14px;
+    //font-weight: 400;
+    line-height: calc(20 / 14);
+    // text-align: left;
+    text-transform: uppercase;
+    color: #111111;
+  }
+}
