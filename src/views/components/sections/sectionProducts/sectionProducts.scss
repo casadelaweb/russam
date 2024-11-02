@@ -1,0 +1,115 @@
+@use "src/styles/shared" as *;
+
+.sectionProducts {
+  overflow: hidden;
+  margin-top: 60px;
+  margin-bottom: 65px;
+
+  &Container {
+    @include container;
+  }
+
+  &Header {
+    @include flex(center, space-between);
+    margin-bottom: 20px;
+    @include mediaTabletL {
+      margin-bottom: 33px;
+    }
+  }
+
+  &Title {
+    //font-family: HeliosExtC;
+    font-size: 20px;
+    // font-weight: 400;
+    line-height: calc(24 / 20);
+    // text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+    @include mediaTabletL {
+      font-size: 32px;
+    }
+  }
+
+  &Quantity {
+    //font-family: TT Commons;
+    font-size: 10px;
+    // font-weight: 400;
+    line-height: 1;
+    // text-align: left;
+    color: rgba(#111111, 0.5);
+    @include mediaTabletL {
+      font-size: 14px;
+    }
+  }
+
+  &Button {
+    // font-family: TT Commons;
+    font-size: 13px;
+    line-height: calc(16 / 13);
+    text-transform: uppercase;
+    color: #111111;
+    border-bottom: 1px solid rgba(#111111, 0.5);
+    @include mediaTabletL {
+      font-size: 16px;
+    }
+  }
+
+  .swiper {
+    &-button {
+      &-prev, &-next {
+        @include resetFlex;
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 41px);
+        width: 28px;
+        height: 28px;
+        transform: translate(0, -50%);
+        color: rgba(#111111, 0.5);
+        @include mediaTabletL {
+          width: 44px;
+          height: 44px;
+        }
+
+        &::after {
+          font-size: 14px;
+          color: rgba(#111111, 0.5);
+          @include mediaTabletL {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &-prev {
+        left: -8px;
+        //@include mediaTabletL {
+        //  left: calc(-12px - 44px);
+        //}
+      }
+
+      &-next {
+        right: -8px;
+        //@include mediaTabletL {
+        //  right: calc(-12px - 44px);
+        //}
+      }
+    }
+
+    &-pagination {
+      position: static;
+      margin: 32px auto 0;
+      transition: background-color 0.33s;
+
+      &-bullet {
+        width: 24px;
+        height: 2px;
+        margin: 0 !important;
+        opacity: 1 !important;
+        background: #d9d9d9;
+
+        &-active {
+          background: rgba(#111111, 0.5);
+        }
+      }
+    }
+  }
+}
