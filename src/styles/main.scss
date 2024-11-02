@@ -1,0 +1,36 @@
+@use "src/styles/shared" as *;
+@import "src/styles/ui";
+
+:root {
+  --headerHeight: #{$headerInitialHeight};
+  --scrollbarWidth: 17px;
+}
+
+html, body, #app {
+  @include flex($d: column);
+}
+
+body {
+  color: #111111;
+}
+
+.swiper {
+  min-width: 0;
+  max-width: 100%;
+
+  &-wrapper {
+    min-width: 0;
+  }
+
+  &-button {
+    &-prev, &-next {
+      @include flex(center, center);
+      flex: 0 0 auto;
+      min-width: 0;
+    }
+  }
+}
+
+.main {
+  padding-top: var(--headerHeight);
+}
