@@ -1,0 +1,86 @@
+@use "src/styles/shared" as *;
+
+.productCard {
+  //@include flex($d: column);
+  position: relative;
+  z-index: 0;
+  //width: 205px;
+  //transition: padding 0.33s;
+  //@include mediaTabletM {
+  //  width: 270px;
+  //}
+
+  &:hover {
+    .productCardCart {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  &Tags {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: 12px;
+  }
+
+  &Tag {
+    // font-family: TT Commons;
+    font-size: 14px;
+    // font-weight: 400;
+    line-height: calc(19 / 14);
+    text-transform: uppercase;
+    color: #c1a778;
+  }
+
+  &Picture {
+    display: contents;
+  }
+
+  &Img {
+    display: block;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  &Price {
+    // font-family: TT Commons;
+    font-size: 14px;
+    // font-weight: 400;
+    line-height: calc(16 / 14);
+    color: rgba(#111111, 0.5)
+  }
+
+  &Discount {
+    font-size: 10px;
+    line-height: 1;
+    padding: 2px;
+    text-align: center;
+    //font-family: TT Commons;
+    color: white;
+    // font-weight: 400;
+    border-radius: 2px;
+    background: #c1a778;
+  }
+
+  &Title {
+    @include lineClamp(2);
+    // font-family: TT Commons;
+    font-size: 14px;
+    // font-weight: 400;
+    line-height: calc(16 / 14);
+    margin-top: 10px;
+    //margin-bottom: 12px;
+    color: rgba(#111111, 0.5);
+  }
+
+  &Cart {
+    @include buttonMain;
+    width: 100%;
+    margin-top: 12px;
+    // transform: translate(0, 20px);
+    transform: translate(20px, 0);
+    pointer-events: auto;
+    opacity: 0;
+  }
+}
