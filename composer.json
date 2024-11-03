@@ -1,6 +1,9 @@
 {
   "name": "a.volkov/russam",
   "type": "project",
+  "scripts": {
+    "serve": "php -S localhost:8000 -t public"
+  },
   "autoload": {
     "psr-4": {
       "Core\\": "core/",
