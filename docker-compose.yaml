@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  app:
+    image: php:8.2-fpm
+    container_name: php-fpm
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+      - ./configuration/php/php.ini:/usr/local/etc/php/php.ini  # Подключение пользовательского php.ini
+    expose:
+      - "9000"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+      - ./configuration/nginx/nginx.conf:/etc/nginx/nginx.conf  # Подключение пользовательского nginx.conf
+    depends_on:
+      - app
