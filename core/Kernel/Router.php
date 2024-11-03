@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\Kernel;
+namespace Kernel;
 
-use Core\App\Models\PageModel;
+use App\Models\PageModel;
 use Exception;
 
 class Router {

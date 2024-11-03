@@ -1,9 +1,9 @@
 <?php
 
-namespace Core\App\Controllers;
+namespace App\Controllers;
 
-use Core\App\Models\PageModel;
-use Core\Kernel\Controller;
+use App\Models\PageModel;
+use Kernel\Controller;
 
 class PageController extends Controller {
   public function index(?PageModel $page = null): void {

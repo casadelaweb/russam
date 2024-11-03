@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Kernel;
+namespace Kernel;
 class Controller {
   public function model(string $model): object {
     require_once __DIR__ . "/../app/Models/$model.php";

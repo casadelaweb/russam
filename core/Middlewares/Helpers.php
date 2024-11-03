@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Middlewares;
+namespace Middlewares;
 
 class Helpers {
   static public function getFilePathWithHash(string $path): string {

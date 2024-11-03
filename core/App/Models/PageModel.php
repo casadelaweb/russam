@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\App\Models;
+namespace App\Models;
 
-use Core\Kernel\Model;
+use Kernel\Model;
 
 class PageModel {
   public string $title;

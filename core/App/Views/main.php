@@ -1,8 +1,8 @@
 <?php
 
-use Core\App\Models\PageModel;
-use Core\Middlewares\Helpers;
-use Core\Middlewares\Render;
+use App\Models\PageModel;
+use Middlewares\Helpers;
+use Middlewares\Render;
 
 /** @var PageModel $page */
 ?>

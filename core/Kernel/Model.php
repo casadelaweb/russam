@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Kernel;
+namespace Kernel;
 
 class Model {
 

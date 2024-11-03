@@ -1,8 +1,8 @@
 <?php
 
-namespace Core\App;
+namespace App;
 
-use Core\Kernel\Router;
+use Kernel\Router;
 
 class App {
   public Router $router;

@@ -1,4 +1,4 @@
-<?php namespace Core\Middlewares;
+<?php namespace Middlewares;
 
 class Render {
   public static function component(string $name, array $props = []): void {

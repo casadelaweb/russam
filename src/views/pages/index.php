@@ -1,4 +1,4 @@
-<?php use Core\Middlewares\Render;
+<?php use Middlewares\Render;
 
 $products = [
   [
