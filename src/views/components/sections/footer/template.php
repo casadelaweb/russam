@@ -1,38 +1,74 @@
 <footer class="footer">
   <div class="footerContainer">
     <div class="footerMain">
-      <div class="footerMainCol">
-        <a href="">КАТАЛОГ</a>
-        <a href="">украшения</a>
-        <a href="">дом & аксессуары</a>
-        <a href="">high jewelry</a>
-        <a href="">new</a>
-        <a href="">камни</a>
+      <div class="footerList _catalog open" open>
+        <div class="footerListHead">
+          <a href="#">КАТАЛОГ</a>
+          <button type="button" class="footerListButton">
+            -
+            <span class="iconfont icon-arrow-down"></span>
+          </button>
+        </div>
+        <div class="footerListBody">
+          <a href="#">украшения</a>
+          <a href="#">дом & аксессуары</a>
+          <a href="#">high jewelry</a>
+          <a href="#">new</a>
+          <a href="#">камни</a>
+        </div>
       </div>
-      <div class="footerMainCol">
-        <a href="">Доставка и самовывоз</a>
-        <a href="">оплата</a>
-        <a href="">гарантия</a>
-        <a href="">Вопросы и ответы</a>
-        <a href="">услуги</a>
-        <a href="">блог</a>
-        <a href="">правила продажи</a>
-      </div>
-      <div class="footerMainCol">
-        <a href="">о компании</a>
-        <a href="">новости</a>
-        <a href="">контакты</a>
-        <a href="">Пользовательское соглашение</a>
+      <div class="footerList _sitemap">
+        <div class="footerListHead">
+          Карта сайта
+          <button type="button" class="footerListButton">
+            -
+            <span class="iconfont icon-arrow-down"></span>
+          </button>
+        </div>
+        <div class="footerListBody">
+          <div class="footerCol">
+            <a href="#">Доставка и самовывоз</a>
+            <a href="#">оплата</a>
+            <a href="#">гарантия</a>
+            <a href="#">Вопросы и ответы</a>
+            <a href="#">услуги</a>
+            <a href="#">блог</a>
+            <a href="#">правила продажи</a>
+          </div>
+          <div class="footerCol">
+            <a href="#">о компании</a>
+            <a href="#">новости</a>
+            <a href="#">контакты</a>
+            <a href="#">Пользовательское соглашение</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="footerAside">
-      Звоните бесплатно по России
-      <a class="footerTel" href="tel:8 (800) 777-19-12">8 (800) 777-19-12</a>
-      Пн-Вс с 09.00 до 21.00
-      Наши сообщества
-      Санкт-Петербург, пл. Фаберже, 8
-      8 (800) 777-19-12
-      market@russam.ru
+    <div class="footerContacts">
+      <p>Звоните бесплатно по России</p>
+      <a class="footerTel" href="tel:8 (800) 777-19-12">
+        8 (800) 777-19-12
+      </a>
+      <div class="footerTimetable">Пн-Вс с 09.00 до 21.00</div>
+      <div class="footerSocials">
+        <div class="footerSocialsTitle">Наши сообщества</div>
+        <div class="footerSocialsList">
+          <a href="#" class="footerSocialsItem">
+            <span class="iconfont icon-telegram"></span>
+            <img src="/assets/img/footer/telegram.svg" alt="img" loading="lazy">
+          </a>
+          <a href="#" class="footerSocialsItem">
+            <span class="iconfont icon-vk"></span>
+            <img src="/assets/img/footer/vk.svg" alt="img" loading="lazy">
+          </a>
+        </div>
+      </div>
+
+      <div class="footerAddress">Санкт-Петербург, пл. Фаберже, 8</div>
+      <a href="mailto:order@russam.ru" class="footerEmail">
+        order@russam.ru
+      </a>
+
     </div>
     <div class="footerBottom">
       <div class="footerCopyright">
@@ -45,6 +81,5 @@
       </p>
 
     </div>
-
   </div>
 </footer>

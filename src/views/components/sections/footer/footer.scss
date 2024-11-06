@@ -1,39 +1,261 @@
 @use "src/styles/shared" as *;
 
 .footer {
-  //margin-top: 68px;
-  padding-bottom: 28px;
+  text-align: center;
+  @include mediaTabletM {
+    text-align: left;
+  }
 
   &Container {
-    @include container;
+    @include mediaTabletM {
+      @include container;
+      @include flex($w: wrap);
+    }
   }
 
   &Main {
-    display: flex;
+    padding: 40px 0;
+    border-top: 1px solid #1111111a;
+    @include mediaTabletM {
+      flex: 1 0 auto;
+      border-top: 0;
+      @include flex;
+    }
 
-    &Col {
-      font-size: 12px;
-      line-height: 1.0;
-      display: grid;
-      // font-family: HeliosExt;
-      text-transform: uppercase;
-      // font-weight: 400;
-      grid-template-columns: 1fr;
-      row-gap: 21px;
-      //text-align: left;
+    &Catalog {
+      margin-bottom: 32px;
+    }
+  }
+
+  &Contacts {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: calc(18 / 14);
+    padding: 40px 0;
+    // text-align: center;
+    color: #111111;
+    border-top: 1px solid #1111111a;
+    @include mediaTabletM {
+      width: fit-content;
+      @include resetFlex;
+      border-top: 0;
+    }
+    @include mediaTabletL {
+      font-size: 16px;
+      line-height: 1;
     }
   }
 
   &Bottom {
-    // font-family: TT Commons;
+    //font-family: "TTCommons", sans-serif;
     font-size: 12px;
     font-weight: 300;
     line-height: calc(17 / 12);
-    //text-align: left;
+    padding: 0 10px 10px;
     color: rgba(black, 0.5);
+    @include mediaTabletM {
+      @include resetFlex;
+      width: 100%;
+    }
+  }
+
+  &List {
+    $this: &;
+    width: fit-content;
+    margin: 0 auto;
+    @include mediaTabletM {
+      margin: 0;
+    }
+
+    &._catalog {
+      margin-bottom: 32px;
+      @include mediaTabletM {
+        margin: 0 64px 0 0;
+      }
+      @include mediaTabletL {
+        margin-right: 32px;
+      }
+      @include mediaLaptopS {
+        margin-right: 64px;
+      }
+      @include mediaLaptopM {
+        margin-right: 80px;
+      }
+      @include mediaLaptopL {
+        margin-right: 140px;
+      }
+    }
+
+    &._sitemap {
+      color: rgba(black, 0.5);
+    }
+
+    &Head {
+      @include flex(center);
+      font-family: "HeliosExt", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: calc(20 / 14);
+      width: fit-content;
+      margin: 0 auto;
+      text-transform: uppercase;
+      column-gap: 4px;
+      @include mediaTabletM {
+        margin: 0 0 20px;
+        pointer-events: auto;
+      }
+
+      ._sitemap & {
+        @include mediaTabletM {
+          display: none;
+        }
+      }
+
+      a {
+        pointer-events: none;
+      }
+    }
+
+    &Button {
+      @include flex(center, center);
+      font-size: 6px;
+      width: 12px;
+      height: 12px;
+      transition: transform 0.33s, background-color 0.33s, color 0.33s;
+      transform-origin: center;
+      @include mediaTabletM {
+        display: none;
+      }
+
+      #{$this}.is-opening > &, #{$this}.open > & {
+        transform: rotate(180deg);
+      }
+
+      #{$this}.is-closing > & {
+        transform: rotate(0);
+      }
+    }
+
+    &Body {
+      display: none;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 16px;
+      row-gap: 12px;
+      @include mediaTabletM {
+        align-items: flex-start;
+        padding: 0;
+        text-align: left;
+        row-gap: 20px;
+      }
+
+      #{$this}.is-opening > &, #{$this}.open > & {
+        display: flex;
+      }
+
+      #{$this}._sitemap & {
+        @include mediaTabletM {
+          @include flex($d: row);
+          column-gap: 64px;
+        }
+        @include mediaTabletL {
+          column-gap: 32px;
+        }
+        @include mediaLaptopS {
+          column-gap: 64px;
+        }
+        @include mediaLaptopM {
+          column-gap: 80px;
+        }
+        @include mediaLaptopL {
+          column-gap: 96px;
+        }
+      }
+
+      .footerCol {
+        display: contents;
+        @include mediaTabletM {
+          @include flex($d: column);
+          row-gap: 20px;
+        }
+      }
+
+      a {
+        font-family: "HeliosExtC", sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: calc(18 / 12);
+        display: inline-block;
+        width: fit-content;
+        text-transform: uppercase;
+        color: #000000;
+
+        #{$this}._sitemap & {
+          color: rgba(#000000, 0.5);
+        }
+      }
+    }
+  }
+
+  &Timetable {
+    @include mediaTabletL {
+      margin-bottom: 56px;
+    }
+  }
+
+  &Tel {
+    font-family: "HeliosExtC", sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: calc(32 / 28);
+    display: inline-block;
+    margin-top: 8px;
+    @include mediaTabletL {
+      font-size: 32px;
+      line-height: calc(44 / 32);
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &Socials {
+    margin: 28px 0;
+    @include mediaTabletL {
+      margin: 0 0 32px;
+    }
+
+    &Title {
+      margin-bottom: 8px;
+    }
+
+    &List {
+    }
+
+    &Item {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      margin: 0 6px;
+      @include mediaTabletL {
+        width: 24px;
+        height: 24px;
+        margin: 0 4px;
+        color: rgba(#111111, 0.7);
+      }
+    }
+  }
+
+  &Address {
+    margin-bottom: 2px;
+    @include mediaTabletL {
+      margin-bottom: 12px;
+    }
   }
 
   &Copyright {
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+    @include mediaTabletM {
+      margin-bottom: 14px;
+    }
   }
 }
