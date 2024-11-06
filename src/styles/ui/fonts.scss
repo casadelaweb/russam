@@ -1,35 +1,170 @@
 @font-face {
-  font-family: "Rubik";
+  font-family: "TTCommons";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-Light.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-Light.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-Light.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-Light.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("src/assets/fonts/Rubik-Regular.ttf") format("truetype");
+  src: url("src/assets/fonts/TTCommons/TTCommons-Regular.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-Regular.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-Regular.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-Regular.eot");
 }
 
 @font-face {
-  font-family: "Rubik";
+  font-family: "TTCommons";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("src/assets/fonts/Rubik-Medium.ttf") format("truetype");
+  src: url("src/assets/fonts/TTCommons/TTCommons-Medium.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-Medium.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-Medium.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-Medium.eot");
 }
 
 @font-face {
-  font-family: "Rubik";
+  font-family: "TTCommons";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("src/assets/fonts/Rubik-SemiBold.ttf") format("truetype");
+  src: url("src/assets/fonts/TTCommons/TTCommons-DemiBold.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBold.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBold.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBold.eot");
 }
 
 @font-face {
-  font-family: "Rubik";
+  font-family: "TTCommons";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("src/assets/fonts/Rubik-Bold.ttf") format("truetype");
+  src: url("src/assets/fonts/TTCommons/TTCommons-Bold.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-Bold.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-Bold.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-Bold.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-LightItalic.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-LightItalic.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-LightItalic.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-LightItalic.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-Italic.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-Italic.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-Italic.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-Italic.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-MediumItalic.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-MediumItalic.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-MediumItalic.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-MediumItalic.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-DemiBoldItalic.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBoldItalic.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBoldItalic.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-DemiBoldItalic.eot");
+}
+
+@font-face {
+  font-family: "TTCommons";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("src/assets/fonts/TTCommons/TTCommons-BoldItalic.ttf") format("truetype"),
+  url("src/assets/fonts/TTCommons/TTCommons-BoldItalic.woff2") format("woff2"),
+  url("src/assets/fonts/TTCommons/TTCommons-BoldItalic.woff") format("woff"),
+  url("src/assets/fonts/TTCommons/TTCommons-BoldItalic.eot");
+}
+
+@font-face {
+  font-family: "HeliosExtC";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExtC/heliosextlightc.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeliosExtC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExtC/heliosextc.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeliosExt";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExt/HeliosExt-Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "HeliosExt";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExt/HeliosExt-Regular.woff2") format("woff2"), url("src/assets/fonts/HeliosExt/heliosext.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeliosExt";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExt/HeliosExt-Bold.woff") format("woff"),
+  url("src/assets/fonts/HeliosExt/heliosext_bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "HeliosExt";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExt/heliosext_italic.ttf") format("tryetype");
+}
+
+@font-face {
+  font-family: "HeliosExt";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("src/assets/fonts/HeliosExt/heliosext_bold_italic.ttf") format("tryetype");
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "TTCommons", sans-serif;
 }

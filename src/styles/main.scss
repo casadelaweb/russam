@@ -1,5 +1,5 @@
-@use "src/styles/shared" as *;
-@import "src/styles/ui";
+@use "src/styles/shared/index" as *;
+@forward "src/styles/ui";
 
 :root {
   --headerHeight: #{$headerInitialHeight};
@@ -31,6 +31,6 @@ body {
   }
 }
 
-.main {
-  padding-top: var(--headerHeight);
-}
+//.main {
+//  padding-top: var(--headerHeight);
+//}

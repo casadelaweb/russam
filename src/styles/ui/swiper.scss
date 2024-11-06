@@ -1,0 +1,38 @@
+@use "src/styles/shared" as *;
+
+.swiper {
+  @include resetFlex;
+
+  &-button {
+    &-prev, &-next {
+      position: absolute;
+      z-index: 2;
+      color: rgba(#111111, 0.5);
+      @include resetFlex;
+
+      &::after {
+        color: rgba(#111111, 0.5);
+      }
+    }
+
+  }
+
+  &-pagination {
+    position: static;
+    margin: 32px auto 0;
+    transition: background-color 0.33s;
+    border-radius: 0 !important;
+
+    &-bullet {
+      width: 24px;
+      height: 2px;
+      margin: 0;
+      opacity: 1;
+      background: #d9d9d9;
+
+      &-active {
+        background: rgba(#111111, 0.5);
+      }
+    }
+  }
+}
