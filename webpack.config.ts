@@ -54,17 +54,9 @@ function config(env: iEnvVariables): Configuration {
         '.js',
         '.json',
         '.wasm',
-//        '.ejs'
       ],
     },
     plugins: [
-      // new HtmlWebpackPlugin({
-      //   template: 'src/views/pages/index.html',
-      //   filename: '../index.html',
-      //   inject: true,
-      //   scriptLoading: 'blocking',
-      //   minify: false,
-      // }),
       new MiniCssExtractPlugin({
         filename: 'css/[name].css?v=[contenthash:8]',
         chunkFilename: 'css/[name].css?v=[contenthash:8]',
@@ -72,48 +64,6 @@ function config(env: iEnvVariables): Configuration {
     ],
     module: {
       rules: [
-        // {
-        //   test: /\.ejs$/,
-        //   use: [
-        //     {
-        //       loader: 'html-loader',
-        //     },
-        //     {
-        //       loader: 'ejs-loader',
-        //       options: {
-        //         esModule: true, // позволяет использовать ES модули
-        //         variable: 'data', // задает имя переменной, которая будет использоваться в шаблонах
-        //       },
-        //     },
-        //   ],
-        // },
-        // {
-        //   test: /\.html$/i,
-        //   loader: 'html-loader',
-        //   options: {
-        //     minimize: false,
-        //     sources: {
-        //       list: [
-        //         '...',
-        //         {
-        //           tag: 'img',
-        //           attribute: 'data-src',
-        //           type: 'src',
-        //         },
-        //         {
-        //           tag: 'img',
-        //           attribute: 'data-srcset',
-        //           type: 'srcset',
-        //         },
-        //       ],
-        //     },
-        //     preprocessor(content, loaderContext) {
-        //       const basePath = path.resolve(__dirname, './')
-        //       return replaceImportsWithVariables(content)
-        //       //return content
-        //     }
-        //   },
-        // },
         ruleFonts(),
         ruleIconfonts(),
         ruleFavicon(),

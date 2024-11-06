@@ -2,21 +2,23 @@
 
 .sectionHero {
   border-bottom: 1px solid #d9d9d9;
-  @include mediaDesktop {
+  @include mediaTabletM {
     border-bottom: 0;
   }
 
   &Container {
-    @include container;
     position: relative;
     z-index: 1;
+    @include mediaLaptopS {
+      @include container;
+    }
   }
 
   &Slide {
-    @include flex($d: column);
     position: relative;
     z-index: 1;
-    @include mediaDesktop {
+    @include flex($d: column);
+    @include mediaTabletM {
       height: 560px;
     }
 
@@ -29,23 +31,27 @@
       padding-top: 28px;
       padding-bottom: 36px;
       text-align: center;
-      @include mediaDesktop {
+      @include mediaTabletM {
         display: block;
-        width: 383px;
-        margin: auto 0 auto 129px;
+        width: 350px;
+        margin: auto 0 auto 40px;
         padding-bottom: 0;
         text-align: left;
+      }
+      @include mediaTabletL {
+        width: 383px;
+        margin: auto 0 auto 129px;
       }
     }
 
     &Title {
-      //font-family: HeliosExtLightC;
+      // font-family: "HeliosExtC", sans-serif;
       font-size: 12px;
       font-weight: 300;
       line-height: calc(18 / 12);
       margin-bottom: 8px;
       color: rgba(black, 0.5);
-      @include mediaDesktop {
+      @include mediaTabletM {
         font-size: 16px;
         font-weight: 300;
         line-height: calc(24 / 16);
@@ -54,12 +60,12 @@
     }
 
     &Brand {
-      //font-family: HeliosExt;
+      font-family: "HeliosExt", sans-serif;
       font-size: 20px;
       line-height: calc(24 / 20);
       margin-bottom: 12px;
-      @include mediaDesktop {
-        //font-family: HeliosExtC;
+      @include mediaTabletM {
+        // font-family: "HeliosExtC", sans-serif;
         font-size: 60px;
         line-height: calc(72 / 60);
         margin-bottom: 23px;
@@ -68,13 +74,12 @@
     }
 
     &Description {
-      //font-family: TT Commons;
+      font-family: "TTCommons", sans-serif;
       font-size: 14px;
       line-height: calc(16 / 14);
       margin-bottom: 20px;
       color: rgba(#111111, 0.5);
-
-      @include mediaDesktop {
+      @include mediaTabletM {
         font-size: 18px;
         line-height: calc(23.4 / 18);
         margin-bottom: 56px;
@@ -84,7 +89,7 @@
 
     &Button {
       @include buttonMain;
-      @include mediaDesktop {
+      @include mediaTabletM {
         @include buttonDark;
       }
     }
@@ -99,7 +104,7 @@
       object-position: center;
       object-fit: cover;
 
-      @include mediaDesktop {
+      @include mediaTabletM {
         position: absolute;
         z-index: 0;
         top: 0;
@@ -113,28 +118,47 @@
   .swiper {
     &-button {
       &-prev, &-next {
-        @include resetFlex;
         position: absolute;
         z-index: 2;
         top: 50%;
-        width: 44px;
-        height: 44px;
+        width: 28px;
+        height: 28px;
         transform: translate(0, -50%);
         color: #838383;
+        @include resetFlex;
+        @include mediaTabletM {
+          width: 44px;
+          height: 44px;
+        }
 
         &::after {
           //display: none;
-          font-size: 20px;
+          font-size: 14px;
           color: #838383;
+          @include mediaTabletM {
+            font-size: 20px;
+          }
         }
       }
 
       &-prev {
-        left: 37px;
+        left: 8px;
+        @include mediaMobileM {
+          left: 16px;
+        }
+        @include mediaTabletM {
+          left: 37px;
+        }
       }
 
       &-next {
-        right: 37px;
+        right: 8px;
+        @include mediaMobileM {
+          right: 16px;
+        }
+        @include mediaTabletM {
+          right: 37px;
+        }
       }
     }
 

@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.sectionHeroSlider', {
       loop: true,
       modules: [Pagination, Navigation],
+      speed: 1000,
+      effect: 'slide',
       pagination: {
-        enabled: true,
+        enabled: false,
         clickable: true,
         el: '.swiper-pagination',
       },
@@ -15,7 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
       },
-      breakpoints: {}
+      breakpoints: {
+        768: {
+          pagination: {
+            enabled: true,
+          }
+        }
+      }
     })
   },
   {
