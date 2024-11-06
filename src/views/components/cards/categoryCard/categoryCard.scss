@@ -1,0 +1,30 @@
+@use "src/styles/shared" as *;
+
+.categoryCard {
+  $this: &;
+  transition: background-color 0.33s;
+  @include responsiveHover {
+    background: #fafafa;
+  }
+
+  &Picture {
+    display: contents;
+  }
+
+  &Img {
+    width: 160px;
+    height: 160px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &Title {
+    font-family: "TTCommons", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: calc(16 / 14);
+    margin: 8px 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #111111;
+  }
+}

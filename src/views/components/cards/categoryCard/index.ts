@@ -1,0 +1,8 @@
+import './categoryCard'
+import './categoryCard.scss'
+import 'src/assets/img/sectionCategories/1-desktop.jpg'
+import 'src/assets/img/sectionCategories/2-desktop.jpg'
+import 'src/assets/img/sectionCategories/3-desktop.jpg'
+import 'src/assets/img/sectionCategories/4-desktop.jpg'
+import 'src/assets/img/sectionCategories/5-desktop.jpg'
+import 'src/assets/img/sectionCategories/6-desktop.jpg'

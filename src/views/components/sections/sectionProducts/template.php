@@ -14,9 +14,9 @@
         <a href="<?= $url; ?>">
           <span><?= $title; ?></span>
         </a>
-        <span class="sectionProductsQuantity">
+        <sup class="sectionProductsQuantity">
           (<?= $quantity; ?>)
-        </span>
+        </sup>
       </h2>
       <a class="sectionProductsButton" href="<?= $url; ?>">
         <?= $buttonText; ?>
@@ -26,11 +26,13 @@
       <div class="swiper-wrapper">
         <?php foreach ($products as $product): ?>
           <div class="swiper-slide">
+            <span class="swiper-lazy-preloader"></span>
             <?php Render::component('cards/productCard', [
               'title' => $product['title'],
               'price' => $product['price'],
               'priceOld' => $product['priceOld'],
               'discount' => $product['discount'],
+              'url' => $product['url'],
             ]); ?>
           </div>
         <?php endforeach; ?>

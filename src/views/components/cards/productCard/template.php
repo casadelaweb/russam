@@ -8,10 +8,12 @@
 ?>
 
 <article class="productCard">
-  <picture class="productCardPicture">
-    <img alt="img" class="productCardImg" loading="lazy"
-         src="../../assets/img/product-1.jpg">
-  </picture>
+  <a href="<?= $url; ?>">
+    <picture class="productCardPicture">
+      <img alt="img" class="productCardImg" loading="lazy"
+           src="../../assets/img/product-1.jpg">
+    </picture>
+  </a>
   <div class="productCardTags">
     <span class="productCardTag">NEW</span>
   </div>

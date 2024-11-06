@@ -1,0 +1,74 @@
+@use "src/styles/shared" as *;
+
+.sectionCategories {
+  margin-top: 80px;
+  margin-bottom: 140px;
+
+  &Container {
+    @include container;
+  }
+
+  &Title {
+    // font-family: "HeliosExtC", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: calc(70 / 52);
+    position: relative;
+    z-index: -1;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: #1111110d;
+    @include mediaMobileS {
+      font-size: 52px;
+      margin: 0 -10px;
+    }
+    @include mediaTabletM {
+      font-size: 112px;
+      line-height: calc(148 / 112);
+    }
+  }
+
+  &Slider {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    &-button {
+      &-prev, &-next {
+        position: absolute;
+        z-index: 2;
+        top: calc(50% - 41px);
+        width: 28px;
+        height: 28px;
+        transform: translate(0, -50%);
+        color: rgba(#111111, 0.5);
+        @include mediaTabletL {
+          width: 44px;
+          height: 44px;
+        }
+
+        &::after {
+          font-size: 14px;
+          color: rgba(#111111, 0.5);
+          @include mediaTabletL {
+            font-size: 20px;
+          }
+        }
+      }
+
+      &-prev {
+        left: -8px;
+      }
+
+      &-next {
+        right: -8px;
+      }
+    }
+
+    //&-slide {
+    //  width: fit-content;
+    //}
+  }
+}

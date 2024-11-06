@@ -1,1 +1,2 @@
 import './productCard'
+import './categoryCard'
