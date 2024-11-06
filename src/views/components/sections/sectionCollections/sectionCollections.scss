@@ -1,0 +1,121 @@
+@use "src/styles/shared" as *;
+
+.sectionCollections {
+  overflow: hidden;
+  margin: 60px 0;
+  @include mediaLaptopL {
+    margin: 140px 0 90px;
+  }
+
+  &Container {
+    @include container;
+  }
+
+  &Nav {
+    margin-bottom: 10px;
+    column-gap: 20px;
+
+    & {
+      @include flex(center, center);
+    }
+
+    &Item {
+      font-family: "HeliosExt", sans-serif;
+      font-size: 14px;
+      line-height: calc(20 / 14);
+      text-transform: uppercase;
+      color: rgba(#111111, 0.3);
+
+      &._active {
+        color: #111111;
+      }
+    }
+  }
+
+  &Heading {
+    font-family: "HeliosExtC", sans-serif;
+    font-size: 48px;
+    line-height: calc(63 / 48);
+    margin: 0 -8px;
+    margin-bottom: -24px;
+    text-align: center;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    color: rgba(#111111, 0.05);
+  }
+
+  &Sliders {
+  }
+
+  &Slider {
+    overflow: unset;
+
+    &Nav {
+      @include flex(center);
+
+      & {
+        margin-top: auto;
+        padding-top: 24px;
+        column-gap: 16px;
+      }
+    }
+
+    &Button {
+      @include buttonMore;
+
+      & {
+        margin-left: auto;
+      }
+    }
+
+    .swiper {
+      &-button-prev,
+      &-button-next {
+        position: static;
+        width: 28px;
+        height: 28px;
+        margin: 0;
+        transform: none;
+
+        &:after {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &Slide {
+    @include flex($d: column);
+    background: white;
+
+    //& {
+    //  height: auto;
+    //}
+
+    &Img {
+    }
+
+    &Title {
+      font-family: "HeliosExtC", sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1.0;
+      flex: 0 1 auto;
+      margin: -0.66em -8px 16px;
+      padding-left: 32px;
+      letter-spacing: -0.03em;
+      color: #c1a778;
+      @include mediaMobileL {
+        font-size: 40px;
+      }
+    }
+
+    &Description {
+      font-size: 14px;
+      line-height: calc(16 / 14);
+      margin-top: auto;
+      padding-left: 32px;
+      color: rgba(#111111, 0.5);
+    }
+  }
+}
