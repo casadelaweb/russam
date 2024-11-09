@@ -12,9 +12,12 @@
   }
 
   &Img {
-    width: 160px;
-    height: 160px;
-    aspect-ratio: 1 / 1;
+    @include resetFlex;
+
+    & {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
   }
 
   &Title {

@@ -1,5 +1,67 @@
 <?php use Middlewares\Render;
 
+$categories = [
+  [
+    'title' => 'Кольца',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/1-desktop.jpg',
+  ],
+  [
+    'title' => 'Серьги',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/2-desktop.jpg',
+  ],
+  [
+    'title' => 'броши',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/3-desktop.jpg',
+  ],
+  [
+    'title' => 'колье',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/4-desktop.jpg',
+  ],
+  [
+    'title' => 'цепи',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/5-desktop.jpg',
+  ],
+  [
+    'title' => 'браслеты',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/6-desktop.jpg',
+  ],
+  [
+    'title' => 'Кольца',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/1-desktop.jpg',
+  ],
+  [
+    'title' => 'Серьги',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/2-desktop.jpg',
+  ],
+  [
+    'title' => 'броши',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/3-desktop.jpg',
+  ],
+  [
+    'title' => 'колье',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/4-desktop.jpg',
+  ],
+  [
+    'title' => 'цепи',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/5-desktop.jpg',
+  ],
+  [
+    'title' => 'браслеты',
+    'url' => '/catalog/category',
+    'imgUrl' => '/assets/img/sectionCategories/6-desktop.jpg',
+  ],
+];
 $products = [
   [
     'title' => 'Кольцо из белого золота с изумрудом и турмалинами',
@@ -40,38 +102,6 @@ $products = [
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
     'url' => '/product',
-  ],
-];
-$categories = [
-  [
-    'title' => 'Кольца',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/1-desktop.jpg',
-  ],
-  [
-    'title' => 'Серьги',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/2-desktop.jpg',
-  ],
-  [
-    'title' => 'броши',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/3-desktop.jpg',
-  ],
-  [
-    'title' => 'колье',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/4-desktop.jpg',
-  ],
-  [
-    'title' => 'цепи',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/5-desktop.jpg',
-  ],
-  [
-    'title' => 'браслеты',
-    'url' => '/catalog/category',
-    'imgUrl' => '/assets/img/sectionCategories/6-desktop.jpg',
   ],
 ];
 

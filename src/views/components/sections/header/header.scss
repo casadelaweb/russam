@@ -2,12 +2,13 @@
 
 .header {
   //display: none;
+  overflow: hidden;
   width: 100%;
   background: white;
 
   &Desktop {
     display: none;
-    @include mediaTabletL {
+    @include mediaLaptopS {
       display: block;
     }
   }
