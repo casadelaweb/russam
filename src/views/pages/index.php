@@ -76,12 +76,10 @@ $categories = [
 ];
 
 Render::component('sections/sectionHero');
-
 Render::component('sections/sectionCategories', [
   'title' => 'Категории',
   'categories' => $categories,
 ]);
-
 Render::component('sections/sectionProducts', [
   'title' => 'Новинки',
   'quantity' => 24,
@@ -89,9 +87,7 @@ Render::component('sections/sectionProducts', [
   'buttonText' => 'Смотреть все',
   'products' => $products,
 ]);
-
 Render::component('sections/sectionCollections');
-
 Render::component('sections/sectionProducts', [
   'title' => 'Бестселлеры',
   'quantity' => 24,
@@ -99,6 +95,7 @@ Render::component('sections/sectionProducts', [
   'buttonText' => 'Смотреть все',
   'products' => $products,
 ]);
+Render::component('sections/sectionBenefits');
 Render::component('sections/sectionAbout', [
   'title' => 'Петербургский <br/> ювелирный бренд <br/> с вековой историей',
 ]);

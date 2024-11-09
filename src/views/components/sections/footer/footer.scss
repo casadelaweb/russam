@@ -232,13 +232,16 @@
     }
 
     &Item {
+      font-size: 36px;
       display: inline-block;
-      width: 36px;
-      height: 36px;
+      //width: 36px;
+      //height: 36px;
       margin: 0 6px;
+      color: rgba(#111111, 0.3);
       @include mediaTabletL {
-        width: 24px;
-        height: 24px;
+        font-size: 24px;
+        //width: 24px;
+        //height: 24px;
         margin: 0 4px;
         color: rgba(#111111, 0.7);
       }

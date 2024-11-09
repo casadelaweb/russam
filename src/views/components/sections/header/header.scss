@@ -1,7 +1,7 @@
 @use "src/styles/shared/index" as *;
 
 .header {
-  display: none;
+  //display: none;
   width: 100%;
   background: white;
 
@@ -35,19 +35,32 @@
   }
 
   &Actions {
+    @include flex(center);
+    column-gap: 16px;
   }
 
-  &Profile {
+  &Profile, &Fav, &Cart {
+    @include resetFlex;
+    @include flex(center, center);
+
+    & {
+      font-size: 18px;
+      width: 24px;
+      height: 24px;
+      color: #000000;
+    }
   }
 
   &Fav, &Cart {
-    color: #000000;
-
     &Quantity {
-      // font-family: "HeliosExtC", sans-serif;
+      font-family: "HeliosExtC", sans-serif;
       font-size: 10px;
       line-height: calc(16 / 10);
+      margin-left: 2px;
     }
+  }
+
+  &Fav {
   }
 
   &Cart {
@@ -55,10 +68,14 @@
     }
   }
 
+  &Profile {
+  }
+
   &Shops {
     font-family: "TTCommons", sans-serif;
     font-size: 12px;
     line-height: calc(16 / 12);
+    margin-right: calc(28px - 16px);
     text-transform: uppercase;
     color: rgba(#111111, 0.5);
   }
@@ -71,10 +88,27 @@
   }
 
   &Button {
-    font-family: "HeliosExt", sans-serif;
-    font-size: 14px;
-    line-height: calc(20 / 14);
-    text-transform: uppercase;
-    color: #111111;
+    @include resetFlex;
+    @include flex(center);
+
+    & {
+      font-family: "HeliosExt", sans-serif;
+      font-size: 14px;
+      line-height: calc(20 / 14);
+      width: fit-content;
+      text-transform: uppercase;
+      color: #111111;
+      column-gap: 4px;
+    }
+
+    .iconfont {
+      @include flex(center, center);
+
+      & {
+        font-size: 8px;
+        width: 12px;
+        height: 12px;
+      }
+    }
   }
 }

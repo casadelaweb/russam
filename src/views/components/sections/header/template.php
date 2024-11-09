@@ -16,15 +16,15 @@
         МАГАЗИНЫ
       </a>
       <a href="/profile" class="headerProfile">
-        icon
+        <span class="iconfont icon-user"></span>
       </a>
       <a href="/fav" class="headerFav">
-        icon
-        <span class="headerFavQuantity">2</span>
+        <span class="iconfont icon-heart-outline"></span>
+        <sup class="headerFavQuantity">2</sup>
       </a>
       <a href="/cart" class="headerCart">
-        icon
-        <span class="headerCartQuantity">5</span>
+        <span class="iconfont icon-cart"></span>
+        <sup class="headerCartQuantity">5</sup>
       </a>
     </div>
   </div>
@@ -41,5 +41,8 @@
       <span class="iconfont icon-arrow-down"></span>
     </a>
     <a href="/" class="headerButton">АКЦИИ</a>
+    <button type="button">
+      <span class="iconfont icon-search"></span>
+    </button>
   </div>
 </header>

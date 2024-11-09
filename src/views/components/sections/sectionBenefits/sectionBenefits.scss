@@ -1,0 +1,104 @@
+@use "src/styles/shared" as *;
+
+.sectionBenefits {
+  overflow: hidden;
+
+  &Container {
+    @include mediaLaptopL {
+      @include container;
+    }
+  }
+
+  &Icon {
+    @include resetFlex;
+    @include flex(center, center);
+
+    & {
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      transition: font-size 0.33s, width 0.33s, height 0.33s, border-color 0.33s,
+      background-color 0.33s;
+      color: white;
+      border: 1px solid rgba(white, 0.2);
+      border-radius: 50%;
+      background: none;
+
+      .swiper-slide-active &,
+      &._active {
+        font-size: 28px;
+        width: 60px;
+        height: 60px;
+        border-color: transparent;
+        background: #c1a778;
+      }
+    }
+  }
+
+  &Main {
+    &Icons {
+      @include flex(center);
+
+      & {
+        position: absolute;
+        z-index: 3;
+        top: 64px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        column-gap: 4px;
+      }
+    }
+
+    &Icon {
+      @extend .sectionBenefitsIcon;
+    }
+
+    &Slider {
+      position: relative;
+      z-index: 0;
+    }
+
+    &Slide {
+      @include flex($d: column);
+
+      & {
+        height: 400px;
+        padding: 64px 0;
+        background: #80756e;
+      }
+
+      &Title {
+        font-family: "HeliosExt", sans-serif;
+        font-size: 20px;
+        line-height: calc(24 / 20);
+        margin: auto 0 12px;
+        text-align: center;
+        color: white;
+      }
+
+      &Note {
+        font-size: 14px;
+        line-height: calc(16 / 14);
+        text-align: center;
+        color: rgba(white, 0.5);
+      }
+
+      &Icon {
+        @extend .sectionBenefitsIcon;
+      }
+    }
+  }
+
+  &Footer {
+    &Slider {
+    }
+
+    &Slide {
+      font-family: "HeliosExt", sans-serif;
+      font-size: 14px;
+      line-height: calc(20 / 14);
+      min-height: 32px;
+      border-top: 1px solid rgba(#111111, 0.1);
+    }
+  }
+}

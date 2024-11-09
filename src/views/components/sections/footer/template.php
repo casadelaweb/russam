@@ -55,11 +55,9 @@
         <div class="footerSocialsList">
           <a href="#" class="footerSocialsItem">
             <span class="iconfont icon-telegram"></span>
-            <img src="/assets/img/footer/telegram.svg" alt="img" loading="lazy">
           </a>
           <a href="#" class="footerSocialsItem">
             <span class="iconfont icon-vk"></span>
-            <img src="/assets/img/footer/vk.svg" alt="img" loading="lazy">
           </a>
         </div>
       </div>
