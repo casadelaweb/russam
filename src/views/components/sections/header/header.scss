@@ -5,6 +5,14 @@
   width: 100%;
   background: white;
 
+  &Desktop {
+    display: none;
+    @include mediaTabletL {
+      display: block;
+    }
+  }
+
+
   &Top, &Bottom {
     max-width: 1366px;
     margin: 0 auto;
@@ -88,6 +96,7 @@
   }
 
   &Button {
+    @include addBottomLineOnHover(#111111);
     @include resetFlex;
     @include flex(center);
 

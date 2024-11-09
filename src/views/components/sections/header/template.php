@@ -1,48 +1,61 @@
 <header class="header">
-  <div class="headerTop">
-    <div class="headerContacts">
-      <a href="tel:8 (800) 777-19-12" class="headerContactsTel">
-        8 (800) 777-19-12
+  <div class="headerDesktop">
+    <div class="headerTop">
+      <div class="headerContacts">
+        <a href="tel:8 (800) 777-19-12" class="headerContactsTel">
+          8 (800) 777-19-12
+        </a>
+        <span class="headerContactsLabel">
+          Перезвоните мне
+        </span>
+      </div>
+      <a href="/" class="headerLogo">
+        <img src="/assets/img/header/logo.png" alt="img" class="headerLogoImg" loading="eager">
       </a>
-      <span class="headerContactsLabel">
-        Перезвоните мне
-      </span>
+      <div class="headerActions">
+        <a href="/shops" class="headerShops">
+          МАГАЗИНЫ
+        </a>
+        <a href="/profile" class="headerProfile">
+          <span class="iconfont icon-user"></span>
+        </a>
+        <a href="/fav" class="headerFav">
+          <span class="iconfont icon-heart-outline"></span>
+          <sup class="headerFavQuantity">2</sup>
+        </a>
+        <a href="/cart" class="headerCart">
+          <span class="iconfont icon-cart"></span>
+          <sup class="headerCartQuantity">5</sup>
+        </a>
+      </div>
     </div>
-    <a href="/" class="headerLogo">
-      <img src="/assets/img/header/logo.png" alt="img" class="headerLogoImg" loading="eager">
-    </a>
-    <div class="headerActions">
-      <a href="/shops" class="headerShops">
-        МАГАЗИНЫ
+    <div class="headerBottom">
+      <a href="/" class="headerButton">
+        Украшения
+        <span class="iconfont icon-arrow-down"></span>
       </a>
-      <a href="/profile" class="headerProfile">
-        <span class="iconfont icon-user"></span>
+      <a href="/" class="headerButton">эксклюзив</a>
+      <a href="/" class="headerButton">коллекции</a>
+      <a href="/" class="headerButton">wedding</a>
+      <a href="/" class="headerButton">
+        ДОМ & АКСЕССУАРЫ
+        <span class="iconfont icon-arrow-down"></span>
       </a>
-      <a href="/fav" class="headerFav">
-        <span class="iconfont icon-heart-outline"></span>
-        <sup class="headerFavQuantity">2</sup>
-      </a>
-      <a href="/cart" class="headerCart">
-        <span class="iconfont icon-cart"></span>
-        <sup class="headerCartQuantity">5</sup>
-      </a>
+      <a href="/" class="headerButton">АКЦИИ</a>
+      <button type="button">
+        <span class="iconfont icon-search"></span>
+      </button>
     </div>
   </div>
-  <div class="headerBottom">
-    <a href="/" class="headerButton">
-      Украшения
-      <span class="iconfont icon-arrow-down"></span>
-    </a>
-    <a href="/" class="headerButton">эксклюзив</a>
-    <a href="/" class="headerButton">коллекции</a>
-    <a href="/" class="headerButton">wedding</a>
-    <a href="/" class="headerButton">
-      ДОМ & АКСЕССУАРЫ
-      <span class="iconfont icon-arrow-down"></span>
-    </a>
-    <a href="/" class="headerButton">АКЦИИ</a>
-    <button type="button">
-      <span class="iconfont icon-search"></span>
+  <div class="headerMobile">
+    <button class="headerMenu" type="button">
+      <span class="iconfont icon-menu"></span>
     </button>
+    <a href="/" class="headerLogo">
+      <img src="/assets/img/header/logo-mobile.png" alt="img" class="headerLogoImg" loading="eager">
+    </a>
+    <a href="tel:8 (800) 777-19-12" class="headerTel">
+      <span class="iconfont icon-tel"></span>
+    </a>
   </div>
 </header>

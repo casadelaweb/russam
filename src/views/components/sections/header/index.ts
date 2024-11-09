@@ -1,3 +1,5 @@
 import './header'
 import './header.scss'
+import './headerMobile.scss'
 import 'src/assets/img/header/logo.png'
+import 'src/assets/img/header/logo-mobile.png'
