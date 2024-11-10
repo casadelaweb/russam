@@ -1,11 +1,7 @@
-\```markdown
-
-# Russam
+# Russam Redesign
 
 - **Тестовый стенд**: [https://russam.ninthtown.ru/](https://russam.ninthtown.ru/)
 - **Прод**: [https://russam.ru/](https://russam.ru/)
-
----
 
 ## Что используется
 
@@ -22,15 +18,12 @@
 - **Разметка вынесена в отдельные файлы `template.php` в папке компонента и страницы с указанием
   параметров с помощью `PHPDoc`.**
 
----
-
 ## Структура проекта
 
 - `core/` — упрощенный mvc framework. используется в качестве базового бэка. туда лезть не нужно.
 - `configuration/`— туда тоже лезть не нужно.
 - `public/assets/` — собранные фронтовые ассеты
 
-- ---
 
 - `src/` — исходный код
 - `src/assets` — статичные файлы, иконки, изображения и прочее
@@ -38,8 +31,6 @@
 - `src/scripts` — общие скрипты и хелперы
 - `src/styles` — общие и shared стили
 - `src/views` — компоненты и страницы
-
----
 
 ## Подробнее о компонентах
 
@@ -51,14 +42,10 @@
 - `src/views/components/cards/template.php` — разметка компонента. Если данные динамически,
   переменные описаны в `PHPDoc`.
 
----
-
 ## Окружения
 
 - **Тестовый стенд**: [https://russam.ninthtown.ru/](https://russam.ninthtown.ru/)
 - **Продакшн**: [https://russam.ru/](https://russam.ru/)
-
----
 
 ## Как развернуть
 
