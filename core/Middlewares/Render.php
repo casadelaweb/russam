@@ -10,6 +10,6 @@ class Render {
   }
 
   public static function page(string $name): void {
-    include_once $_SERVER['DOCUMENT_ROOT'] . "/../src/views/pages/$name.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/../src/views/pages/$name/template.php";
   }
 }

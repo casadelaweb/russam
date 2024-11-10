@@ -11,7 +11,8 @@ use App\Models\PageModel;
 
 $app = new App();
 
-$app->router->add('', PageController::class, new PageModel('Главная страница', 'Краткое описание', '/', 'index'));
+$app->router->add('', PageController::class, new PageModel('Главная страница', 'Краткое описание', '/', 'home'));
+$app->router->add('catalog', PageController::class, new PageModel('Каталог', 'Краткое описание', '/catalog', 'catalog'));
 
 $app->run();
 
