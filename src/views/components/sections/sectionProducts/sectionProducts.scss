@@ -10,10 +10,10 @@
   }
 
   &Header {
-    margin-bottom: 20px;
+    margin-bottom: calc(20px - 12px);
     @include flex(center, space-between);
     @include mediaTabletL {
-      margin-bottom: 33px;
+      margin-bottom: calc(33px - 12px);
     }
   }
 
@@ -47,42 +47,13 @@
   }
 
   .swiper {
+    @include mediaTabletL {
+      margin: -12px;
+      padding: 12px;
+    }
+
     &-button {
-      &-prev, &-next {
-        position: absolute;
-        z-index: 2;
-        top: calc(50% - 41px);
-        width: 28px;
-        height: 28px;
-        transform: translate(0, -50%);
-        color: rgba(#111111, 0.5);
-        @include mediaTabletL {
-          width: 44px;
-          height: 44px;
-        }
-
-        &::after {
-          font-size: 14px;
-          color: rgba(#111111, 0.5);
-          @include mediaTabletL {
-            font-size: 20px;
-          }
-        }
-      }
-
-      &-prev {
-        left: -8px;
-        //@include mediaTabletL {
-        //  left: calc(-12px - 44px);
-        //}
-      }
-
-      &-next {
-        right: -8px;
-        //@include mediaTabletL {
-        //  right: calc(-12px - 44px);
-        //}
-      }
+      @include swiperNavigationButtons;
     }
 
     &-pagination {

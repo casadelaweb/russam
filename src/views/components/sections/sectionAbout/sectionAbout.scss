@@ -8,10 +8,13 @@
 
   &Container {
     @include container;
-    position: relative;
-    z-index: 0;
-    @include mediaLaptopL {
-      padding-top: 48px;
+
+    & {
+      position: relative;
+      z-index: 0;
+      @include mediaLaptopL {
+        padding-top: 48px;
+      }
     }
   }
 
@@ -34,9 +37,12 @@
 
     &Tab {
       @include flex;
-      height: auto;
 
-      &._first {
+      & {
+        height: auto;
+
+        &._first {
+        }
       }
     }
 
@@ -46,40 +52,43 @@
 
     &Img {
       @include resetFlex;
-      width: fit-content;
-      height: fit-content;
-      margin-top: auto;
 
-      &._left {
-        ._first & {
-          margin-left: 32px;
+      & {
+        width: fit-content;
+        height: fit-content;
+        margin-top: auto;
+
+        &._left {
+          ._first & {
+            margin-left: 32px;
+          }
+
+          ._second & {
+            margin-bottom: -18px;
+            margin-left: 32px;
+          }
+
+          ._third & {
+            margin-bottom: 32px;
+            margin-left: 32px;
+          }
         }
 
-        ._second & {
-          margin-bottom: -18px;
-          margin-left: 32px;
-        }
+        &._right {
+          ._first & {
+            margin-bottom: -24px;
+            margin-left: auto;
+          }
 
-        ._third & {
-          margin-bottom: 32px;
-          margin-left: 32px;
-        }
-      }
+          ._second & {
+            margin-bottom: 20px;
+            margin-left: auto;
+          }
 
-      &._right {
-        ._first & {
-          margin-bottom: -24px;
-          margin-left: auto;
-        }
-
-        ._second & {
-          margin-bottom: 20px;
-          margin-left: auto;
-        }
-
-        ._third & {
-          margin-bottom: -12px;
-          margin-left: auto;
+          ._third & {
+            margin-bottom: -12px;
+            margin-left: auto;
+          }
         }
       }
     }
@@ -157,9 +166,9 @@
   }
 
   &Nav {
-    @include flex(center, center);
     margin-bottom: 40px;
     column-gap: 20px;
+    @include flex(center, center);
     @include mediaTabletM {
       column-gap: 24px;
     }
@@ -212,9 +221,9 @@
     }
 
     img {
-      @include resetFlex;
       width: 100%;
       margin-bottom: 28px;
+      @include resetFlex;
       @include mediaTabletM {
         order: 2;
         width: auto;

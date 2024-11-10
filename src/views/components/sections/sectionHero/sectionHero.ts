@@ -1,11 +1,12 @@
 import Swiper from 'swiper'
-import { Pagination, Navigation } from 'swiper/modules'
+import { Pagination, Navigation, } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.sectionHeroSlider', {
+    const slider = new Swiper('.sectionHeroSlider', {
       loop: true,
       modules: [Pagination, Navigation],
       speed: 1000,
+      rewind: false,
       effect: 'slide',
       pagination: {
         enabled: false,
@@ -24,6 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       }
+    })
+
+    document.body.addEventListener('click', (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+
+      if (target.closest('.sectionHeroSlidePrev')) {
+        slider.slidePrev()
+      }
+      if (target.closest('.sectionHeroSlideNext')) {
+        slider.slideNext()
+      }
+    }, {
+      passive: true,
     })
   },
   {

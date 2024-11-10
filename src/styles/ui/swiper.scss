@@ -1,46 +1,61 @@
 @use "src/styles/shared" as *;
 
-.swiper {
+#app .swiper {
   @include resetFlex;
 
-  &-button {
-    &-prev, &-next {
-      @include resetFlex;
+  //&-button {
+  //  &-prev, &-next {
+  //    @include resetFlex;
+  //
+  //    & {
+  //      font-size: 14px;
+  //      position: absolute;
+  //      z-index: 2;
+  //      color: rgba(#111111, 0.5);
+  //      @include mediaLaptopL {
+  //        font-size: 20px;
+  //      }
+  //    }
+  //
+  //
+  //    &::after {
+  //      display: none;
+  //    }
+  //  }
+  //
+  //}
 
-      & {
-        font-size: 14px;
-        position: absolute;
-        z-index: 2;
-        color: rgba(#111111, 0.5);
-        @include mediaLaptopL {
-          font-size: 20px;
-        }
-      }
+  //&-pagination {
+  //  position: static;
+  //  margin: 32px auto 0;
+  //  transition: background-color 0.33s;
+  //  border-radius: 0 !important;
+  //
+  //  &-bullet {
+  //    width: 24px;
+  //    height: 2px;
+  //    margin: 0;
+  //    opacity: 1;
+  //    background: #d9d9d9;
+  //
+  //    &-active {
+  //      background: rgba(#111111, 0.5);
+  //    }
+  //  }
+  //}
 
-
-      &::after {
-        display: none;
-      }
-    }
-
-  }
-
-  &-pagination {
+  &-scrollbar {
     position: static;
+    width: 33%;
+    height: 2px;
     margin: 32px auto 0;
-    transition: background-color 0.33s;
-    border-radius: 0 !important;
+    border-radius: 0;
+    background: #d9d9d9;
 
-    &-bullet {
-      width: 24px;
+    &-drag {
       height: 2px;
-      margin: 0;
-      opacity: 1;
-      background: #d9d9d9;
-
-      &-active {
-        background: rgba(#111111, 0.5);
-      }
+      border-radius: 0;
+      background: rgba(#111111, 0.5);
     }
   }
 }

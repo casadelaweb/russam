@@ -61,32 +61,7 @@
     }
 
     &-button {
-      &-prev, &-next {
-        position: absolute;
-        z-index: 2;
-        top: 50%;
-        width: 28px;
-        height: 28px;
-        transform: translate(0, -50%);
-        @include mediaLaptopL {
-          width: 44px;
-          height: 44px;
-        }
-      }
-
-      &-prev {
-        left: -8px;
-        @include mediaLaptopL {
-
-        }
-      }
-
-      &-next {
-        right: -8px;
-        @include mediaLaptopL {
-
-        }
-      }
+      @include swiperNavigationButtons;
     }
   }
 }

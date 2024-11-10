@@ -69,16 +69,13 @@
     }
 
     .swiper {
-      &-button-prev,
-      &-button-next {
-        position: static;
-        width: 28px;
-        height: 28px;
-        margin: 0;
-        transform: none;
+      &-button {
+        @include swiperNavigationButtons;
 
-        &:after {
-          font-size: 14px;
+        & {
+          position: static;
+          margin: 0;
+          transform: none;
         }
       }
     }

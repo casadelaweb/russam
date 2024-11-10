@@ -43,7 +43,8 @@
       <button class="swiper-button-next" type="button">
         <span class="iconfont icon-arrow-right"></span>
       </button>
-      <div class="swiper-pagination"></div>
+      <!--<div class="swiper-pagination"></div>-->
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
 </section>

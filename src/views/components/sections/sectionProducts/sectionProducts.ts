@@ -1,15 +1,19 @@
 import Swiper from 'swiper'
-import { FreeMode, Navigation, Pagination } from 'swiper/modules'
+import { FreeMode, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.sectionProductsSlider', {
-      modules: [Pagination, Navigation, FreeMode],
+      modules: [Navigation, FreeMode, Scrollbar],
       freeMode: true,
-      pagination: {
+      scrollbar: {
+        el: '.swiper-scrollbar',
         enabled: true,
-        clickable: true,
-        el: '.swiper-pagination',
       },
+      // pagination: {
+      //   enabled: false,
+      //   clickable: true,
+      //   el: '.swiper-pagination',
+      // },
       navigation: {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
@@ -22,14 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
           spaceBetween: 12,
         },
         540: {
-          slidesPerView: 3
+          slidesPerView: 3,
+          spaceBetween: 12,
         },
         768: {
           slidesPerView: 3.5,
+          spaceBetween: 12,
         },
-        1024: { slidesPerView: 4, },
-        1366: { slidesPerView: 4.5 },
-        1440: { slidesPerView: 4.75 }
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 12,
+          scrollbar: {
+            enabled: false,
+          }
+        },
+        1366: {
+          slidesPerView: 4.5,
+          spaceBetween: 12,
+          scrollbar: {
+            enabled: false,
+          }
+        },
+        1440: {
+          slidesPerView: 4.75,
+          spaceBetween: 12,
+          scrollbar: {
+            enabled: false,
+          }
+        }
       }
     })
   },

@@ -6,6 +6,30 @@
   position: relative;
   z-index: 0;
 
+  &::before {
+    position: absolute;
+    z-index: 3;
+    top: -12px;
+    right: -12px;
+    bottom: 40px;
+    left: -12px;
+    display: inline-block;
+    visibility: hidden;
+    width: calc(100% + 24px);
+    content: "";
+    transition: opacity 0.33s, visibility 0.33s;
+    pointer-events: none;
+    opacity: 0;
+    border: 1px solid rgba(#111111, 0.1);
+  }
+
+  &:hover::before {
+    @include mediaLaptopS {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   &Tags {
     position: absolute;
     z-index: 1;
@@ -20,6 +44,57 @@
     color: #c1a778;
   }
 
+  &Fav {
+    @include resetFlex;
+    @include flex(center, center);
+
+    & {
+      font-size: 18px;
+      position: absolute;
+      z-index: 3;
+      top: 12px;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.33s, opacity 0.33s;
+      transform: translate(50%, -50%);
+      opacity: 0;
+      color: rgba(#111111, 0.5);
+      @include responsiveHover {
+        .icon-heart-fill {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+
+      &._active {
+        .icon-heart-fill {
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        .icon-heart-outline {
+        }
+      }
+
+      .icon-heart-fill {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transition: transform 0.33s;
+        transform: translate(-50%, -50%) scale(0);
+        transform-origin: center;
+      }
+
+      .icon-heart-outline {
+      }
+    }
+
+    #{$this}:hover & {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
   &Picture {
     display: contents;
   }
@@ -30,20 +105,44 @@
     margin-bottom: 12px;
   }
 
+  &Prices {
+    font-family: "TTCommons", sans-serif;
+    @include mediaLaptopS {
+      @include flex(center);
+    }
+  }
+
   &Price {
-    font-size: 14px;
-    line-height: calc(16 / 14);
-    color: rgba(#111111, 0.5)
+    &,
+    &Current {
+      font-size: 15px;
+      line-height: calc(16 / 14);
+      margin-right: 16px;
+      color: #111111;
+      @include mediaLaptopS {
+        font-size: 18px;
+        line-height: calc(20 / 18);
+      }
+    }
+
+    &Old {
+      font-size: 14px;
+      line-height: calc(16 / 14);
+      text-decoration: line-through;
+      color: rgba(#111111, 0.5);
+    }
   }
 
   &Discount {
     font-size: 10px;
     line-height: 1;
-    padding: 2px;
+    margin-left: 4px;
+    padding: 3px 2px 0;
     text-align: center;
     color: white;
     border-radius: 2px;
     background: #c1a778;
+    @include resetFlex;
   }
 
   &Title {
@@ -56,14 +155,18 @@
 
 
   &Cart {
-    @include buttonMain;
+    @include buttonWhite;
 
     & {
-      width: 100%;
-      margin-top: 12px;
-      transform: translate(20px, 0);
+      display: none;
+      width: calc(100% + 24px);
+      margin: 12px -12px 0;
+      transform: translate(0, 0);
       pointer-events: auto;
       opacity: 0;
+      @include mediaLaptopS {
+        display: flex;
+      }
     }
 
     #{$this}:hover & {
