@@ -52,9 +52,9 @@ class Router {
   private function renderError(int $statusCode): void {
     http_response_code($statusCode);
     if ($statusCode === 404) {
-      include '../app/Views/errors/404.php';
+      include __DIR__ . '/../app/Views/errors/404.php';
     } elseif ($statusCode === 500) {
-      include '../app/Views/errors/500.php';
+      include __DIR__ . '/../app/Views/errors/500.php';
     }
   }
 }
