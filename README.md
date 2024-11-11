@@ -36,10 +36,11 @@
 
 Каждый компонент или страница представляет собой набор определенных файлов. Например:
 
-- `src/views/components/cards/index.ts` — точка входа для webpack
-- `src/views/components/cards/productCard.ts` — скрипты компонента
-- `src/views/components/cards/productCard.scss` — стили компонента
-- `src/views/components/cards/template.php` — разметка компонента. Если данные динамически,
+- `src/views/components/cards/productCard/index.ts` — точка входа для webpack
+- `src/views/components/cards/productCard/productCard.ts` — скрипты компонента
+- `src/views/components/cards/productCard/productCard.scss` — стили компонента
+- `src/views/components/cards/productCard/template.php` — разметка компонента. Если данные
+  динамически,
   переменные описаны в `PHPDoc`.
 
 ## Окружения
