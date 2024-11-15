@@ -5,7 +5,6 @@
         <div class="footerListHead">
           <a href="#">КАТАЛОГ</a>
           <button type="button" class="footerListButton">
-            -
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -21,7 +20,6 @@
         <div class="footerListHead">
           Карта сайта
           <button type="button" class="footerListButton">
-            -
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
@@ -66,7 +64,15 @@
       <a href="mailto:order@russam.ru" class="footerEmail">
         order@russam.ru
       </a>
-
+      <div class="footerStores">
+        <a
+          href="https://apps.apple.com/ru/app/rs1912-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B5-%D1%81%D0%B0%D0%BC%D0%BE%D1%86%D0%B2%D0%B5%D1%82%D1%8B/id6470205661">
+          <img src="/assets/img/footer/appstore.svg" alt="img" loading="lazy">
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=ru.russam.android">
+          <img src="/assets/img/footer/googleplay.svg" alt="img" loading="lazy">
+        </a>
+      </div>
     </div>
     <div class="footerBottom">
       <div class="footerCopyright">
