@@ -1,82 +1,105 @@
 <?php
 $slides = [
   [
-    'title' => 'ЗАКАЗЫВАЙТЕ ИЗДЕЛИЯ НА ВЫБОР',
+    'title' => 'ЗАКАЗЫВАЙТЕ <br> ИЗДЕЛИЯ НА ВЫБОР',
     'note' => 'Выберите подходящий размер или модель',
     'iconName' => 'wallet',
-    'footerTitle' => 'ОПЛАТА ПРИ ПОЛУЧЕНИИ',
+    'footerTitle' => 'ОПЛАТА <br> ПРИ ПОЛУЧЕНИИ',
+    'imgUrl' => '/assets/img/sectionBenefits/slide-1-img.jpg',
+    'videoUrl' => '/assets/video/sectionBenefits/slide-1-video.mp4',
   ],
   [
-    'title' => 'ЗАКАЗЫВАЙТЕ ИЗДЕЛИЯ НА ВЫБОР',
+    'title' => 'ЗАКАЗЫВАЙТЕ <br> ИЗДЕЛИЯ НА ВЫБОР',
     'note' => 'Выберите подходящий размер или модель',
     'iconName' => 'rings',
-    'footerTitle' => 'ИЗДЕЛИЯ  НА ВЫБОР',
+    'footerTitle' => 'ИЗДЕЛИЯ <br> НА ВЫБОР',
+    'imgUrl' => '/assets/img/sectionBenefits/slide-1-img.jpg',
+    'videoUrl' => '/assets/video/sectionBenefits/slide-1-video.mp4',
   ],
   [
-    'title' => 'ЗАКАЗЫВАЙТЕ ИЗДЕЛИЯ НА ВЫБОР',
+    'title' => 'ЗАКАЗЫВАЙТЕ <br> ИЗДЕЛИЯ НА ВЫБОР',
     'note' => 'Выберите подходящий размер или модель',
     'iconName' => 'gift',
-    'footerTitle' => 'ДОСТАВКА ОТ 1 ДНЯ',
+    'footerTitle' => 'ДОСТАВКА <br> ОТ 1 ДНЯ',
+    'imgUrl' => '/assets/img/sectionBenefits/slide-1-img.jpg',
+    'videoUrl' => '/assets/video/sectionBenefits/slide-1-video.mp4',
   ],
   [
-    'title' => 'ЗАКАЗЫВАЙТЕ ИЗДЕЛИЯ НА ВЫБОР',
+    'title' => 'ЗАКАЗЫВАЙТЕ <br> ИЗДЕЛИЯ НА ВЫБОР',
     'note' => 'Выберите подходящий размер или модель',
     'iconName' => 'warranty',
-    'footerTitle' => 'ГАРАНТИЯ 2 ГОДА',
+    'footerTitle' => 'ГАРАНТИЯ <br> 2 ГОДА',
+    'imgUrl' => '/assets/img/sectionBenefits/slide-1-img.jpg',
+    'videoUrl' => '/assets/video/sectionBenefits/slide-1-video.mp4',
   ],
   [
-    'title' => 'ЗАКАЗЫВАЙТЕ ИЗДЕЛИЯ НА ВЫБОР',
+    'title' => 'ЗАКАЗЫВАЙТЕ <br> ИЗДЕЛИЯ НА ВЫБОР',
     'note' => 'Выберите подходящий размер или модель',
     'iconName' => 'engraving',
-    'footerTitle' => 'РУЧНАЯ ГРАВИРОВКА С ВЫБОРОМ ШРИФТА',
+    'footerTitle' => 'РУЧНАЯ ГРАВИРОВКА <br> С ВЫБОРОМ ШРИФТА',
+    'imgUrl' => '/assets/img/sectionBenefits/slide-1-img.jpg',
+    'videoUrl' => '/assets/video/sectionBenefits/slide-1-video.mp4',
   ],
-]
+];
+
+$activeSlide = 2;
 ?>
 
 <section class="sectionBenefits">
   <div class="sectionBenefitsContainer">
     <div class="sectionBenefitsMain">
+      <div class="sectionBenefitsMainIcons">
+        <?php
+          foreach ($slides as $i=>$slide):
+          $class = $i === $activeSlide ? '_active' : '';
+        ?>
+          <button class="sectionBenefitsMainIcon <?= $class; ?>" type="button"
+                  data-index="<?= $i; ?>">
+            <span class="iconfont icon-<?= $slide['iconName']; ?>"></span>
+          </button>
+        <?php endforeach; ?>
+      </div>
       <div class="sectionBenefitsMainSlider">
-        <div class="sectionBenefitsMainIcons">
-          <?php $i = 0;
-          foreach ($slides as $slide):
-            $class = $i === 0 ? '_active' : '';
-            ?>
-            <button class="sectionBenefitsMainIcon <?= $class; ?>" type="button"
-                    data-index="<?= $i; ?>">
+        <?php
+          foreach ($slides as $i=>$slide):
+          $slideImgUrl = $slide['imgUrl'];
+          $slideVideoUrl = $slide['videoUrl'];
+          $class = $i === $activeSlide ? '_active' : '';
+        ?>
+          <article class="sectionBenefitsMainSlide <?= $class; ?>" data-index="<?= $i; ?>">
+            <div class="sectionBenefitsMainSlideImg">
+              <img src="<?= $slideImgUrl; ?>" alt="">
+            </div>
+            <div class="sectionBenefitsMainSlideVideo">
+              <video autoplay muted loop width="auto" height="100%">
+                <source src="<?= $slideVideoUrl; ?>" type="video/mp4">
+              </video>
+            </div>
+            <button type="button" class="sectionBenefitsMainSlideIcon">
               <span class="iconfont icon-<?= $slide['iconName']; ?>"></span>
             </button>
-            <?php $i++;
-          endforeach;
-          unset($i); ?>
-        </div>
-        <div class="swiper-wrapper">
-          <?php foreach ($slides as $slide): ?>
-            <article class="swiper-slide sectionBenefitsMainSlide">
-              <button type="button" class="sectionBenefitsMainSlideIcon">
-                <span class="iconfont icon-<?= $slide['iconName']; ?>"></span>
-              </button>
 
-              <h3 class="sectionBenefitsMainSlideTitle">
-                <?= $slide['title']; ?>
-              </h3>
-              <div class="sectionBenefitsMainSlideNote">
-                <?= $slide['note']; ?>
-              </div>
-            </article>
-          <?php endforeach; ?>
-        </div>
+            <h3 class="sectionBenefitsMainSlideTitle">
+              <?= $slide['title']; ?>
+            </h3>
+            <div class="sectionBenefitsMainSlideNote">
+              <?= $slide['note']; ?>
+            </div>
+          </article>
+        <?php endforeach; ?>
       </div>
     </div>
     <div class="sectionBenefitsFooter">
-      <div class="sectionBenefitsFooterSlider swiper">
-        <div class="swiper-wrapper">
-          <?php foreach ($slides as $slide): ?>
-            <div class="swiper-slide sectionBenefitsFooterSlide">
+      <div class="sectionBenefitsFooterBtns">
+          <?php
+            foreach ($slides as $i=>$slide):
+            $class = $i === $activeSlide ? '_active' : '';
+          ?>
+
+            <div class="sectionBenefitsFooterBtn <?= $class; ?>" data-index="<?= $i; ?>">
               <?= $slide['footerTitle']; ?>
             </div>
           <?php endforeach; ?>
-        </div>
       </div>
     </div>
   </div>
