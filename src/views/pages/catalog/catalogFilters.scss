@@ -1,0 +1,147 @@
+@use "src/styles/shared" as *;
+
+.catalogFilters {
+  flex-grow: 1;
+  @include flex($d: column);
+  //padding-right: 16px;
+  //@include mediaTabletL {
+  //  padding-right: 0;
+  //}
+
+  &Header, &Buttons, &Feedback {
+    margin-bottom: 16px;
+    padding: 16px;
+    border-bottom: 1px solid $colorGreyMild;
+    @include mediaTabletL {
+      margin: 0;
+      padding: 0;
+      border-bottom: 0;
+    }
+  }
+
+  &Header {
+    //@include textS;
+    @include flex($d: column);
+    margin: 0;
+    row-gap: 8px;
+    @include mediaTabletL {
+      display: none;
+    }
+
+    &Row {
+      @include flex(center, space-between);
+    }
+  }
+
+  &Close {
+    @include buttonArrowSmall;
+  }
+
+  &Buttons {
+    position: sticky;
+    z-index: 10;
+    bottom: 0;
+    display: grid;
+    margin: 0;
+    padding-bottom: 16px;
+    border-top: 1px solid $colorGreyMild;
+    background: white;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+    @include mediaTabletL {
+      position: static;
+      border: 0;
+      column-gap: 16px;
+    }
+  }
+
+  &Submit {
+    @include buttonDark;
+
+    & {
+      width: 100%;
+    }
+  }
+
+  &Reset {
+    @include buttonPale;
+
+    & {
+      width: 100%;
+    }
+  }
+
+  &Body {
+    flex: 1 0 auto;
+    margin-bottom: 40px;
+    //padding: 16px;
+  }
+
+  &Footer {
+    @include flex(center);
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+    margin-top: auto;
+    padding: (14px * 2) 14px;
+    background: white;
+  }
+
+  &Title {
+    font-size: 17px;
+    margin-bottom: 1.25em;
+    letter-spacing: 0.03em;
+    color: #80756e;
+  }
+
+  &Link {
+    font-size: 15px;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 0.75em;
+    letter-spacing: 0.03em;
+
+    &:hover,
+    &._active {
+      color: $colorDarkMild;
+    }
+  }
+
+  &Tooltip {
+    position: fixed;
+    z-index: 150;
+    top: 50%;
+    left: 200px;
+    display: none;
+    transition: top $trM, left $trM, opacity $trM;
+    pointer-events: none;
+    opacity: 0;
+    border-radius: $brM;
+    @include mediaTabletL {
+      display: none !important;
+    }
+
+    &._active {
+      display: block;
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    &::before {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      content: " ";
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 2px;
+      background: $colorPrimary;
+    }
+
+    &Button {
+      @include buttonDark;
+    }
+  }
+}

@@ -262,6 +262,21 @@
     }
   }
 
+  &Email {
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  &Stores {
+    @include flex(center);
+    width: fit-content;
+    margin: 0 auto;
+    column-gap: 16px;
+    @include mediaTabletL {
+      margin: 0;
+    }
+  }
+
   &Copyright {
     margin-bottom: 12px;
     @include mediaTabletM {

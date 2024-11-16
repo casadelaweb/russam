@@ -1,2 +1,7 @@
 import './sectionProducts'
 import './sectionProducts.scss'
+import 'src/assets/img/sectionProducts/product-desktop-1.jpg'
+import 'src/assets/img/sectionProducts/product-desktop-2.jpg'
+import 'src/assets/img/sectionProducts/product-desktop-3.jpg'
+import 'src/assets/img/sectionProducts/product-desktop-4.jpg'
+import 'src/assets/img/sectionProducts/product-desktop-5.jpg'

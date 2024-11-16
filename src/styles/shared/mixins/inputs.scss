@@ -1,0 +1,21 @@
+@mixin inputMain {
+  display: inline-block;
+  padding: 10px;
+  color: #111111;
+  border: 1px solid #00000033;
+  font-family: "TTCommons", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: left;
+  transition: border-color 0.33s;
+  height: 40px;
+
+  &::placeholder {
+    color: #11111180;
+  }
+
+  &.error, &._error {
+    border-color: #ff0024;
+  }
+}

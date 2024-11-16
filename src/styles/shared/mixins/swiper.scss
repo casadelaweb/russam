@@ -1,0 +1,43 @@
+@use "./media.scss" as Media;
+@use "./helpers.scss" as Helpers;
+
+
+@mixin swiperNavigationButtons {
+  &-prev, &-next, &Prev, &Next {
+    @include Helpers.resetFlex;
+    @include Helpers.flex(center, center);
+
+    & {
+      position: absolute;
+      z-index: 3;
+      top: 50%;
+      font-size: 12px;
+      width: 28px;
+      height: 28px;
+      transform: translate(0, -50%);
+      color: rgba(#111111, 0.5);
+      @include Media.mediaTabletM {
+        font-size: 20px;
+        width: 44px;
+        height: 44px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &-prev, &Prev {
+    left: -8px;
+    @include Media.mediaTabletM {
+      left: -37px;
+    }
+  }
+  &-next, &Next {
+    right: -8px;
+    @include Media.mediaTabletM {
+      right: -37px;
+    }
+  }
+}
