@@ -1,3 +1,4 @@
+<?php use Middlewares\Render;?>
 <header class="header">
   <div class="headerDesktop">
     <div class="headerTop">
@@ -29,23 +30,7 @@
         </a>
       </div>
     </div>
-    <div class="headerBottom">
-      <a href="/" class="headerButton">
-        Украшения
-        <span class="iconfont icon-arrow-down"></span>
-      </a>
-      <a href="/" class="headerButton">эксклюзив</a>
-      <a href="/" class="headerButton">коллекции</a>
-      <a href="/" class="headerButton">wedding</a>
-      <a href="/" class="headerButton">
-        ДОМ & АКСЕССУАРЫ
-        <span class="iconfont icon-arrow-down"></span>
-      </a>
-      <a href="/" class="headerButton">АКЦИИ</a>
-      <button type="button">
-        <span class="iconfont icon-search"></span>
-      </button>
-    </div>
+    <?php Render::component('sections/header/headerBottom'); ?>
   </div>
   <div class="headerMobile">
     <button class="headerMenu" type="button">
@@ -59,3 +44,4 @@
     </a>
   </div>
 </header>
+<div class="headerOverlay"></div>

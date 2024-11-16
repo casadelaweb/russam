@@ -1718,7 +1718,6 @@ body {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./src/views/components/sections/header/header.scss ***!
   \***********************************************************************************************************************************************************************/
 .header {
-  overflow: hidden;
   width: 100%;
   background: white;
 }
@@ -1846,6 +1845,18 @@ body {
   width: 12px;
   height: 12px;
 }
+.headerOverlay {
+  position: fixed;
+  z-index: 69;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s, visibility 0.3s;
+  cursor: pointer;
+}
 /*!*****************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./src/views/components/sections/header/headerMobile.scss ***!
   \*****************************************************************************************************************************************************************************/
@@ -1888,6 +1899,55 @@ body {
   width: 24px;
   height: 24px;
   margin-left: auto;
+}
+/*!******************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./src/views/components/sections/header/headerBottom/headerBottom.scss ***!
+  \******************************************************************************************************************************************************************************************/
+.header {
+  position: relative;
+  z-index: 1000;
+}
+
+.menuContainer {
+  max-width: 1366px;
+  margin: 0 auto;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  padding-top: 40px;
+  padding-bottom: 125px;
+  position: relative;
+}
+@media screen and (min-width: 1180px) {
+  .menuChildrensL1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    z-index: 100;
+    background: #fff;
+    transition: 0.33s;
+  }
+  .menuChildrensL1Left {
+    width: 206px;
+    padding-left: 41px;
+    border-right: 1px solid rgb(217, 217, 217);
+  }
+  .menuChildrensL2 {
+    width: calc(100% - 206px);
+    left: 206px;
+    position: absolute;
+    top: 0;
+    padding-left: 43px;
+    padding-top: 40px;
+    display: flex;
+  }
+  .menuChildrensL2Left {
+    width: 225px;
+  }
+  .menuChildrensL2Right {
+    width: calc(100% - 225px);
+    height: 100px;
+    background: rgb(0, 0, 0);
+  }
 }
 /*!*******************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[5].use[2]!./src/modules/details/details.scss ***!
@@ -4121,4 +4181,4 @@ body {
   \***************************************************************************************************************************************************************/
 
 
-/*# sourceMappingURL=main.css.map?v=1ee9666a*/
+/*# sourceMappingURL=main.css.map?v=70cbd949*/

@@ -118,6 +118,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/views/components/sections/header/headerBottom/headerBottom.scss":
+/*!*****************************************************************************!*\
+  !*** ./src/views/components/sections/header/headerBottom/headerBottom.scss ***!
+  \*****************************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./src/views/components/sections/header/headerMobile.scss":
 /*!****************************************************************!*\
   !*** ./src/views/components/sections/header/headerMobile.scss ***!
@@ -685,6 +698,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 /***/ }),
 
+/***/ "./src/views/components/sections/header/headerBottom/headerBottom.ts":
+/*!***************************************************************************!*\
+  !*** ./src/views/components/sections/header/headerBottom/headerBottom.ts ***!
+  \***************************************************************************/
+/***/ (function() {
+
+
+
+/***/ }),
+
+/***/ "./src/views/components/sections/header/headerBottom/index.ts":
+/*!********************************************************************!*\
+  !*** ./src/views/components/sections/header/headerBottom/index.ts ***!
+  \********************************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./headerBottom */ "./src/views/components/sections/header/headerBottom/headerBottom.ts");
+/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_headerBottom__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _headerBottom_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerBottom.scss */ "./src/views/components/sections/header/headerBottom/headerBottom.scss");
+
+
+
+
+/***/ }),
+
 /***/ "./src/views/components/sections/header/index.ts":
 /*!*******************************************************!*\
   !*** ./src/views/components/sections/header/index.ts ***!
@@ -699,6 +739,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _headerMobile_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./headerMobile.scss */ "./src/views/components/sections/header/headerMobile.scss");
 /* harmony import */ var src_assets_img_header_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/img/header/logo.png */ "./src/assets/img/header/logo.png");
 /* harmony import */ var src_assets_img_header_logo_mobile_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/img/header/logo-mobile.png */ "./src/assets/img/header/logo-mobile.png");
+/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./headerBottom */ "./src/views/components/sections/header/headerBottom/index.ts");
+
 
 
 
@@ -12462,4 +12504,4 @@ __webpack_require__.r(__webpack_exports__);
 }();
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map?v=477d7c6d
+//# sourceMappingURL=main.js.map?v=4396766f
