@@ -1,0 +1,74 @@
+@use "src/styles/shared" as *;
+
+.dropdown {
+  position: relative;
+  z-index: 0;
+
+  //.header & {
+  //  z-index: 101;
+  //}
+
+  &Head {
+    @include textM;
+    @include flex(center);
+    column-gap: 8px;
+    // padding-bottom: 20px;
+    // margin-bottom: -20px;
+
+    &:hover + .dropdownBody {
+      transform: translate(0, 0);
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    &Item {
+      @include flex(center);
+      margin: 0;
+      column-gap: 8px;
+    }
+
+    .iconfont {
+      @include textS;
+    }
+  }
+
+  &Body {
+    @include flex($d: column);
+    position: absolute;
+    z-index: 1;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    min-width: 160px;
+    transition: opacity $trM, transform $trM;
+    transform: translate(0, 40px);
+    pointer-events: none;
+    opacity: 0;
+    border: 1px solid $colorGreyMild;
+    border-top: 0;
+    border-radius: $brM;
+    background: white;
+    @include mediaDesktop {
+      min-width: 200px;
+    }
+
+    &._active {
+      transform: translate(0, 0);
+      pointer-events: auto;
+      opacity: 1;
+    }
+
+    &Item {
+      @include textS;
+      padding: 8px 12px;
+      border-top: 1px solid $colorGreyMild;
+      @include onHover {
+        background: $colorGreyLight;
+      }
+
+      &:active {
+        background: $colorGreyMild;
+      }
+    }
+  }
+}

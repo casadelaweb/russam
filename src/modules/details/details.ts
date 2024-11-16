@@ -1,6 +1,34 @@
-import { iElementData, iSelectors, iOptions } from 'src/modules/details/details.types'
 import './details.scss'
-import { isMediaAboveLaptop } from 'src/scripts/helpers'
+
+type iElementData = {
+  details: HTMLDetailsElement,
+  summary: HTMLElement,
+  button: HTMLElement,
+  content: HTMLElement,
+  parameters: {
+    isOpen: boolean,
+    isClosing: boolean,
+    isOpening: boolean,
+    animation?: any
+  }
+}
+
+type iSelectors = {
+  details: string,
+  summary: string,
+  button: string,
+  content: string,
+  scrollbars: {
+    vertical: string,
+  }
+}
+
+type iOptions = {
+  disableAfter: number | null,
+  preferButtonIfExist: boolean,
+  selectors: iSelectors,
+}
+
 
 export class Details {
   private static readonly optionsDefault: iOptions = {
@@ -12,7 +40,6 @@ export class Details {
       content: '[data-details=body]',
       scrollbars: { vertical: 'has-vertical-scrollbar', },
     },
-    onlyUnderLaptop: false,
     disableAfter: null,
   }
   public elements: iElementData[]
