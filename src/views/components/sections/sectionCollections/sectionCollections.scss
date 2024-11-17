@@ -3,28 +3,55 @@
 .sectionCollections {
   overflow: hidden;
   margin: 60px 0;
+  @include mediaMobileL {
+    margin-bottom: 90px;
+  }
   @include mediaLaptopL {
     margin: 140px 0 90px;
   }
 
   &Container {
     @include container;
+    @include mediaLaptopL {
+      position: relative;
+      z-index: 0;
+    }
   }
 
   &Nav {
-    margin-bottom: 10px;
-    column-gap: 20px;
+    @include flex(center, center);
 
     & {
-      @include flex(center, center);
+      margin-bottom: 10px;
+      column-gap: 16px;
+      @include mediaMobileM {
+        column-gap: 20px;
+      }
+      @include mediaLaptopL {
+        position: absolute;
+        z-index: 3;
+        top: 150px;
+        left: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        row-gap: 16px;
+      }
     }
 
     &Item {
       font-family: "HeliosExt", sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       line-height: calc(20 / 14);
       text-transform: uppercase;
       color: rgba(#111111, 0.3);
+      @include mediaMobileS {
+        font-size: 14px;
+      }
+      @include mediaLaptopL {
+        font-size: 16px;
+        line-height: calc(20 / 16);
+      }
 
       &._active {
         color: #111111;
@@ -36,15 +63,29 @@
     font-family: "HeliosExtC", sans-serif;
     font-size: 48px;
     line-height: calc(63 / 48);
-    margin: 0 -8px;
-    margin-bottom: -24px;
+    margin: 0 -8px -24px;
     text-align: center;
     letter-spacing: -0.03em;
     text-transform: uppercase;
     color: rgba(#111111, 0.05);
+    @include mediaLaptopL {
+      font-size: 200px;
+      line-height: calc(220 / 200);
+      margin: 0 -60px -70px;
+    }
   }
 
   &Sliders {
+    overflow: unset;
+    @include mediaLaptopL {
+      padding-bottom: 308px;
+    }
+
+    &Slide {
+      @include mediaLaptopL {
+        overflow: unset !important;
+      }
+    }
   }
 
   &Slider {
@@ -57,6 +98,12 @@
         margin-top: auto;
         padding-top: 24px;
         column-gap: 16px;
+        @include mediaMobileM {
+          padding-left: 32px;
+        }
+        @include mediaLaptopL {
+          display: none;
+        }
       }
     }
 
@@ -72,24 +119,69 @@
       &-button {
         @include swiperNavigationButtons;
 
-        & {
-          position: static;
-          margin: 0;
-          transform: none;
+        &-prev, &-next {
+          position: static !important;
+          margin: 0 !important;
+          transform: none !important;
+          @include mediaLaptopL {
+
+          }
         }
       }
     }
   }
 
   &Slide {
-    @include flex($d: column);
     background: white;
+    @include flex($d: column);
+    @include mediaLaptopL {
+      position: relative;
+      flex-direction: row;
+      background: none;
+      column-gap: 60px;
+    }
 
-    //& {
-    //  height: auto;
-    //}
+    &Buttons {
+      display: none;
+      @include mediaLaptopL {
+        @include flex(center);
+        margin-top: 80px;
+        margin-bottom: auto;
+        column-gap: 16px;
+      }
+    }
+
+    &Button {
+      display: none;
+      @include mediaLaptopL {
+        display: flex;
+        @include buttonMore;
+      }
+      @include swiperNavigationButtons;
+
+      &Prev, &Next {
+        position: static;
+        margin: 0;
+        transform: none;
+      }
+    }
+
+    &Picture {
+      display: contents;
+    }
 
     &Img {
+      @include resetFlex;
+
+      & {
+        width: 100%;
+      }
+
+      @include mediaLaptopL {
+        width: 432px;
+        height: 470px;
+        margin-left: auto;
+      }
     }
 
     &Title {
@@ -98,12 +190,18 @@
       font-weight: 400;
       line-height: 1.0;
       flex: 0 1 auto;
-      margin: -0.66em -8px 16px;
-      padding-left: 32px;
+      margin: -16px 0 16px;
       letter-spacing: -0.03em;
+      text-transform: uppercase;
       color: #c1a778;
+      @include mediaMobileM {
+        padding-left: 32px;
+      }
       @include mediaMobileL {
         font-size: 40px;
+      }
+      @include mediaLaptopL {
+        display: none;
       }
     }
 
@@ -111,8 +209,64 @@
       font-size: 14px;
       line-height: calc(16 / 14);
       margin-top: auto;
-      padding-left: 32px;
       color: rgba(#111111, 0.5);
+      @include mediaMobileM {
+        padding-left: 32px;
+      }
+      @include mediaLaptopL {
+        font-size: 18px;
+        line-height: calc(20 / 18);
+        margin-bottom: 32px;
+        padding-left: 0;
+      }
+    }
+
+    &Content {
+      @include resetFlex;
+
+      & {
+        @include mediaLaptopL {
+          @include flex(flex-start, flex-end, column);
+          width: 383px;
+          padding-bottom: 57px;
+        }
+      }
+    }
+  }
+
+  &Names {
+    display: none;
+    @include mediaLaptopL {
+      position: absolute;
+      z-index: 30;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 814px;
+      height: 588px;
+    }
+
+    //.swiper-wrapper {
+    //align-items: flex-end;
+    //flex-direction: column;
+    //justify-content: flex-end;
+    //}
+  }
+
+  &Name {
+    @include mediaLaptopL {
+      font-family: "HeliosExtC", sans-serif;
+      font-size: 80px;
+      font-weight: 400;
+      line-height: calc(84 / 80);
+      height: fit-content;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: rgba(#111111, 0.1);
+    }
+
+    &.swiper-slide-active {
+      color: #c1a778;
     }
   }
 }

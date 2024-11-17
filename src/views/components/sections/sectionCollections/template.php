@@ -1,5 +1,5 @@
 <?php
-$groups = [
+$collectionCategory = [
   [
     'title' => 'Украшения',
     'slides' => [
@@ -19,36 +19,54 @@ $groups = [
         'imgUrl' => '/assets/img/sectionCollections/slide-2-mobile.jpg',
       ],
     ],
+    'url' => '/collections/jewelry',
   ],
   [
     'title' => 'Дом',
     'slides' => [
       [
-        'title' => 'Lorem ipsum dolor.',
+        'title' => 'Rosewood',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequuntur illo ipsa provident, veniam veritatis.',
-        'imgUrl' => '/assets/img/sectionCollections/slide-1-mobile.jpg',
+        'imgUrl' => '/assets/img/sectionCollections/collection-rosewood.png',
       ],
       [
-        'title' => 'Lorem',
+        'title' => 'Chance',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque explicabo modi nemo neque qui quo soluta velit. Architecto atque autem commodi esse et, necessitatibus nulla, praesentium, quaerat quod reprehenderit tempore.',
-        'imgUrl' => '/assets/img/sectionCollections/slide-2-mobile.jpg',
+        'imgUrl' => '/assets/img/sectionCollections/collection-chance.png',
       ],
     ],
+    'url' => '/collections/home',
   ],
   [
     'title' => 'HIGH jewelry',
     'slides' => [
       [
-        'title' => 'Lorem ipsum dolor sit.',
+        'title' => 'Deux Forces',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at eligendi fuga, necessitatibus ut voluptatem?',
-        'imgUrl' => '/assets/img/sectionCollections/slide-1-mobile.jpg',
+        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.png',
       ],
       [
-        'title' => '  Lorem ipsum dolor sit amet.',
+        'title' => 'Star',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
-        'imgUrl' => '/assets/img/sectionCollections/slide-2-mobile.jpg',
+        'imgUrl' => '/assets/img/sectionCollections/collection-star.png',
+      ],
+      [
+        'title' => 'Heritage',
+        'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-heritage.png',
+      ],
+      [
+        'title' => 'короткое название',
+        'description' => 'короткое описание',
+        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.png',
+      ],
+      [
+        'title' => 'длинное название',
+        'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-star.png',
       ],
     ],
+    'url' => '/collections/high-jewelry',
   ],
 ];
 ?>
@@ -57,9 +75,9 @@ $groups = [
   <div class="sectionCollectionsContainer">
     <nav class="sectionCollectionsNav">
       <?php $i = 0;
-      foreach ($groups as $group):
+      foreach ($collectionCategory as $collectionGroup):
         $class = $i === 0 ? '_active' : '';
-        $title = $group['title'];
+        $title = $collectionGroup['title'];
         ?>
         <button type="button" class="sectionCollectionsNavItem <?= $class; ?>"
                 data-index="<?= $i; ?>">
@@ -74,11 +92,11 @@ $groups = [
     </div>
     <div class="sectionCollectionsSliders swiper">
       <div class="swiper-wrapper">
-        <?php
-        foreach ($groups as $group):
-          $slides = $group['slides'];
-          ?>
-          <div class="swiper-slide">
+        <?php $collectionGroupIndex = 0;
+        foreach ($collectionCategory as $collectionGroup):
+          $slides = $collectionGroup['slides'];
+          $collectionGroupUrl = $collectionGroup['url']; ?>
+          <div class="swiper-slide sectionCollectionsSlidersSlide">
             <div class="sectionCollectionsSlider swiper">
               <div class="swiper-wrapper">
                 <?php foreach ($slides as $slide):
@@ -88,15 +106,32 @@ $groups = [
                   ?>
                   <article class="swiper-slide sectionCollectionsSlide">
                     <span class="swiper-lazy-preloader"></span>
-                    <picture>
+                    <picture class="sectionCollectionsSlidePicture">
                       <img src="<?= $slideImgUrl; ?>" alt="img"
                            class="sectionCollectionsSlideImg" loading="lazy">
                     </picture>
                     <h3 class="sectionCollectionsSlideTitle">
                       <?= $slideTitle; ?>
                     </h3>
-                    <div class="sectionCollectionsSlideDescription">
-                      <?= $slideDescription; ?>
+                    <div class="sectionCollectionsSlideContent">
+                      <div class="sectionCollectionsSlideButtons">
+                        <button class="sectionCollectionsSlideButtonPrev"
+                                type="button"
+                                data-index="<?= $collectionGroupIndex; ?>">
+                          <span class="iconfont icon-arrow-left"></span>
+                        </button>
+                        <button class="sectionCollectionsSlideButtonNext"
+                                type="button"
+                                data-index="<?= $collectionGroupIndex; ?>">
+                          <span class="iconfont icon-arrow-right"></span>
+                        </button>
+                      </div>
+                      <div class="sectionCollectionsSlideDescription">
+                        <?= $slideDescription; ?>
+                      </div>
+                      <a href="<?= $collectionGroupUrl; ?>" class="sectionCollectionsSlideButton">
+                        смотреть все
+                      </a>
                     </div>
                   </article>
                 <?php endforeach; ?>
@@ -108,14 +143,40 @@ $groups = [
                 <button class="swiper-button-next" type="button">
                   <span class="iconfont icon-arrow-right"></span>
                 </button>
-                <a href="#" class="sectionCollectionsSliderButton">
+                <a href="<?= $collectionGroupUrl; ?>" class="sectionCollectionsSliderButton">
                   смотреть все
                 </a>
               </div>
             </div>
+            <div class="sectionCollectionsNames swiper">
+              <div class="swiper-wrapper">
+                <?php foreach ($slides as $slide):
+                  $name = $slide['title']; ?>
+                  <div class="swiper-slide sectionCollectionsName">
+                    <?= $name; ?>
+                  </div>
+                <?php endforeach; ?>
+              </div>
+            </div>
           </div>
-        <?php endforeach; ?>
+          <?php $collectionGroupIndex++;
+        endforeach; ?>
       </div>
     </div>
+
+    <?php /*foreach ($collectionCategory as $collectionGroup):
+      $slides = $collectionGroup['slides']; ?>
+      <div class="sectionCollectionsNames swiper">
+        <div class="swiper-wrapper">
+          <?php foreach ($slides as $slide):
+            $name = $slide['title']; ?>
+            <div class="swiper-slide sectionCollectionsName">
+              <?= $name; ?>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endforeach; */ ?>
+
   </div>
 </section>
