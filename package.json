@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "4.0.0-beta.0",
+    "es-toolkit": "^1.27.0",
     "hc-sticky": "^2.2.7",
     "imask": "7.6.1",
     "nouislider": "^15.8.1",

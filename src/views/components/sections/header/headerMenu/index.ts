@@ -1,2 +1,2 @@
-import "./headerMenu";
-import "./headerMenu.scss";
+import './headerMenu'
+import './headerMenu.scss'
