@@ -118,10 +118,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/views/components/sections/header/headerBottom/headerBottom.scss":
-/*!*****************************************************************************!*\
-  !*** ./src/views/components/sections/header/headerBottom/headerBottom.scss ***!
-  \*****************************************************************************/
+/***/ "./src/views/components/sections/header/headerMenu/headerMenu.scss":
+/*!*************************************************************************!*\
+  !*** ./src/views/components/sections/header/headerMenu/headerMenu.scss ***!
+  \*************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -683,13 +683,13 @@ __webpack_require__.r(__webpack_exports__);
   \********************************************************/
 /***/ (function() {
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener("DOMContentLoaded", ()=>{
     const body = document.body;
-    const header = body.querySelector('.header');
+    const header = body.querySelector(".header");
     const height = header.offsetHeight;
-    const value = height + 'px';
-    document.documentElement.style.setProperty('--headerHeight', value);
-    window.addEventListener('scroll', ()=>{});
+    const value = height + "px";
+    document.documentElement.style.setProperty("--headerHeight", value);
+    window.addEventListener("scroll", ()=>{});
 }, {
     passive: true,
     once: true
@@ -698,27 +698,100 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
 /***/ }),
 
-/***/ "./src/views/components/sections/header/headerBottom/headerBottom.ts":
-/*!***************************************************************************!*\
-  !*** ./src/views/components/sections/header/headerBottom/headerBottom.ts ***!
-  \***************************************************************************/
+/***/ "./src/views/components/sections/header/headerMenu/headerMenu.ts":
+/*!***********************************************************************!*\
+  !*** ./src/views/components/sections/header/headerMenu/headerMenu.ts ***!
+  \***********************************************************************/
 /***/ (function() {
 
+document.addEventListener("DOMContentLoaded", ()=>{
+    const body = document.body;
+    const header = body.querySelector(".header");
+    const ACTIVE_CLASS = "_active";
+    header.addEventListener("click", (e)=>{
+        const target = e.target;
+        if (header.offsetWidth < 1180) {
+            if (target.closest(".headerMenuParent")) {
+                target.closest(".headerMenuParent").classList.add(`${ACTIVE_CLASS}`);
+            }
+            if (target.closest(".headerMenuBtnBack")) {
+                target.closest(".headerMenuParent").classList.remove(`${ACTIVE_CLASS}`);
+            }
+            if (target.closest(".headerMenuOpen")) {
+                header.classList.add("_menu_open");
+            }
+            if (target.closest(".headerMenuClose")) {
+                menuClose();
+            }
+        } else {
+            if (target.closest(".headerMenuParentL1")) {
+                const parentL1 = target.closest(".headerMenuParentL1");
+                const parentL2 = parentL1.querySelector(".headerMenuParentL2");
+                if (!parentL1.classList.contains(`${ACTIVE_CLASS}`)) {
+                    clearHeaderActiveElement();
+                    if (header.classList.contains("_menu_open")) {
+                        setTimeout(()=>{
+                            if (parentL2) {
+                                parentL2.classList.add(`${ACTIVE_CLASS}`);
+                            }
+                            parentL1.classList.add(`${ACTIVE_CLASS}`);
+                        }, 500);
+                    } else {
+                        header.classList.add("_menu_open");
+                        if (parentL2) {
+                            parentL2.classList.add(`${ACTIVE_CLASS}`);
+                        }
+                        parentL1.classList.add(`${ACTIVE_CLASS}`);
+                    }
+                }
+            }
+            if (target.closest(".headerOverlay")) {
+                menuClose();
+            }
+        }
+    });
+    const headerMenuChildrensLeftAll = header.querySelectorAll(".headerMenuChildrensL1Left");
+    headerMenuChildrensLeftAll.forEach((el)=>{
+        el.addEventListener("mouseover", (e)=>{
+            if (header.offsetWidth >= 1180) {
+                const target = e.target;
+                if (target.closest(".headerMenuBtnL2") && !target.closest(".headerMenuChildrensL1LeftGold")) {
+                    el.querySelector("._active").classList.remove(`${ACTIVE_CLASS}`);
+                    target.closest(".headerMenuParentL2 ").classList.add(`${ACTIVE_CLASS}`);
+                }
+            }
+        });
+    });
+    function clearHeaderActiveElement() {
+        const activeElements = header.querySelectorAll(`.${ACTIVE_CLASS}`);
+        activeElements.forEach((el)=>{
+            el.classList.remove(`${ACTIVE_CLASS}`);
+        });
+        console.log(activeElements);
+    }
+    function menuClose() {
+        clearHeaderActiveElement();
+        header.classList.remove("_menu_open");
+    }
+}, {
+    passive: true,
+    once: true
+});
 
 
 /***/ }),
 
-/***/ "./src/views/components/sections/header/headerBottom/index.ts":
-/*!********************************************************************!*\
-  !*** ./src/views/components/sections/header/headerBottom/index.ts ***!
-  \********************************************************************/
+/***/ "./src/views/components/sections/header/headerMenu/index.ts":
+/*!******************************************************************!*\
+  !*** ./src/views/components/sections/header/headerMenu/index.ts ***!
+  \******************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./headerBottom */ "./src/views/components/sections/header/headerBottom/headerBottom.ts");
-/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_headerBottom__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _headerBottom_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerBottom.scss */ "./src/views/components/sections/header/headerBottom/headerBottom.scss");
+/* harmony import */ var _headerMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./headerMenu */ "./src/views/components/sections/header/headerMenu/headerMenu.ts");
+/* harmony import */ var _headerMenu__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_headerMenu__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _headerMenu_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./headerMenu.scss */ "./src/views/components/sections/header/headerMenu/headerMenu.scss");
 
 
 
@@ -736,10 +809,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ "./src/views/components/sections/header/header.ts");
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_header__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header.scss */ "./src/views/components/sections/header/header.scss");
-/* harmony import */ var _headerMobile_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./headerMobile.scss */ "./src/views/components/sections/header/headerMobile.scss");
-/* harmony import */ var src_assets_img_header_logo_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/img/header/logo.png */ "./src/assets/img/header/logo.png");
-/* harmony import */ var src_assets_img_header_logo_mobile_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/img/header/logo-mobile.png */ "./src/assets/img/header/logo-mobile.png");
-/* harmony import */ var _headerBottom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./headerBottom */ "./src/views/components/sections/header/headerBottom/index.ts");
+/* harmony import */ var _headerMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./headerMenu */ "./src/views/components/sections/header/headerMenu/index.ts");
+/* harmony import */ var _headerMobile_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./headerMobile.scss */ "./src/views/components/sections/header/headerMobile.scss");
+/* harmony import */ var src_assets_img_header_logo_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! src/assets/img/header/logo.png */ "./src/assets/img/header/logo.png");
+/* harmony import */ var src_assets_img_header_logo_mobile_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/assets/img/header/logo-mobile.png */ "./src/assets/img/header/logo-mobile.png");
+/* harmony import */ var src_assets_video_header_offer_video_mp4__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/assets/video/header/offer-video.mp4 */ "./src/assets/video/header/offer-video.mp4");
+
 
 
 
@@ -1904,6 +1979,17 @@ module.exports = __webpack_require__.p + "img/sectionHero/slide-img-desktop.jpg"
 
 "use strict";
 module.exports = __webpack_require__.p + "img/sectionHero/slide-img-mobile.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/video/header/offer-video.mp4":
+/*!*************************************************!*\
+  !*** ./src/assets/video/header/offer-video.mp4 ***!
+  \*************************************************/
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+module.exports = __webpack_require__.p + "video/header/offer-video.mp4";
 
 /***/ }),
 
@@ -12504,4 +12590,4 @@ __webpack_require__.r(__webpack_exports__);
 }();
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map?v=4396766f
+//# sourceMappingURL=main.js.map?v=405ba600

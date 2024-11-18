@@ -1,16 +1,14 @@
 @use "src/styles/shared/index" as *;
 
 .header {
-  //display: none;
-  // overflow: hidden;
   width: 100%;
   background: white;
 
-  &Desktop {
-    display: none;
-    @include mediaLaptopS {
-      display: block;
-    }
+  &Cont {
+    z-index: 100;
+    position: relative;
+    background: #fff;
+    padding: 0 20px;
   }
 
   &Top,
@@ -20,8 +18,11 @@
   }
 
   &Top {
-    padding: 20px 0;
-    @include flex(center, space-between);
+    @include mediaLaptopS {
+      padding: 20px 0;
+      @include flex(center, space-between);
+      border-bottom: 1px solid rgba(#111111, 0.1);
+    }
   }
 
   &Contacts {
@@ -41,24 +42,46 @@
       text-transform: uppercase;
       color: rgba(#111111, 0.5);
     }
+    @media screen and (max-width: 1179px) {
+      display: none;
+    }
+  }
+  &Logo {
+    @media screen and (max-width: 1179px) {
+      display: none;
+    }
   }
 
   &Actions {
     @include flex(center);
     column-gap: 16px;
-  }
+    @media screen and (max-width: 1179px) {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: #fff;
+      display: flex;
+    }
+    &Item {
+      & {
+        @include flex(center, center);
 
-  &Profile,
-  &Fav,
-  &Cart {
-    @include resetFlex;
-    @include flex(center, center);
-
-    & {
-      font-size: 18px;
-      width: 24px;
-      height: 24px;
-      color: #000000;
+        & {
+          font-size: 24px;
+          color: #000000;
+          sup {
+            position: static;
+            margin-left: 5px;
+            display: block;
+          }
+        }
+      }
+      @media screen and (max-width: 1179px) {
+        width: 25%;
+        padding: 10px 0;
+      }
     }
   }
 
@@ -72,6 +95,11 @@
     }
   }
 
+  &Search {
+    @include mediaLaptopS {
+      display: none;
+    }
+  }
   &Fav {
   }
 
@@ -90,38 +118,8 @@
     margin-right: calc(28px - 16px);
     text-transform: uppercase;
     color: rgba(#111111, 0.5);
-  }
-
-  &Bottom {
-    padding: 14px 0;
-    border-top: 1px solid rgba(#111111, 0.1);
-    column-gap: 28px;
-    @include flex(center, center);
-  }
-
-  &Button {
-    @include addBottomLineOnHover(#111111);
-    @include resetFlex;
-    @include flex(center);
-
-    & {
-      font-family: "HeliosExt", sans-serif;
-      font-size: 14px;
-      line-height: calc(20 / 14);
-      width: fit-content;
-      text-transform: uppercase;
-      color: #111111;
-      column-gap: 4px;
-    }
-
-    .iconfont {
-      @include flex(center, center);
-
-      & {
-        font-size: 8px;
-        width: 12px;
-        height: 12px;
-      }
+    @media screen and (max-width: 1179px) {
+      display: none;
     }
   }
 
@@ -133,10 +131,15 @@
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    opacity: 1;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     cursor: pointer;
+    ._menu_open & {
+      @include mediaLaptopS {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 }

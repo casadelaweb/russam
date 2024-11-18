@@ -10,7 +10,7 @@
     }
   }
 
-  &Menu {
+  &MenuOpen {
     @include resetFlex;
     @include flex(center, center);
 
@@ -23,9 +23,7 @@
   }
 
   &Logo {
-
     &Img {
-
     }
   }
 
