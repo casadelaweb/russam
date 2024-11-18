@@ -68,6 +68,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-1.jpg',
     'url' => '/product',
   ],
   [
@@ -75,6 +76,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-2.jpg',
     'url' => '/product',
   ],
   [
@@ -82,6 +84,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-3.jpg',
     'url' => '/product',
   ],
   [
@@ -89,6 +92,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-4.jpg',
     'url' => '/product',
   ],
   [
@@ -96,6 +100,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-5.jpg',
     'url' => '/product',
   ],
   [
@@ -103,6 +108,7 @@ $products = [
     'price' => 'от 77 975 ₽',
     'priceOld' => '150 000 ₽',
     'discount' => '25%',
+    'imgUrl' => '/assets/img/sectionProducts/product-desktop-1.jpg',
     'url' => '/product',
   ],
 ];

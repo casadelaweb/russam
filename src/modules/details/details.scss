@@ -9,7 +9,6 @@
     padding-bottom: 16px;
     padding-left: unset;
     column-gap: 8px;
-    // cursor: pointer;
 
     &::before {
       display: none;
@@ -24,17 +23,7 @@
     height: 32px;
     transition: transform 0.33s, background-color 0.33s, color 0.33s;
     transform-origin: center;
-    //border: 1px solid $colorGreyMild;
-    //color: $colorDarkMild;
     border-radius: 50%;
-
-    //@include onHover {
-    //  background: $colorGreyLight;
-    //}
-    //
-    //&:active {
-    //  background: $colorGreyMild;
-    //}
 
     .is-opening > &, .open > & {
       transform: rotate(180deg);
@@ -51,12 +40,6 @@
     padding-top: 16px;
     padding-bottom: 16px;
     row-gap: 8px;
-
-    //a {
-    //  @include onHover {
-    //    color: $colorPrimary;
-    //  }
-    //}
 
     .is-opening > &, .open > & {
       display: flex;

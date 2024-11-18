@@ -5,13 +5,13 @@
 /** @var string $discount */
 /** @var string $url */
 /** @var array $images */
+/** @var string $imgUrl */
 ?>
 
 <article class="productCard">
   <a href="<?= $url; ?>">
     <picture class="productCardPicture">
-      <img alt="img" class="productCardImg" loading="lazy"
-           src="/assets/img/product-1.jpg">
+      <img alt="img" class="productCardImg" loading="lazy" src="<?= $imgUrl; ?>">
     </picture>
   </a>
   <div class="productCardTags">

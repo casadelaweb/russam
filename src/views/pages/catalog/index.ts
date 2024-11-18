@@ -1,2 +1,13 @@
-import './pageCatalog'
-import './pageCatalog.scss'
+import './catalog'
+import './catalogFilters'
+import './catalogFilter'
+import './catalogAside'
+
+import './catalog.scss'
+import './catalogFilters.scss'
+import './catalogFilter.scss'
+import './catalogAside.scss'
+import './catalogNav.scss'
+
+import './units'
+import './sections'

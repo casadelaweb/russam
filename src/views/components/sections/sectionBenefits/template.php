@@ -50,9 +50,9 @@ $activeSlide = 2;
     <div class="sectionBenefitsMain">
       <div class="sectionBenefitsMainIcons">
         <?php
-          foreach ($slides as $i=>$slide):
+        foreach ($slides as $i => $slide):
           $class = $i === $activeSlide ? '_active' : '';
-        ?>
+          ?>
           <button class="sectionBenefitsMainIcon <?= $class; ?>" type="button"
                   data-index="<?= $i; ?>">
             <span class="iconfont icon-<?= $slide['iconName']; ?>"></span>
@@ -61,11 +61,11 @@ $activeSlide = 2;
       </div>
       <div class="sectionBenefitsMainSlider">
         <?php
-          foreach ($slides as $i=>$slide):
+        foreach ($slides as $i => $slide):
           $slideImgUrl = $slide['imgUrl'];
           $slideVideoUrl = $slide['videoUrl'];
           $class = $i === $activeSlide ? '_active' : '';
-        ?>
+          ?>
           <article class="sectionBenefitsMainSlide <?= $class; ?>" data-index="<?= $i; ?>">
             <div class="sectionBenefitsMainSlideImg">
               <img src="<?= $slideImgUrl; ?>" alt="">
@@ -91,15 +91,15 @@ $activeSlide = 2;
     </div>
     <div class="sectionBenefitsFooter">
       <div class="sectionBenefitsFooterBtns">
-          <?php
-            foreach ($slides as $i=>$slide):
-            $class = $i === $activeSlide ? '_active' : '';
+        <?php
+        foreach ($slides as $i => $slide):
+          $class = $i === $activeSlide ? '_active' : '';
           ?>
 
-            <div class="sectionBenefitsFooterBtn <?= $class; ?>" data-index="<?= $i; ?>">
-              <?= $slide['footerTitle']; ?>
-            </div>
-          <?php endforeach; ?>
+          <div class="sectionBenefitsFooterBtn <?= $class; ?>" data-index="<?= $i; ?>">
+            <?= $slide['footerTitle']; ?>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>
