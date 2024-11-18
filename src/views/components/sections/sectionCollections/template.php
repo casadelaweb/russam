@@ -4,19 +4,29 @@ $collectionCategory = [
     'title' => 'Украшения',
     'slides' => [
       [
-        'title' => 'CANDY',
-        'description' => '«Русские самоцветы» – наследник легендарных техник Карла Фаберже. Продолжая
-                  традиции
-                  легендарного мастера, Императорский ювелирный дом создал коллекцию украшений
-                  с гильошированной эмалью HERITAGE — она стала поистине знаковой и в полной мере
-                  отражает
-                  ДНК бренда.',
-        'imgUrl' => '/assets/img/sectionCollections/slide-1-mobile.jpg',
+        'title' => 'HERITAGE',
+        'description' => '«Русские самоцветы» – наследник легендарных техник Карла Фаберже. Продолжая традиции легендарного мастера, Императорский ювелирный дом создал коллекцию украшений с гильотинированной эмалью HERITAGE – она стала поистине знаковой и в полной мере отражает ДНК бренда.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-heritage.jpg',
       ],
       [
-        'title' => 'LA RIVIERE-TENNIS SNOWDROPS TENNIS',
-        'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis consectetur distinctio dolorum ipsum laboriosam, libero nisi nobis possimus praesentium vero!',
-        'imgUrl' => '/assets/img/sectionCollections/slide-2-mobile.jpg',
+        'title' => 'nightshade',
+        'description' => 'В основу дизайна коллекции NIGHTSHADE легли готические элементы, авторски интерпретированные в современном видении. В украшениях комбинируются белое золото и черные бриллианты, а яркие самоцветы идеально гармонируют между собой и образуют контрастные сочетания. В коллекции прослеживается особая символика, которая воплощена в крестах-подвесках.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-nightshade.jpg',
+      ],
+      [
+        'title' => 'forget me not',
+        'description' => 'Украшения о незабываемых моментах, чувствах и дорогих сердцу людях. Хрупкие цветы с бриллиантами-сердцевинами в золотой оправе, нежно обнимающей лепестки из оникса и бирюзы глубоких оттенков. Украшения, наполненные сакральным смыслом, силой любви и верности.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-forget-me-not.jpg',
+      ],
+      [
+        'title' => 'harmony',
+        'description' => '',
+        'imgUrl' => '/assets/img/sectionCollections/collection-harmony.jpg',
+      ],
+      [
+        'title' => 'deep ocean',
+        'description' => 'В коллекции DEEP OCEAN ювелиры обратились к теме бережного отношения к окружающей среде. Ключевые элементы – барочный жемчуг, бриллианты и лондон-топазы: камни закреплены таким образом, что свет свободно проходит сквозь грани, создавая игру оттенков морской волны.',
+        'imgUrl' => '/assets/img/sectionCollections/collection-deep-ocean.jpg',
       ],
     ],
     'url' => '/collections/jewelry',
@@ -27,12 +37,12 @@ $collectionCategory = [
       [
         'title' => 'Rosewood',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consequuntur illo ipsa provident, veniam veritatis.',
-        'imgUrl' => '/assets/img/sectionCollections/collection-rosewood.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-rosewood.jpg',
       ],
       [
         'title' => 'Chance',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque explicabo modi nemo neque qui quo soluta velit. Architecto atque autem commodi esse et, necessitatibus nulla, praesentium, quaerat quod reprehenderit tempore.',
-        'imgUrl' => '/assets/img/sectionCollections/collection-chance.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-chance.jpg',
       ],
     ],
     'url' => '/collections/home',
@@ -43,27 +53,27 @@ $collectionCategory = [
       [
         'title' => 'Deux Forces',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias at eligendi fuga, necessitatibus ut voluptatem?',
-        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.jpg',
       ],
       [
         'title' => 'Star',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
-        'imgUrl' => '/assets/img/sectionCollections/collection-star.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-star.jpg',
       ],
       [
         'title' => 'Heritage',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
-        'imgUrl' => '/assets/img/sectionCollections/collection-heritage.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-heritage.jpg',
       ],
       [
         'title' => 'короткое название',
         'description' => 'короткое описание',
-        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-deux-forces.jpg',
       ],
       [
         'title' => 'длинное название',
         'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet cupiditate in quae quis vitae? Eveniet natus optio perspiciatis sed, suscipit totam voluptas voluptatibus! Cupiditate dolore doloremque, itaque laboriosam maiores minus natus porro quae soluta! Debitis non possimus qui reiciendis similique.',
-        'imgUrl' => '/assets/img/sectionCollections/collection-star.png',
+        'imgUrl' => '/assets/img/sectionCollections/collection-star.jpg',
       ],
     ],
     'url' => '/collections/high-jewelry',

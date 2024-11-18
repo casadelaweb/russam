@@ -37,50 +37,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const groupElements: HTMLElement[] = Array.from(collectionElement.querySelectorAll('.sectionCollectionsSlider'))
       groupElements.forEach((groupElement, index) => {
+        const prevButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonPrev'))
+        const nextButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonNext'))
+
         swiperGroups.push(new Swiper(groupElement, {
-          modules: [Navigation, EffectFade, Thumbs],
-          speed: 1000,
-          watchSlidesProgress: true,
-          slideToClickedSlide: true,
-          effect: 'slide',
-          slidesPerView: 1,
-          spaceBetween: 10,
-          navigation: {
-            enabled: true,
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next',
-          },
-          breakpoints: {
-            375: {
-              slidesPerView: 1.1,
+            modules: [Navigation, EffectFade, Thumbs],
+            speed: 1000,
+            watchSlidesProgress: true,
+            slideToClickedSlide: true,
+            effect: 'slide',
+            slidesPerView: 1,
+            spaceBetween: 10,
+            navigation: {
+              enabled: true,
+              prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next',
             },
-            540: {
-              slidesPerView: 1.5,
-            },
-            768: {
-              slidesPerView: 2.5,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1180: {
-              slidesPerView: 3.5,
-            },
-            1440: {
-              effect: 'fade',
-              slidesPerView: 1,
-              spaceBetween: 40,
-              fadeEffect: {
-                crossFade: true,
+            breakpoints: {
+              375: {
+                slidesPerView: 1.1,
               },
-            }
-          },
-          on: {
-            slideChange(swiper) {
-              swiperNames[index].slideTo(swiper.activeIndex)
+              540: {
+                slidesPerView: 1.5,
+              },
+              768: {
+                slidesPerView: 2.5,
+              },
+              1024: {
+                slidesPerView: 3,
+              },
+              1180: {
+                slidesPerView: 3.5,
+              },
+              1440: {
+                effect: 'fade',
+                slidesPerView: 1,
+                spaceBetween: 40,
+                fadeEffect: {
+                  crossFade: true,
+                },
+              }
             },
-          },
-        }))
+            on: {
+              slideChange(swiper) {
+                swiperNames[index].slideTo(swiper.activeIndex)
+
+                if (swiper.isBeginning) {
+                  prevButtons.forEach((button) => {
+                    button.setAttribute('disabled', 'disabled')
+                  })
+                } else if (swiper.isEnd) {
+                  nextButtons.forEach((button) => {
+                    button.setAttribute('disabled', 'disabled')
+                  })
+                } else {
+                  prevButtons.forEach((button) => {
+                    button.removeAttribute('disabled')
+                  })
+                  nextButtons.forEach((button) => {
+                    button.removeAttribute('disabled')
+                  })
+                }
+              },
+            },
+          })
+        )
       })
 
       const nameElements: HTMLElement[] = Array.from(collectionElement.querySelectorAll('.sectionCollectionsNames'))
@@ -99,7 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-
     function calcSlideTitleOffset() {
       const titles = Array.from(body.querySelectorAll('.sectionCollectionsSlideTitle'))
       titles.forEach((el: HTMLElement) => {
@@ -113,8 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
       calcSlideTitleOffset()
     })
-
-
     document.body.addEventListener('click', (event: MouseEvent) => {
       const target = event.target as HTMLElement
 
@@ -143,5 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   },
   {
     passive: true,
-    once: true,
-  })
+    once:
+      true,
+  }
+)
