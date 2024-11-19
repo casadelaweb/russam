@@ -1716,7 +1716,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _sectionBenefits__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sectionBenefits */ "./src/views/components/sections/sectionBenefits/sectionBenefits.ts");
-/* harmony import */ var _sectionBenefits__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sectionBenefits__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _sectionBenefits_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./sectionBenefits.scss */ "./src/views/components/sections/sectionBenefits/sectionBenefits.scss");
 /* harmony import */ var src_assets_img_sectionBenefits_slide_1_img_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/assets/img/sectionBenefits/slide-1-img.jpg */ "./src/assets/img/sectionBenefits/slide-1-img.jpg");
 /* harmony import */ var src_assets_video_sectionBenefits_slide_1_video_mp4__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/assets/video/sectionBenefits/slide-1-video.mp4 */ "./src/assets/video/sectionBenefits/slide-1-video.mp4");
@@ -1732,24 +1731,40 @@ __webpack_require__.r(__webpack_exports__);
 /*!**************************************************************************!*\
   !*** ./src/views/components/sections/sectionBenefits/sectionBenefits.ts ***!
   \**************************************************************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    const $benefitsParent = document.body.querySelector('.sectionBenefits');
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.mjs");
+
+document.addEventListener("DOMContentLoaded", ()=>{
+    const $benefitsParent = document.body.querySelector(".sectionBenefits");
     if ($benefitsParent) {
         function benefitsSliderSetActive(index) {
-            $benefitsParent.querySelectorAll('._active').forEach((el)=>{
-                el.classList.remove('_active');
+            $benefitsParent.querySelectorAll("._active").forEach((el)=>{
+                el.classList.remove("_active");
             });
             $benefitsParent.querySelectorAll(`[data-index="${index}"`).forEach((el)=>{
-                el.classList.add('_active');
+                el.classList.add("_active");
             });
         }
-        $benefitsParent.addEventListener('click', (event)=>{
+        const benefitsFooterBtns = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".sectionBenefitsFooterBtns", {
+            slidesPerView: "auto",
+            spaceBetween: 4,
+            centeredSlides: false,
+            initialSlide: 2,
+            on: {
+                slideChange (swiper) {
+                    benefitsSliderSetActive(swiper.activeIndex);
+                }
+            }
+        });
+        $benefitsParent.addEventListener("click", (event)=>{
             const target = event.target;
-            if (target.closest('[data-index]')) {
-                const btn = target.closest('[data-index]');
+            if (target.closest("[data-index]")) {
+                const btn = target.closest("[data-index]");
                 benefitsSliderSetActive(+btn.dataset.index);
+                benefitsFooterBtns.slideTo(+btn.dataset.index);
             }
         });
     }
@@ -16207,4 +16222,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
 }();
 /******/ })()
 ;
-//# sourceMappingURL=main.js.map?v=24ab5746
+//# sourceMappingURL=main.js.map?v=9e086ccf

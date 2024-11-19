@@ -90,16 +90,19 @@ $activeSlide = 2;
       </div>
     </div>
     <div class="sectionBenefitsFooter">
-      <div class="sectionBenefitsFooterBtns">
-        <?php
-        foreach ($slides as $i => $slide):
-          $class = $i === $activeSlide ? '_active' : '';
+      <div class="sectionBenefitsFooterBtns swiper">
+        <div class="swiper-wrapper">
+          <?php
+            foreach ($slides as $i => $slide):
+            $class = $i === $activeSlide ? '_active' : '';
           ?>
 
-          <div class="sectionBenefitsFooterBtn <?= $class; ?>" data-index="<?= $i; ?>">
-            <?= $slide['footerTitle']; ?>
-          </div>
-        <?php endforeach; ?>
+            <div class="sectionBenefitsFooterBtn swiper-slide <?= $class; ?>" data-index="<?= $i; ?>">
+              <?= $slide['footerTitle']; ?>
+            </div>
+
+          <?php endforeach; ?>
+        </div>
       </div>
     </div>
   </div>

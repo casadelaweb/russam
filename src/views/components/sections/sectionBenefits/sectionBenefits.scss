@@ -19,7 +19,7 @@
       width: 44px;
       height: 44px;
       transition: font-size 0.33s, width 0.33s, height 0.33s, border-color 0.33s,
-      background-color 0.33s;
+        background-color 0.33s;
       color: white;
       border: 1px solid rgba(white, 0.2);
       border-radius: 50%;
@@ -91,7 +91,7 @@
           height: 500px;
         }
         @include mediaTabletM {
-          height: 550px;
+          height: 575px;
         }
         @include mediaTabletL {
           height: 610px;
@@ -194,6 +194,7 @@
   &Footer {
     overflow-y: scroll;
     background: #fafafa;
+
     @include mediaLaptopS {
       overflow: hidden;
     }
@@ -203,7 +204,7 @@
       flex-wrap: wrap;
       justify-content: space-between;
       width: max-content;
-      padding: 22px 0;
+      padding: 22px 4px;
       @include mediaLaptopS {
         width: 100%;
       }
@@ -216,7 +217,7 @@
       position: relative;
       width: 280px;
       min-height: 32px;
-      margin: 0 2px;
+      // margin: 0 2px;
       padding-top: 12px;
       padding-left: 20px;
       cursor: pointer;

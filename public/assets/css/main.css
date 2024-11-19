@@ -5080,7 +5080,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .sectionBenefitsMainSlide {
-    height: 550px;
+    height: 575px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -5191,7 +5191,7 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   width: max-content;
-  padding: 22px 0;
+  padding: 22px 4px;
 }
 @media screen and (min-width: 1180px) {
   .sectionBenefitsFooterBtns {
@@ -5205,7 +5205,6 @@ body {
   position: relative;
   width: 280px;
   min-height: 32px;
-  margin: 0 2px;
   padding-top: 12px;
   padding-left: 20px;
   cursor: pointer;
@@ -6566,4 +6565,4 @@ body {
   right: 20px;
 }
 
-/*# sourceMappingURL=main.css.map?v=df7c5c19*/
+/*# sourceMappingURL=main.css.map?v=29f86e85*/
