@@ -58,3 +58,4 @@ prepros.config
 /vendor/
 
 *.Zone.Identifier
+*:Zone.Identifier
