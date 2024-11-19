@@ -9,18 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
       rewind: false,
       effect: 'slide',
       pagination: {
-        enabled: false,
+        enabled: true,
         clickable: true,
         el: '.swiper-pagination',
       },
       navigation: {
-        enabled: true,
+        enabled: false,
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
       },
       breakpoints: {
         768: {
-          pagination: {
+          navigation: {
             enabled: true,
           }
         }

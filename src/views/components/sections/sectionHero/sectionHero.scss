@@ -30,92 +30,180 @@
 
     &Body {
       @include flex(center, center, column);
-      position: relative;
-      z-index: 2;
-      padding-top: 28px;
-      padding-bottom: 36px;
-      text-align: center;
-      @include mediaTabletM {
-        display: block;
-        height: 100%;
-        padding: 40px 0 0 40px;
-        text-align: left;
-      }
-      @include mediaTabletL {
-        padding-left: 64px;
-      }
-      @include mediaLaptopL {
-        padding-left: 129px;
+
+      & {
+        // position: relative;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 28px;
+        padding-bottom: 25px;
+        text-align: center;
+        @include mediaTabletM {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          padding: 30px 0 0 40px;
+          text-align: left;
+        }
+        @include mediaTabletL {
+          padding-left: 64px;
+        }
+        @include mediaLaptopL {
+          padding-left: 100px;
+        }
       }
     }
 
     &Content {
       width: 240px;
       margin: 0 auto;
-      @include mediaTabletS {
+      @include mediaMobileL {
         width: 320px;
       }
+      @include mediaTabletS {
+        width: 360px;
+      }
       @include mediaTabletM {
-        width: 350px;
-        margin: 0 0 auto 0;
+        //width: 350px;
+        margin: 0;
       }
       @include mediaTabletL {
-        width: 383px;
+        width: 400px;
       }
     }
 
     &Title {
-      // font-family: "HeliosExtC", sans-serif;
+      font-family: "HeliosExt", sans-serif;
       font-size: 12px;
       font-weight: 300;
-      line-height: calc(18 / 12);
+      line-height: 1.25;
       margin-bottom: 8px;
-      color: rgba(black, 0.5);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(#111111, 0.5);
       @include mediaTabletM {
-        font-size: 16px;
-        font-weight: 300;
-        line-height: calc(24 / 16);
-        margin-bottom: 20px;
+        font-size: 14px;
+        margin-bottom: 0;
+      }
+
+      &._light {
+        color: rgba(#ffffff, 0.75);
+
+        &-mobile {
+          color: rgba(#ffffff, 0.75);
+          @include mediaTabletM {
+            color: rgba(#111111, 0.5);
+          }
+        }
+
+        &-desktop {
+          color: rgba(#111111, 0.5);
+          @include mediaTabletM {
+            color: rgba(#ffffff, 0.75);
+          }
+        }
       }
     }
 
     &Brand {
       font-family: "HeliosExt", sans-serif;
-      font-size: 20px;
+      font-size: 24px;
       line-height: calc(24 / 20);
       margin-bottom: 12px;
+      color: #111111;
+      @include mediaMobileM {
+        font-size: 33px;
+      }
       @include mediaTabletM {
         // font-family: "HeliosExtC", sans-serif;
         font-size: 60px;
         line-height: calc(72 / 60);
-        margin-bottom: 23px;
-        color: #111111;
+        margin-bottom: 33px;
+      }
+
+      &._light {
+        color: white;
+
+        &-mobile {
+          color: white;
+          @include mediaTabletM {
+            color: #111111;
+          }
+        }
+
+        &-desktop {
+          color: #111111;
+          @include mediaTabletM {
+            color: white;
+          }
+        }
       }
     }
 
     &Description {
-      font-family: "TTCommons", sans-serif;
-      font-size: 14px;
+      font-family: "HeliosExt", sans-serif;
+      font-size: 13px;
+      //font-family: "TTCommons", sans-serif;
+      font-weight: 300;
       line-height: calc(16 / 14);
       margin-bottom: 20px;
       color: rgba(#111111, 0.5);
       @include mediaTabletM {
-        font-size: 18px;
+        font-size: 16px;
         line-height: calc(23.4 / 18);
-        margin-bottom: 56px;
-        color: rgba(black, 0.5);
+        margin-bottom: 40px;
+      }
+
+      &._light {
+        color: rgba(#ffffff, 0.75);
+
+        &-mobile {
+          color: rgba(#ffffff, 0.75);
+          @include mediaTabletM {
+            color: rgba(#111111, 0.5);
+          }
+        }
+
+        &-desktop {
+          color: rgba(#111111, 0.5);
+          @include mediaTabletM {
+            color: rgba(#ffffff, 0.75);
+          }
+        }
       }
     }
 
     &Button {
-      @include buttonWhite;
+      @include buttonDark;
 
       & {
-        width: 100%;
+        margin: 0 auto;
+        @include mediaTabletM {
+          margin: 0;
+        }
       }
 
-      @include mediaTabletM {
-        @include buttonDark;
+      &._light {
+        @include buttonLight;
+
+        &-mobile {
+          @include buttonLight;
+          @include mediaTabletM {
+            @include buttonDark;
+          }
+        }
+
+        &-desktop {
+          @include buttonDark;
+          @include mediaTabletM {
+            @include buttonLight;
+          }
+        }
       }
     }
 
@@ -123,12 +211,12 @@
       display: contents;
     }
 
+    &Video,
     &Img {
       order: -1;
       width: 100%;
       object-position: center;
       object-fit: cover;
-
       @include mediaTabletM {
         position: absolute;
         z-index: 0;
@@ -186,9 +274,12 @@
     }
 
     &-pagination {
-      position: absolute;
-      z-index: 2;
-      bottom: 24px;
+      position: static;
+      @include mediaTabletM {
+        position: absolute;
+        z-index: 2;
+        bottom: 24px;
+      }
 
       &-bullet {
         width: 37px;

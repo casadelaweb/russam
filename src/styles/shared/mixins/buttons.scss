@@ -18,7 +18,7 @@
   line-height: 1;
 }
 
-@mixin buttonWhite {
+@mixin buttonLight {
   @include buttonTemplate;
 
   & {
