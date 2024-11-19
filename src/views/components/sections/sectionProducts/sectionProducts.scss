@@ -57,11 +57,17 @@
       right: 0;
       width: calc(60px - 16px);
       height: 100%;
+      transition: opacity 0.33s;
       pointer-events: none;
+      opacity: 0;
       background: linear-gradient(90deg, rgba(white, 0) 0%, white 65%);
       @include mediaLaptopL {
         width: calc(170px - 93px);
         background: linear-gradient(90deg, rgba(white, 0.14) 0%, white 57.28%);
+      }
+
+      &._active {
+        opacity: 1;
       }
     }
   }

@@ -1,5 +1,5 @@
 import Swiper from 'swiper'
-import { FreeMode, Navigation, Pagination, Scrollbar } from 'swiper/modules'
+import { FreeMode, Navigation, Scrollbar } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.sectionProductsSlider', {
@@ -9,11 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.swiper-scrollbar',
         enabled: true,
       },
-      // pagination: {
-      //   enabled: false,
-      //   clickable: true,
-      //   el: '.swiper-pagination',
-      // },
       navigation: {
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
@@ -52,6 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
           spaceBetween: 12,
           scrollbar: {
             enabled: false,
+          }
+        }
+      },
+      on: {
+        slideChange(swiper) {
+          const gradient: HTMLElement = swiper.el.querySelector('.sectionProductsSliderGradient')
+          if (swiper.isEnd && gradient) {
+            gradient.classList.remove('_active')
+          } else {
+            gradient?.classList.add('_active')
           }
         }
       }

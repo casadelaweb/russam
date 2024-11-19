@@ -34,9 +34,10 @@
   },
   "dependencies": {
     "body-scroll-lock": "4.0.0-beta.0",
-    "hc-sticky": "^2.2.7",
+    "es-toolkit": "1.27.0",
+    "hc-sticky": "2.2.7",
     "imask": "7.6.1",
-    "nouislider": "^15.8.1",
+    "nouislider": "15.8.1",
     "restyle.css": "1.0.8",
     "swiper": "11.1.14",
     "vanilla-lazyload": "19.1.3"

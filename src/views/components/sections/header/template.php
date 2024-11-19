@@ -1,4 +1,4 @@
-<?php use Middlewares\Render;?>
+<?php use Middlewares\Render; ?>
 <header class="header">
   <div class="headerCont">
 
@@ -18,11 +18,11 @@
         <a href="/shops" class="headerShops">
           МАГАЗИНЫ
         </a>
-        <button type="button"  class="headerSearch headerActionsItem">
+        <button type="button" class="headerSearch headerActionsItem">
           <span class="iconfont icon-search"></span>
         </button>
         <a href="/profile" class="headerProfile headerActionsItem">
-        <span class="iconfont icon-user"></span>
+          <span class="iconfont icon-user"></span>
         </a>
         <a href="/fav" class="headerFav headerActionsItem">
           <span class="iconfont icon-heart-outline"></span>

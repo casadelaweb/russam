@@ -67,13 +67,13 @@
       <?= $title; ?>
     </h2>
     <nav class="sectionAboutNav">
-      <button type="button" data-index="1" class="sectionAboutNavItem _active">
+      <button type="button" data-index="0" class="sectionAboutNavItem _active">
         История
       </button>
-      <button type="button" data-index="2" class="sectionAboutNavItem">
+      <button type="button" data-index="1" class="sectionAboutNavItem">
         ценности
       </button>
-      <button type="button" data-index="3" class="sectionAboutNavItem">
+      <button type="button" data-index="2" class="sectionAboutNavItem">
         миссия
       </button>
     </nav>
