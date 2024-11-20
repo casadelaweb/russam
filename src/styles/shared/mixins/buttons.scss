@@ -116,7 +116,7 @@
   line-height: calc(16 / 13);
   text-transform: uppercase;
   color: #111111;
-  border-bottom: 1px solid rgba(#111111, 0.5);
+  border-bottom: 1px solid #11111180;
   transition: border-color 0.33s;
   @include Media.mediaTabletL {
     font-size: 16px;

@@ -1,5 +1,5 @@
 import Swiper from 'swiper'
-import { EffectCreative, EffectFade, FreeMode, Navigation, Thumbs } from 'swiper/modules'
+import { EffectCreative, EffectFade, Navigation, Thumbs } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         effect: 'creative',
         creativeEffect: {
           prev: {
-            translate: [0, 0, -25],
+            translate: [0, '25%', -25],
             opacity: 0,
             scale: 0.5,
           },
           next: {
-            translate: ['100%', 0, 0],
+            translate: ['75%', 0, 0],
             opacity: 0,
             scale: 1,
           },
@@ -37,85 +37,122 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const groupElements: HTMLElement[] = Array.from(collectionElement.querySelectorAll('.sectionCollectionsSlider'))
       groupElements.forEach((groupElement, index) => {
-        const prevButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonPrev'))
-        const nextButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonNext'))
+        // const prevButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonPrev'))
+        // const nextButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonNext'))
+        // console.log(prevButtons, nextButtons)
 
-        swiperGroups.push(new Swiper(groupElement, {
-            modules: [Navigation, EffectFade, Thumbs],
-            speed: 1000,
-            watchSlidesProgress: true,
-            slideToClickedSlide: true,
-            effect: 'slide',
-            slidesPerView: 1,
-            spaceBetween: 10,
-            navigation: {
-              enabled: true,
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next',
+        const slider = new Swiper(groupElement, {
+          modules: [Navigation, EffectFade],
+          speed: 333,
+          loop: false,
+          watchSlidesProgress: true,
+          slideToClickedSlide: true,
+          effect: 'slide',
+          slidesPerView: 1,
+          spaceBetween: 10,
+          navigation: {
+            enabled: true,
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+          },
+          breakpoints: {
+            375: {
+              slidesPerView: 1.1,
             },
-            breakpoints: {
-              375: {
-                slidesPerView: 1.1,
-              },
-              540: {
-                slidesPerView: 1.5,
-              },
-              768: {
-                slidesPerView: 2.5,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-              1180: {
-                slidesPerView: 3.5,
-              },
-              1440: {
-                effect: 'fade',
-                slidesPerView: 1,
-                spaceBetween: 40,
-                fadeEffect: {
-                  crossFade: true,
-                },
-              }
+            540: {
+              slidesPerView: 1.5,
             },
-            on: {
-              slideChange(swiper) {
-                swiperNames[index].slideTo(swiper.activeIndex)
-
-                if (swiper.isBeginning) {
-                  prevButtons.forEach((button) => {
-                    button.setAttribute('disabled', 'disabled')
-                  })
-                } else if (swiper.isEnd) {
-                  nextButtons.forEach((button) => {
-                    button.setAttribute('disabled', 'disabled')
-                  })
+            768: {
+              slidesPerView: 2.5,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+            1180: {
+              slidesPerView: 3.5,
+            },
+            1440: {
+              effect: 'fade',
+              slidesPerView: 1,
+              spaceBetween: 40,
+              // navigation: {
+              //   enabled: true,
+              //   prevEl: '.sectionCollectionsSlideButtonPrev',
+              //   nextEl: '.sectionCollectionsSlideButtonNext',
+              // },
+              fadeEffect: {
+                crossFade: true,
+              },
+            }
+          },
+          on: {
+            slideChange(swiper) {
+              //console.log(index, swiper.activeIndex)
+              swiperNames[index].slideTo(swiper.activeIndex)
+              swiperNames[index].slides.forEach((slide, index) => {
+                const name: HTMLElement | null = slide.querySelector('.sectionCollectionsName')
+                //console.log(index, swiper.activeIndex)
+                if (index === swiper.activeIndex) {
+                  slide.classList.add('_active')
+                  name?.classList.add('_active')
                 } else {
-                  prevButtons.forEach((button) => {
-                    button.removeAttribute('disabled')
-                  })
-                  nextButtons.forEach((button) => {
-                    button.removeAttribute('disabled')
-                  })
+                  slide.classList.remove('_active')
+                  name?.classList.remove('_active')
                 }
-              },
+              })
+
+              // if (swiper.isBeginning) {
+              //   prevButtons.forEach((button) => {
+              //     button.setAttribute('disabled', 'disabled')
+              //   })
+              // } else if (swiper.isEnd) {
+              //   nextButtons.forEach((button) => {
+              //     button.setAttribute('disabled', 'disabled')
+              //   })
+              // } else {
+              //   prevButtons.forEach((button) => {
+              //     button.removeAttribute('disabled')
+              //   })
+              //   nextButtons.forEach((button) => {
+              //     button.removeAttribute('disabled')
+              //   })
+              // }
             },
-          })
-        )
+          },
+        })
+        // prevButtons.forEach((button) => {
+        //   button.addEventListener('click', (event) => {
+        //     //event.preventDefault()
+        //     slider.slidePrev()
+        //     console.log('click prev')
+        //   })
+        // })
+        // nextButtons.forEach((button) => {
+        //   button.addEventListener('click', (event) => {
+        //     //event.preventDefault()
+        //     slider.slideNext()
+        //     console.log('click next')
+        //   })
+        // })
+        swiperGroups.push(slider)
       })
 
       const nameElements: HTMLElement[] = Array.from(collectionElement.querySelectorAll('.sectionCollectionsNames'))
       nameElements.forEach((nameElement, index) => {
         swiperNames.push(new Swiper(nameElement, {
           modules: [Thumbs],
+          speed: 333,
+          loop: false,
           thumbs: {
             swiper: swiperGroups[index],
           },
+          centeredSlides: true,
           direction: 'vertical',
           effect: 'slide',
           slidesPerView: 'auto',
           spaceBetween: 20,
           slideToClickedSlide: true,
+          grabCursor: true,
         }))
       })
     })
@@ -148,15 +185,17 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       }
 
-      if (target.closest('.sectionCollectionsSlideButtonNext')) {
-        const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonNext')
-        const index = parseInt(button.getAttribute('data-index'))
-        swiperGroups[index].slideNext()
-      } else if (target.closest('.sectionCollectionsSlideButtonPrev')) {
-        const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonPrev')
-        const index = parseInt(button.getAttribute('data-index'))
-        swiperGroups[index].slidePrev()
-      }
+      // if (target.closest('.sectionCollectionsSlideButtonNext')) {
+      //   const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonNext')
+      //   const index = parseInt(button.getAttribute('data-index'))
+      //   swiperGroups[index].slideNext()
+      //   console.log('Button Index:', index)
+      //   console.log('Swiper Instance:', swiperGroups[index])
+      // } else if (target.closest('.sectionCollectionsSlideButtonPrev')) {
+      //   const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonPrev')
+      //   const index = parseInt(button.getAttribute('data-index'))
+      //   swiperGroups[index].slidePrev()
+      // }
     })
   },
   {

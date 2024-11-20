@@ -98,7 +98,7 @@
       background: white;
     }
     &::-webkit-scrollbar-thumb {
-      background: rgba(#111111, 0.5);
+      background: #11111180;
       border: 0 solid white;
     }
   }
@@ -114,7 +114,7 @@
   transition: opacity 0.33s;
   pointer-events: none;
   opacity: 0;
-  background: rgba(#111111, 0.5);
+  background: #11111180;
 
   &._active {
     pointer-events: auto;

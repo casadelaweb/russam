@@ -207,7 +207,7 @@
   &Tab {
     font-size: 14px;
     line-height: calc(16 / 14);
-    color: rgba(#111111, 0.5);
+    color: #11111180;
     @include mediaTabletM {
       font-size: 16px;
       line-height: calc(20 / 16);

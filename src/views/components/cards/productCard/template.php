@@ -4,7 +4,6 @@
 /** @var string $priceOld */
 /** @var string $discount */
 /** @var string $url */
-/** @var array $images */
 /** @var string $imgUrl */
 ?>
 

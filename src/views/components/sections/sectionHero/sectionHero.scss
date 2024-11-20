@@ -85,7 +85,7 @@
       margin-bottom: 8px;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(#111111, 0.5);
+      color: #11111180;
       @include mediaTabletM {
         font-size: 14px;
         margin-bottom: 0;
@@ -97,12 +97,12 @@
         &-mobile {
           color: rgba(#ffffff, 0.75);
           @include mediaTabletM {
-            color: rgba(#111111, 0.5);
+            color: #11111180;
           }
         }
 
         &-desktop {
-          color: rgba(#111111, 0.5);
+          color: #11111180;
           @include mediaTabletM {
             color: rgba(#ffffff, 0.75);
           }
@@ -152,7 +152,7 @@
       font-weight: 300;
       line-height: calc(16 / 14);
       margin-bottom: 20px;
-      color: rgba(#111111, 0.5);
+      color: #11111180;
       @include mediaTabletM {
         font-size: 16px;
         line-height: calc(23.4 / 18);
@@ -165,12 +165,12 @@
         &-mobile {
           color: rgba(#ffffff, 0.75);
           @include mediaTabletM {
-            color: rgba(#111111, 0.5);
+            color: #11111180;
           }
         }
 
         &-desktop {
-          color: rgba(#111111, 0.5);
+          color: #11111180;
           @include mediaTabletM {
             color: rgba(#ffffff, 0.75);
           }
@@ -291,7 +291,7 @@
         background: #d9d9d9;
 
         &-active {
-          background: rgba(#111111, 0.5);
+          background: #11111180;
         }
       }
     }

@@ -11,7 +11,7 @@
   //      font-size: 14px;
   //      position: absolute;
   //      z-index: 2;
-  //      color: rgba(#111111, 0.5);
+  //      color: #11111180;
   //      @include mediaLaptopL {
   //        font-size: 20px;
   //      }
@@ -39,7 +39,7 @@
   //    background: #d9d9d9;
   //
   //    &-active {
-  //      background: rgba(#111111, 0.5);
+  //      background: #11111180;
   //    }
   //  }
   //}
@@ -55,7 +55,7 @@
     &-drag {
       height: 2px;
       border-radius: 0;
-      background: rgba(#111111, 0.5);
+      background: #11111180;
     }
   }
 }

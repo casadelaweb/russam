@@ -124,6 +124,7 @@ $collectionCategory = [
                       <?= $slideTitle; ?>
                     </h3>
                     <div class="sectionCollectionsSlideContent">
+                      <?php /*?>
                       <div class="sectionCollectionsSlideButtons">
                         <button class="sectionCollectionsSlideButtonPrev"
                                 type="button"
@@ -136,6 +137,7 @@ $collectionCategory = [
                           <span class="iconfont icon-arrow-right"></span>
                         </button>
                       </div>
+                      */ ?>
                       <div class="sectionCollectionsSlideDescription">
                         <?= $slideDescription; ?>
                       </div>
@@ -173,20 +175,7 @@ $collectionCategory = [
         endforeach; ?>
       </div>
     </div>
-
-    <?php /*foreach ($collectionCategory as $collectionGroup):
-      $slides = $collectionGroup['slides']; ?>
-      <div class="sectionCollectionsNames swiper">
-        <div class="swiper-wrapper">
-          <?php foreach ($slides as $slide):
-            $name = $slide['title']; ?>
-            <div class="swiper-slide sectionCollectionsName">
-              <?= $name; ?>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    <?php endforeach; */ ?>
-
+    <img src="/assets/img/sectionCollections/bg.png" alt="img" class="sectionCollectionsBg"
+         loading="lazy">
   </div>
 </section>
