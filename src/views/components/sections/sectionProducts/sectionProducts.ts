@@ -50,16 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
       },
-      // on: {
-      //   slideChange(swiper) {
-      //     const gradient: HTMLElement = swiper.el.querySelector('.sectionProductsSliderGradient')
-      //     if (swiper.isEnd && gradient) {
-      //       gradient.classList.remove('_active')
-      //     } else {
-      //       gradient?.classList.add('_active')
-      //     }
-      //   }
-      // }
+      on: {
+        slideChange(swiper) {
+          const gradient: HTMLElement = swiper.el.querySelector('.sectionProductsSliderGradient')
+          if (swiper.isEnd && gradient) {
+            gradient.classList.add('_disabled')
+          } else {
+            gradient?.classList.remove('_disabled')
+          }
+        }
+      }
     })
   },
   {

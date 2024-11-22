@@ -49,6 +49,13 @@
   &Slider {
     position: relative;
     z-index: 0;
+    @include mediaTabletM {
+      padding-left: 32px;
+    }
+    @include mediaTabletL {
+      margin: -12px;
+      padding: 12px 12px 12px 32px;
+    }
 
     &Gradient {
       position: absolute;
@@ -57,47 +64,56 @@
       right: 0;
       width: calc(60px - 16px);
       height: 100%;
-      //transition: opacity 0.33s;
+      transition: opacity 0.33s, transform 0.33s;
+      transform: none;
       pointer-events: none;
-      //opacity: 0;
+      opacity: 1;
       background: linear-gradient(90deg, rgba(white, 0) 0%, white 65%);
-      @include mediaLaptopL {
-        width: calc(170px - 93px);
-        background: linear-gradient(90deg, rgba(white, 0.14) 0%, white 57.28%);
+      @include mediaTabletM {
+        width: calc(170px - 40px);
+        background: linear-gradient(90deg, rgba(white, 0.1) 0%, white 100%);
       }
 
-      //&._active {
-      //  opacity: 1;
-      //}
+      &._disabled {
+        transform: scaleY(0);
+        opacity: 0;
+      }
     }
   }
 
   .swiper {
-    @include mediaTabletL {
-      margin: -12px;
-      padding: 12px;
-    }
-
     &-button {
       @include swiperNavigationButtons;
-    }
 
-    &-pagination {
-      position: static;
-      margin: 32px auto 0;
-      transition: background-color 0.33s;
+      &-prev, {
+        @include mediaTabletM {
+          left: -12px;
+        }
+      }
 
-      &-bullet {
-        width: 24px;
-        height: 2px;
-        margin: 0 !important;
-        opacity: 1 !important;
-        background: #d9d9d9;
-
-        &-active {
-          background: #11111180;
+      &-next {
+        @include mediaTabletM {
+          right: -16px;
         }
       }
     }
+
+    //&-pagination {
+    //  position: static;
+    //  margin: 32px auto 0;
+    //  transition: background-color 0.33s;
+    //
+    //  &-bullet {
+    //    width: 24px;
+    //    height: 2px;
+    //    margin: 0 !important;
+    //    opacity: 1 !important;
+    //    background: #d9d9d9;
+    //
+    //    &-active {
+    //      background: #11111180;
+    //    }
+    //  }
+    //}
   }
 }
