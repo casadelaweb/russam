@@ -21,8 +21,8 @@
     'brand' => 'NIGHTSHADE',
     'description' => 'Готические элементы в современном видении',
     'url' => '/catalog',
-    'imgUrl' => '/assets/img/sectionHero/slide-2-mobile.jpg',
-    'imgUrlDesktop' => '/assets/img/sectionHero/slide-2-desktop.jpg',
+    'imgUrl' => '/assets/img/sectionHero/slide-2-mobile-content.jpg',
+    'imgUrlDesktop' => '/assets/img/sectionHero/slide-2-desktop-content.jpg',
 
     /** css класс для смены цветовой темы
      * Всегда светлый текст или кнопка - _light
@@ -37,19 +37,20 @@
     'brand' => 'MARQUIS',
     'description' => 'Романтика в новом прочтении',
     'url' => '/catalog',
-    'imgUrl' => '/assets/img/sectionHero/slide-3-mobile.jpg',
-    'imgUrlDesktop' => '/assets/img/sectionHero/slide-3-desktop.jpg',
+    'imgUrl' => '/assets/img/sectionHero/slide-3-mobile-content.jpg',
+    'imgUrlDesktop' => '/assets/img/sectionHero/slide-3-desktop-content.jpg',
   ],
   [
     'title' => '',
     'brand' => 'НОВЫЕ <br> МАГАЗИНЫ',
     'description' => 'ТЦ Коламбус | ТЦ Европейский | ТЦ Европолис | ТЦ Метрополис',
     'url' => '/catalog',
-    'imgUrl' => '/assets/img/sectionHero/slide-4-mobile.jpg',
-    'imgUrlDesktop' => '/assets/img/sectionHero/slide-4-desktop.jpg',
+    'imgUrl' => '/assets/img/sectionHero/slide-4-mobile-content.jpg',
+    'imgUrlDesktop' => '/assets/img/sectionHero/slide-4-desktop-content.jpg',
   ],
 ];
 
+$showContent = false
 ?>
 
 <section class="sectionHero">
@@ -66,30 +67,24 @@
           $colorScheme = $slide['colorScheme'] ?? '';
           ?>
           <article class="swiper-slide sectionHeroSlide">
-            <div class="sectionHeroSlideBody">
-              <?php /*?>
-              <button type="button" class="sectionHeroSlidePrev">
-                <span class="iconfont icon-arrow-left"></span>
-              </button>
-              <button type="button" class="sectionHeroSlideNext">
-                <span class="iconfont icon-arrow-right"></span>
-              </button>
-  */ ?>
-              <div class="sectionHeroSlideContent">
-                <h2 class="sectionHeroSlideTitle <?= $colorScheme; ?>">
-                  <?= $title; ?>
-                </h2>
-                <div class="sectionHeroSlideBrand <?= $colorScheme; ?>">
-                  <?= $brand; ?>
+            <?php if ($showContent): ?>
+              <div class="sectionHeroSlideBody">
+                <div class="sectionHeroSlideContent">
+                  <h2 class="sectionHeroSlideTitle <?= $colorScheme; ?>">
+                    <?= $title; ?>
+                  </h2>
+                  <div class="sectionHeroSlideBrand <?= $colorScheme; ?>">
+                    <?= $brand; ?>
+                  </div>
+                  <div class="sectionHeroSlideDescription <?= $colorScheme; ?>">
+                    <?= $description; ?>
+                  </div>
+                  <a class="sectionHeroSlideButton" href="<?= $url; ?>">
+                    Смотреть
+                  </a>
                 </div>
-                <div class="sectionHeroSlideDescription <?= $colorScheme; ?>">
-                  <?= $description; ?>
-                </div>
-                <a class="sectionHeroSlideButton" href="<?= $url; ?>">
-                  Смотреть
-                </a>
               </div>
-            </div>
+            <?php endif; ?>
             <?php if ($slide['hasVideo']): ?>
               <video class="sectionHeroSlideImg" loop="loop" preload="metadata" autoplay muted>
                 <source media="(min-width: 768px)" src="<?= $imgUrlDesktop; ?>">

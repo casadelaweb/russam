@@ -227,20 +227,20 @@
       }
     }
 
-    &Prev, &Next {
-      display: flex;
-      @include mediaTabletM {
-        display: none;
-      }
-    }
-
-    &Prev {
-      left: 8px;
-    }
-
-    &Next {
-      right: 8px;
-    }
+    //&Prev, &Next {
+    //  display: flex;
+    //  @include mediaTabletM {
+    //    display: none;
+    //  }
+    //}
+    //
+    //&Prev {
+    //  left: 8px;
+    //}
+    //
+    //&Next {
+    //  right: 8px;
+    //}
   }
 
   .swiper {
@@ -248,13 +248,16 @@
       @include swiperNavigationButtons;
 
       &-prev, &-next {
-        display: none;
+        top: auto;
+        bottom: 130px;
+        //display: none;
         @include mediaTabletM {
           display: flex;
         }
       }
 
       &-prev {
+        left: 20px;
         @include mediaTabletM {
           left: 0;
         }
@@ -264,6 +267,7 @@
       }
 
       &-next {
+        right: 20px;
         @include mediaTabletM {
           right: 0;
         }

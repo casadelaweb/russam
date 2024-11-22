@@ -124,20 +124,6 @@ $collectionCategory = [
                       <?= $slideTitle; ?>
                     </h3>
                     <div class="sectionCollectionsSlideContent">
-                      <?php /*?>
-                      <div class="sectionCollectionsSlideButtons">
-                        <button class="sectionCollectionsSlideButtonPrev"
-                                type="button"
-                                data-index="<?= $collectionGroupIndex; ?>">
-                          <span class="iconfont icon-arrow-left"></span>
-                        </button>
-                        <button class="sectionCollectionsSlideButtonNext"
-                                type="button"
-                                data-index="<?= $collectionGroupIndex; ?>">
-                          <span class="iconfont icon-arrow-right"></span>
-                        </button>
-                      </div>
-                      */ ?>
                       <div class="sectionCollectionsSlideDescription">
                         <?= $slideDescription; ?>
                       </div>

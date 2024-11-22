@@ -118,6 +118,7 @@
         }
         @include mediaLaptopL {
           // display: none;
+          display: contents;
         }
       }
     }
@@ -127,6 +128,9 @@
 
       & {
         margin-left: auto;
+        @include mediaLaptopL {
+          display: none;
+        }
       }
     }
 

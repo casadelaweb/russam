@@ -14,31 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '.swiper-pagination',
       },
       navigation: {
-        enabled: false,
+        enabled: true,
         prevEl: '.swiper-button-prev',
         nextEl: '.swiper-button-next',
       },
-      breakpoints: {
-        768: {
-          navigation: {
-            enabled: true,
-          }
-        }
-      }
+      // breakpoints: {
+      //   768: {
+      //     navigation: {
+      //       enabled: true,
+      //     }
+      //   }
+      // }
     })
 
-    document.body.addEventListener('click', (event: MouseEvent) => {
-      const target = event.target as HTMLElement
-
-      if (target.closest('.sectionHeroSlidePrev')) {
-        slider.slidePrev()
-      }
-      if (target.closest('.sectionHeroSlideNext')) {
-        slider.slideNext()
-      }
-    }, {
-      passive: true,
-    })
+    // document.body.addEventListener('click', (event: MouseEvent) => {
+    //   const target = event.target as HTMLElement
+    //
+    //   if (target.closest('.sectionHeroSlidePrev')) {
+    //     slider.slidePrev()
+    //   }
+    //   if (target.closest('.sectionHeroSlideNext')) {
+    //     slider.slideNext()
+    //   }
+    // }, {
+    //   passive: true,
+    // })
   },
   {
     passive: true,
