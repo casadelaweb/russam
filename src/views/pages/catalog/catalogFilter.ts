@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content: '.catalogFilterBody',
       scrollbars: { vertical: 'has-verticalScrollbar', },
     },
-    onlyUnderLaptop: false,
+    disableAfter: null,
   })
   details.init()
 }, {

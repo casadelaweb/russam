@@ -3,10 +3,6 @@
 .catalogFilters {
   flex-grow: 1;
   @include flex($d: column);
-  //padding-right: 16px;
-  //@include mediaTabletL {
-  //  padding-right: 0;
-  //}
 
   &Header, &Buttons, &Feedback {
     margin-bottom: 16px;
@@ -20,10 +16,15 @@
   }
 
   &Header {
-    //@include textS;
-    @include flex($d: column);
+    font-family: "HeliosExt", sans-serif;
+    font-size: 11px;
+    font-weight: 300;
     margin: 0;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 0;
     row-gap: 8px;
+    @include flex($d: column);
     @include mediaTabletL {
       display: none;
     }
@@ -35,6 +36,11 @@
 
   &Close {
     @include buttonArrowSmall;
+
+    & {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &Buttons {
@@ -68,6 +74,7 @@
 
     & {
       width: 100%;
+      column-gap: 8px;
     }
   }
 
@@ -103,7 +110,7 @@
 
     &:hover,
     &._active {
-      color: $colorDarkMild;
+      color: $colorBlack;
     }
   }
 
@@ -118,7 +125,7 @@
     opacity: 0;
     border-radius: $brM;
     @include mediaTabletL {
-      display: none !important;
+      display: block;
     }
 
     &._active {

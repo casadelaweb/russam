@@ -1,5 +1,29 @@
 @use "src/styles/shared" as *;
 
+.catalogHero {
+  margin: 20px 0;
+
+  &Container {
+    @include container;
+  }
+
+  &Title {
+    font-family: "HeliosExt", sans-serif;
+    font-size: 20px;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    @include mediaLaptopL {
+      font-size: 40px;
+    }
+  }
+
+  &Quantity {
+    font-family: "HeliosExt", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(#111111, 0.5);
+  }
+}
 
 .catalog {
   font-size: 14px;
@@ -23,11 +47,11 @@
   }
 
   &Main {
+    row-gap: 24px;
     @include resetFlex;
     @include flex($d: column);
-    row-gap: 16px;
     @include mediaTabletM {
-      row-gap: 20px;
+      row-gap: 32px;
     }
   }
 

@@ -112,7 +112,6 @@ $products = [
     'url' => '/product',
   ],
 ];
-
 Render::component('sections/sectionHero');
 Render::component('sections/sectionCategories', [
   'title' => 'Категории',

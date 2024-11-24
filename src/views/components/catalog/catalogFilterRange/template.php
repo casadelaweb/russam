@@ -4,7 +4,7 @@
 /** @var number $max */
 ?>
 
-<fieldset class="catalogFilter open">
+<fieldset class="catalogFilter open" open>
   <div class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
       <span class="catalogFilterTitle">

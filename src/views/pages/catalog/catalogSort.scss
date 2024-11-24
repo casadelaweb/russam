@@ -1,0 +1,96 @@
+@use "src/styles/shared" as *;
+
+.catalogSort {
+  @include resetFlex;
+  @include mediaTabletL {
+    position: relative;
+    z-index: 5;
+    // width: max-content;
+  }
+
+  &Summary {
+    @include buttonCatalogNav;
+    @include flex(center, center, $w: wrap);
+    @include mediaTabletL {
+      //flex-wrap: nowrap;
+      width: fit-content;
+      //min-width: 200px;
+      padding: 0;
+      border-radius: 0;
+      background: none;
+    }
+
+    & {
+      cursor: pointer;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+
+    @include mediaDesktop {
+      column-gap: 8px;
+    }
+  }
+
+  &Current {
+  }
+
+  &Button {
+    @include buttonArrowSmall;
+  }
+
+  &Title {
+    @include resetFlex;
+    width: 100%;
+  }
+
+  &List {
+    font-size: 13px;
+    position: fixed;
+    z-index: 120;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    width: 100%;
+    padding: 14px;
+    transition: opacity $trM, transform $trM;
+    transform: translate(0, 100%);
+    pointer-events: none;
+    border: 1px solid #eff1f3;
+    border-radius: 0;
+    background: white;
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+    @include mediaTabletL {
+      position: absolute;
+      z-index: 1;
+      top: calc(100% + 8px);
+      bottom: auto;
+      left: 0;
+      transform: translate(0, 40px);
+      opacity: 0;
+    }
+
+    &._active {
+      transform: translate(0, 0);
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  &Item {
+    //@include textXs;
+    @include flex(center);
+    column-gap: 4px;
+  }
+
+  &Overlay {
+    @include overlay;
+
+    & {
+      //z-index: 3;
+      @include mediaTabletL {
+        display: none !important;
+      }
+    }
+  }
+}

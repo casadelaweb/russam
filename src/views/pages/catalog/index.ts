@@ -8,6 +8,4 @@ import './catalogFilters.scss'
 import './catalogFilter.scss'
 import './catalogAside.scss'
 import './catalogNav.scss'
-
-import './units'
-import './sections'
+import './catalogSort.scss'

@@ -1,101 +1,101 @@
 @use "src/styles/shared" as *;
 
-.catalog {
-  &Nav {
-    @include resetFlex;
-    //@include textM;
-    @include flex(center, space-between);
-    column-gap: 8px;
+.catalogNav {
+  @include resetFlex;
+  @include mediaTabletL {
+    @include flex;
+  }
+
+  &Top {
+    display: grid;
+    margin-bottom: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+    row-gap: 12px;
     @include mediaMobileL {
       column-gap: 16px;
     }
     @include mediaTabletM {
       column-gap: 20px;
     }
-  }
-
-  &Sort {
-    position: relative;
-    z-index: 4;
-
-
-    &Summary {
-      font-size: 14px;
-      @include flex(center);
-      cursor: pointer;
-      letter-spacing: -0.02em;
-      column-gap: 4px;
-      @include mediaDesktop {
-        column-gap: 8px;
-      }
-    }
-
-    &Current {
-      color: $colorPrimary;
-    }
-
-    &Button {
-      @include buttonArrowSmall;
-    }
-
-    //&Title {
-    //  // //@include textS;
-    //}
-
-    &List {
-      font-size: 13px;
-      position: fixed;
-      z-index: 120;
-      bottom: 0;
-      left: 0;
-      display: grid;
-      width: 100%;
-      padding: 14px;
-      transition: opacity $trM, transform $trM;
-      transform: translate(0, 100%);
-      pointer-events: none;
-      border: 1px solid #eff1f3;
-      border-radius: 0;
-      background: white;
-      grid-template-columns: 1fr;
-      row-gap: 14px;
-
-      @include mediaTabletL {
-        position: absolute;
-        z-index: 1;
-        top: calc(100% + 8px);
-        left: 0;
-        transform: translate(0, 40px);
-        opacity: 0;
-      }
-
-      &._active {
-        transform: translate(0, 0);
-        pointer-events: auto;
-        opacity: 1;
-      }
-    }
-
-    &Item {
-      //@include textXs;
-      @include flex(center);
-      column-gap: 4px;
-    }
-
-    &Overlay {
-      @include overlay;
-
-      & {
-        z-index: 3;
-      }
+    @include mediaTabletL {
+      display: block;
+      width: fit-content;
+      margin: 0;
     }
   }
 
-  &OpenAside {
-    margin-left: auto;
-    color: $colorDarkMild;
+  &Filters {
+    @include buttonCatalogNav;
     @include mediaTabletL {
       display: none;
+    }
+
+    &Icon {
+      font-size: 24px;
+      color: rgba($colorBlack, 0.75);
+      @include resetFlex;
+    }
+
+    &Title {
+
+    }
+
+    &Quantity {
+      font-family: "HeliosExt", sans-serif;
+      font-size: 10px;
+      padding: 4px;
+      border-radius: 2px;
+      background: white;
+    }
+  }
+
+  &Choices {
+    @include flex($w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+    @include mediaTabletL {
+      order: -1;
+      margin-right: auto;
+    }
+  }
+
+  &Choice {
+    @include resetFlex;
+    @include flex(baseline);
+    font-size: 12px;
+    line-height: 1;
+    padding: 4px 6px;
+    color: #111111;
+    border-radius: 12px;
+    background: rgba(#a39d94, 0.2);
+    column-gap: 4px;
+    @include mediaTabletL {
+      font-size: 13px;
+    }
+    @include mediaLaptopL {
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+    @include responsiveHover {
+      background: rgba(#a39d94, 0.4);
+    }
+
+    .iconfont {
+      @include flex(center, center);
+      font-size: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
+    }
+  }
+
+  &Reset {
+    @include buttonPale;
+
+    & {
+      column-gap: 8px;
     }
   }
 }

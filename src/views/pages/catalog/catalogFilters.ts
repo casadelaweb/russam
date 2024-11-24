@@ -64,9 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!target.closest('.catalogSort')) {
       const elements: Array<HTMLElement> = Array.from(document.body.querySelectorAll('.catalogSort'))
       elements.forEach((sort) => {
-        // const overlay: HTMLElement = document.body.querySelector('.catalogSortOverlay')
+        const overlay: HTMLElement = document.body.querySelector('.catalogSortOverlay')
         const list: HTMLElement = sort.querySelector('.catalogSortList')
-        // overlay.classList.remove('_active')
+        overlay.classList.remove('_active')
         sort.classList.remove('_active')
         list.classList.remove('_active')
       })

@@ -7,7 +7,7 @@
 /** @var array $options */
 ?>
 
-<fieldset class="catalogFilter">
+<fieldset class="catalogFilter open" open>
   <div class="catalogFilterSummary">
     <div class="catalogFilterSummaryContent">
       <span class="catalogFilterTitle">

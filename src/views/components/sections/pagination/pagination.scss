@@ -1,0 +1,29 @@
+@use "src/styles/shared" as *;
+
+.pagination {
+  @include flex(center);
+
+  & {
+    margin: 20px auto;
+    column-gap: 12px;
+    @include mediaTabletL {
+      column-gap: 16px;
+    }
+  }
+
+  &Link {
+    font-size: 14px;
+    color: rgba(#111111, 0.5);
+    @include mediaTabletL {
+      font-size: 18px;
+    }
+
+    @include responsiveHover {
+      color: #111111;
+    }
+
+    &._current {
+      color: #111111;
+    }
+  }
+}
