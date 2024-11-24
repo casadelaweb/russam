@@ -1,5 +1,5 @@
 import 'src/modules/modals/modals.scss'
-import { clearAllBodyScrollLocks, disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 type TypeOS = 'Mac OS' | 'iOS' | 'Windows' | 'Android' | 'Linux' | 'Unknown';
 
@@ -164,7 +164,7 @@ class Modals {
         const modal: HTMLElement | null = this.findModalByAttribute(modalName)
         if (modal) this.activateModal(modal, button)
       } else if (button.matches(buttonClose)) {
-        const modalName: string | null = button.getAttribute('data-modal-close')
+        const modalName: string | null = button.getAttribute('data-modal-close') || button.closest('[data-modal]')?.getAttribute('data-modal')
         if (!modalName) return
 
         const modal: HTMLElement | null = this.findModalByAttribute(modalName)
