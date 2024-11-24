@@ -40,11 +40,10 @@ class Router {
     $controller = new $controllerClass();
     $pageModel = $route['page'];
 
-    // Передаем PageModel объект в контроллер
     if ($pageModel) {
       $controller->index($pageModel);
     } else {
-      $controller->index(new PageModel('Default Title', 'Default Description', '/', 'default'));
+      $controller->index(new PageModel('Default Title', 'Default Description', '/', 'default', null));
     }
   }
 

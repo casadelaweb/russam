@@ -1,10 +1,8 @@
 <?php
 
-use App\Models\PageModel;
 use Middlewares\Helpers;
 use Middlewares\Render;
 
-/** @var PageModel $page */
 ?>
 <!doctype html>
 <html lang="ru">
@@ -16,17 +14,17 @@ use Middlewares\Render;
     <meta content="320" name="MobileOptimized">
     <meta content="True" name="HandheldFriendly">
     <title itemprop="headline">
-      <?= $page->title ?>
+      <?= Page->title ?>
     </title>
     <meta name="description"
-          content="<?= $page->description ?>">
+          content="<?= Page->description ?>">
     <link rel="stylesheet" href="<?= Helpers::getFilePathWithHash('/assets/css/main.css'); ?>">
   </head>
   <body>
     <div id="app">
       <?php Render::component('sections/header') ?>
       <main class="main">
-        <?php Render::page($page->view); ?>
+        <?php Render::page(Page->view); ?>
       </main>
       <?php Render::component('sections/footer') ?>
       <div id="modals">

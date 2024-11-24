@@ -2,6 +2,6 @@
 
 namespace Kernel;
 
-class Model {
+class Model extends \Illuminate\Database\Eloquent\Model {
 
 }

@@ -9,13 +9,28 @@ require_once __DIR__ . '/../database/bootstrap.php';
 use App\App;
 use App\Controllers\PageController;
 use App\Models\PageModel;
-use App\Models\User;
+
+//use App\Models\ProductModel;
+//use App\Models\User;
 
 $app = new App();
 
-$app->router->add('', PageController::class, new PageModel('Главная страница', 'Краткое описание', '/', 'home'));
-$app->router->add('catalog', PageController::class, new PageModel('Каталог', 'Краткое описание', '/catalog', 'catalog'));
+$pageHome = new PageModel(
+  'Главная',
+  'Ювелирные украшения, столовое серебро и предметы интерьера',
+  '/',
+  'home',
+  null,
+);
+$pageCatalog = new PageModel(
+  'Каталог',
+  'Ювелирные украшения, столовое серебро и предметы интерьера по лучшим ценам в интернет-магазине ювелирных магазинов «Русские самоцветы» с доставкой по России. За более подробной информацией обращайтесь по телефону 8 (800) 777-19-12',
+  '/catalog',
+  'catalog',
+  $pageHome,
+);
+
+$app->router->add('', PageController::class, $pageHome);
+$app->router->add('catalog', PageController::class, $pageCatalog);
 
 $app->run();
-
-
