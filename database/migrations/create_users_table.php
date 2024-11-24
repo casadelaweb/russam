@@ -1,9 +1,10 @@
 <?php
 
+require_once __DIR__ . '/../bootstrap.php';
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 use Illuminate\Database\Schema\Blueprint;
-
-require __DIR__ . '/../bootstrap.php';
+use Illuminate\Database\Eloquent\Model;
 
 Capsule::schema()->create('users', function (Blueprint $table) {
   $table->id();

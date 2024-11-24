@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   app:
-    image: php:8.2-fpm
+    build:
+      context: .
+      dockerfile: configuration/php/Dockerfile
     container_name: php-fpm
     working_dir: /var/www/html
     volumes:
@@ -17,7 +19,6 @@ services:
       - COMPOSER_ALLOW_SUPERUSER=1
     networks:
       - app-network
-    command: bash -c "apt-get update && apt-get install -y libmysqlclient-dev && docker-php-ext-install pdo_mysql && php-fpm"
 
   nginx:
     image: nginx:latest
@@ -49,7 +50,7 @@ services:
       - app-network
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
     container_name: phpmyadmin
     environment:
       PMA_HOST: db
