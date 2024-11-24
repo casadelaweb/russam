@@ -1,13 +1,16 @@
 import { debounce } from 'es-toolkit'
 
 document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body
-    const header = body.querySelector('.header') as HTMLElement | null
+    const body: HTMLElement = document.body
+    const header: HTMLElement | null = body.querySelector('.header')
 
     if (!header) return
 
+    const ACTIVE_CLASS: string = '_active'
+    let isSmallScreen: boolean = !window.matchMedia('(min-width: 1180px)').matches
+
     function handleSmallScreenClick(target: HTMLElement) {
-      const parent = target.closest('.headerMenuParent')
+      const parent: HTMLElement = target.closest('.headerMenuParent')
       if (parent) parent.classList.add(ACTIVE_CLASS)
 
       if (target.closest('.headerMenuBtnBack')) {
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleHover(target: HTMLElement, el: HTMLElement) {
-      const btnL2 = target.closest('.headerMenuBtnL2')
+      const btnL2: HTMLElement = target.closest('.headerMenuBtnL2')
       if (btnL2 && !target.closest('.headerMenuChildrenL1LeftGold')) {
         el.querySelector(`.${ ACTIVE_CLASS }`)?.classList.remove(ACTIVE_CLASS)
         btnL2.closest('.headerMenuParentL2')?.classList.add(ACTIVE_CLASS)
@@ -48,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function clearHeaderActiveElements() {
-      const activeElements = header.querySelectorAll(`.${ ACTIVE_CLASS }`)
+      const activeElements: HTMLElement[] = Array.from(header.querySelectorAll(`.${ ACTIVE_CLASS }`))
       activeElements.forEach((el) => el.classList.remove(ACTIVE_CLASS))
     }
 
@@ -57,12 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
       header.classList.remove('_menu_open')
     }
 
-    const ACTIVE_CLASS = '_active'
-
-    let isSmallScreen = !window.matchMedia('(min-width: 1180px)').matches
-
-    header.addEventListener('click', (e: MouseEvent) => {
-      const target = e.target as HTMLElement
+    header.addEventListener('click', (event: MouseEvent) => {
+      const target = event.target as HTMLElement
 
       if (isSmallScreen) {
         handleSmallScreenClick(target)
