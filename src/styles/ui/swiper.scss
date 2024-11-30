@@ -44,6 +44,11 @@
   //  }
   //}
 
+  &-lazy-preloader {
+    border: 2px solid #11111180;
+    border-top-color: transparent;
+  }
+
   &-scrollbar {
     position: static;
     width: 33%;
