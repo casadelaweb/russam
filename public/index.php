@@ -29,8 +29,16 @@ $pageCatalog = new PageModel(
   'catalog',
   $pageHome,
 );
+$pageProduct = new PageModel(
+  'Продукт',
+  'Ювелирные украшения, столовое серебро и предметы интерьера по лучшим ценам в интернет-магазине ювелирных магазинов «Русские самоцветы» с доставкой по России. За более подробной информацией обращайтесь по телефону 8 (800) 777-19-12',
+  '/product',
+  'product',
+  $pageCatalog,
+);
 
 $app->router->add('', PageController::class, $pageHome);
 $app->router->add('catalog', PageController::class, $pageCatalog);
+$app->router->add('product', PageController::class, $pageProduct);
 
 $app->run();

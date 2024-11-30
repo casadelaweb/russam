@@ -32,6 +32,7 @@
 
   &Container {
     @include container;
+    @include resetFlex;
   }
 
   &Layout {
