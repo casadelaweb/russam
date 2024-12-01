@@ -19,3 +19,116 @@
     border-color: #ff0024;
   }
 }
+
+@mixin inputCheckbox {
+  appearance: none;
+  overflow: hidden;
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: 0;
+  transition: background-color 0.33s;
+  position: relative;
+  z-index: 0;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  border: 1px solid #111111;
+  border-radius: 0;
+  background: white;
+
+  &:checked {
+    background: #111111;
+
+    &::before {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "iconfont", emoji !important;
+    font-size: 10px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "\e900";
+    transition: opacity 0.33s, transform 0.33s;
+    transform: none;
+    opacity: 0;
+    color: white;
+    border: 0;
+    border-radius: 0;
+    background: #111111;
+  }
+}
+
+@mixin inputCheckboxLong {
+  $size: 20px;
+
+  position: relative;
+  z-index: 0;
+  width: $size * 2.2;
+  height: $size;
+  transition: background-color 0.25s;
+  border: 0;
+  border-radius: $size;
+  background: #e6eaed;
+  appearance: none;
+
+  &::before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: $size * 0.2;
+    width: $size * 0.8;
+    height: $size * 0.8;
+    content: " ";
+    transition: left 0.25s;
+    transform: translateY(-50%);
+    opacity: 1;
+    border-radius: 50%;
+    background: white;
+  }
+
+  &:checked {
+    background: #56323f;
+
+    &::before {
+      left: calc(100% - $size * 0.8 - $size * 0.2);
+      transform: translate(0, -50%) scale(1);
+    }
+  }
+}
+
+@mixin inputRadio {
+  @include inputCheckbox;
+
+  & {
+    background: none;
+    border-radius: 50%;
+
+    &:checked {
+      background: none;
+
+      &:before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    &:before {
+      content: " ";
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      width: 75%;
+      height: 75%;
+      border-radius: 50%;
+    }
+  }
+}

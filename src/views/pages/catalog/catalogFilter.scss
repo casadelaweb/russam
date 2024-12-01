@@ -1,7 +1,15 @@
 @use "src/styles/shared" as *;
 
 .catalogFilterBool {
-  @extend .catalogFilter !optional;
+  font-family: "HeliosExt", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #111111;
+  border-bottom: 1px solid #eff1f3;
   @include flex(center, space-between);
 
   & {
@@ -18,41 +26,7 @@
   }
 
   &Input {
-    $size: 20px;
-
-    position: relative;
-    z-index: 0;
-    width: $size * 2.2;
-    height: $size;
-    transition: background-color 0.25s;
-    border: 0;
-    border-radius: $size;
-    background: #e6eaed;
-    appearance: none;
-
-    &::before {
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      left: $size * 0.2;
-      width: $size * 0.8;
-      height: $size * 0.8;
-      content: " ";
-      transition: left 0.25s;
-      transform: translateY(-50%);
-      opacity: 1;
-      border-radius: 50%;
-      background: white;
-    }
-
-    &:checked {
-      background: #56323f;
-
-      &::before {
-        left: calc(100% - $size * 0.8 - $size * 0.2);
-        transform: translate(0, -50%) scale(1);
-      }
-    }
+    @include inputCheckboxLong;
   }
 }
 
@@ -66,7 +40,6 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #111111;
-  //border-bottom: 1px solid rgba(#111111, 0.1);
   border-bottom: 1px solid #eff1f3;
 
   &Summary {
@@ -74,6 +47,7 @@
 
     & {
       font-weight: 500;
+      line-height: 1.25;
       padding: 14px;
       transition: background $trM;
       @include mediaTabletL {
@@ -144,6 +118,10 @@
     #{$this}.is-opening &,
     #{$this}.open & {
       display: flex;
+
+      &._shape {
+        display: grid;
+      }
     }
 
     &._grid {
@@ -161,11 +139,11 @@
           width: calc(50% - 12px * 0.5);
         }
       }
+    }
 
-      &.open, &.is-opening, &.is-closing {
-        // display: grid;
-        //padding-top: 40px + 8px + 8px;
-      }
+    &._shape {
+      // display: grid;
+      grid-template-columns: repeat(5, 1fr);
     }
 
     &Inputs {
@@ -213,6 +191,11 @@
 
   &Label {
     //@include textXs;
+    position: relative;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     @include flex(center);
     column-gap: 4px;
     @include mediaDesktop {
@@ -228,7 +211,6 @@
   }
 
   &Input {
-    $size: 16px;
     display: inline-block;
     margin: 0;
 
@@ -243,56 +225,51 @@
     }
 
     &[type=radio] {
-      width: $size;
-      height: $size;
-      border-color: $colorGrey;
-
-      &::before {
-        background: $colorGrey;
-      }
+      @include inputRadio;
     }
 
     &[type=checkbox] {
-      position: relative;
-      z-index: 0;
-      overflow: hidden;
-      width: $size;
-      height: $size;
-      margin: 0;
-      border: 1px solid #111111;
-      border-radius: 0;
-      background: white;
-      appearance: none;
+      @include inputCheckbox;
+    }
 
-      &::before {
-        @include flex(center, center);
+    &._shape {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
 
-        & {
-          position: absolute;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          content: "\2714";
-          transition: opacity $trM;
-          transform: none;
-          opacity: 0;
-          color: white;
-          border: 0;
-          border-radius: 0;
-          background: #111111;
-        }
-      }
-
-      &:checked {
-        &::before {
-          opacity: 1;
-        }
-      }
+    &:checked ~ .catalogFilterIcon {
+      opacity: 1;
     }
   }
 
   &Title {
+  }
+
+  &Color {
+    flex: 0 0 auto;
+    width: 18px;
+    min-width: 0;
+    height: 18px;
+    min-height: 0;
+    border: 1px solid #11111180;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    object-position: center;
+    object-fit: contain;
+  }
+
+  &Icon {
+    transition: opacity 0.33s;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    object-position: center;
+    object-fit: contain;
   }
 }

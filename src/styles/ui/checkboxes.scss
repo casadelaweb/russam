@@ -1,28 +1,28 @@
-[type=checkbox], [type=radio] {
-  overflow: hidden;
-  flex: 0 0 auto;
-  width: 18px;
-  height: 18px;
-  transition: background-color 0.25s;
-  border: 2px solid #eff1f3;
-
-  &:checked {
-    background: #eff1f3;
-
-    &::before {
-      transform: scale(1);
-    }
-  }
-
-  &::before {
-    content: " ";
-    transition: transform 0.25s;
-    transform: scale(0);
-    opacity: 1;
-    background: #eff1f3;
-  }
-}
-
-[type=radio] {
-  border-radius: 50%;
-}
+//[type=checkbox], [type=radio] {
+//  overflow: hidden;
+//  flex: 0 0 auto;
+//  width: 18px;
+//  height: 18px;
+//  transition: background-color 0.25s;
+//  border: 2px solid #eff1f3;
+//
+//  &:checked {
+//    background: #eff1f3;
+//
+//    &::before {
+//      transform: scale(1);
+//    }
+//  }
+//
+//  &::before {
+//    content: " ";
+//    transition: transform 0.25s;
+//    transform: scale(0);
+//    opacity: 1;
+//    background: #eff1f3;
+//  }
+//}
+//
+//[type=radio] {
+//  border-radius: 50%;
+//}

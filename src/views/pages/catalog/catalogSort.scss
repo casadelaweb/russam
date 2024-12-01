@@ -93,4 +93,14 @@
       }
     }
   }
+
+  &Input {
+    @include inputRadio;
+
+    & {
+      width: 22px;
+      height: 22px;
+      margin-left: auto;
+    }
+  }
 }

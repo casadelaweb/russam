@@ -390,6 +390,7 @@ $products = [
           Render::component('cards/productCard', $product);
         endforeach; ?>
       </div>
+
       <?php Render::component('sections/pagination') ?>
     </div>
   </div>

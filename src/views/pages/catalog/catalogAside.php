@@ -40,46 +40,99 @@ use Middlewares\Render; ?>
           'Помолвочное кольцо',
         ],
       ]) ?>
-      <?php Render::component('catalog/catalogFilter', [
+      <?php Render::component('catalog/catalogFilterShape', [
         'filterTitle' => 'Форма камня',
-        'filterType' => 'grid',
-        'hasSearch' => true,
         'inputType' => 'checkbox',
-        'inputName' => 'brand',
-        'options' => [
-          'Вариант 1',
-          'Вариант 2',
-          'Вариант 3',
-          'Вариант 4',
-          'Вариант 5',
-          'Вариант 6',
-          'Вариант 7',
-          'Вариант 8',
+        'inputName' => 'shape',
+        'shapes' => [
+          '/assets/img/catalog/shape-asher.svg',
+          '/assets/img/catalog/shape-baget.svg',
+          '/assets/img/catalog/shape-brilliant.svg',
+          '/assets/img/catalog/shape-corazon.svg',
+          '/assets/img/catalog/shape-izumrud.svg',
+          '/assets/img/catalog/shape-kushon.svg',
+          '/assets/img/catalog/shape-markiz.svg',
+          '/assets/img/catalog/shape-octagon.svg',
+          '/assets/img/catalog/shape-ovalado.svg',
+          '/assets/img/catalog/shape-pera.svg',
+          '/assets/img/catalog/shape-princesa.svg',
+          '/assets/img/catalog/shape-radiant.svg',
+          '/assets/img/catalog/shape-triangulo.svg',
         ],
       ]) ?>
       <?php Render::component('catalog/catalogFilter', [
-        'filterTitle' => 'Фильтр по радио',
+        'filterTitle' => 'Фильтр с радио',
         'inputType' => 'radio',
-        'inputName' => 'cable_form',
+        'inputName' => 'filter_test_1',
         'filterType' => 'row',
         'hasSearch' => false,
-        'options' => ['Круглый', 'Плоский',],
+        'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
       ]) ?>
       <?php Render::component('catalog/catalogFilter', [
+        'filterTitle' => 'Фильтр с большим количеством опций',
+        'inputType' => 'radio',
+        'inputName' => 'filter_test_1',
+        'filterType' => 'row',
+        'hasSearch' => false,
+        'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой', 'Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой', 'Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
+      ]) ?>
+      <?php Render::component('catalog/catalogFilter', [
+        'filterTitle' => 'Фильтр с поиском и списком',
+        'inputType' => 'checkbox',
+        'inputName' => 'filter_test_2',
+        'filterType' => 'row',
+        'hasSearch' => true,
+        'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
+      ]) ?>
+      <?php Render::component('catalog/catalogFilter', [
+        'filterTitle' => 'Фильтр с поиском и сеткой',
+        'inputType' => 'checkbox',
+        'inputName' => 'filter_test_3',
+        'filterType' => 'grid',
+        'hasSearch' => true,
+        'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
+      ]) ?>
+      <?php Render::component('catalog/catalogFilterColor', [
         'filterTitle' => 'Цвет',
         'inputType' => 'checkbox',
         'inputName' => 'color',
-        'filterType' => 'row',
-        'hasSearch' => false,
         'options' => [
-          'Черный',
-          'Белый',
-          'Изумрудный',
-          'Аквамариновый',
-          'Красный',
-          'Оранжевый',
-          'Желтый',
-          'Разноцветный',
+          [
+            'title' => 'Черный',
+            'color' => '#000000',
+          ],
+          [
+            'title' => 'Белый',
+            'color' => '#ffffff',
+          ],
+          [
+            'title' => 'Изумрудный',
+            'color' => 'green',
+          ],
+          [
+            'title' => 'Аквамариновый',
+            'color' => 'teal',
+          ],
+          [
+            'title' => 'Красный',
+            'color' => 'red',
+          ],
+          [
+            'title' => 'Оранжевый',
+            'color' => 'orange',
+          ],
+          [
+            'title' => 'Прозрачный>',
+            'url' => '/assets/img/catalog/transparent.png',
+          ],
+          [
+            'title' => 'Желтый',
+            'color' => 'yellow',
+          ],
+          [
+            'title' => 'Разноцветный',
+            'url' => '/assets/img/catalog/multicolor.png',
+          ],
         ],
       ]) ?>
     </div>

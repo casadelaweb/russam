@@ -26,17 +26,21 @@
         </button>
       </div>
       <div class="catalogSortList">
-        <?php foreach ($items as $item): ?>
+        <?php $i = 0;
+        foreach ($items as $item): ?>
           <label class="catalogSortItem">
-            <input type="radio" name="sort">
             <span><?= $item; ?></span>
+            <input class="catalogSortInput" type="radio"
+                   name="sort" <?= $i === 0 ? 'checked' : ''; ?>>
           </label>
-        <?php endforeach; ?>
+          <?php $i++;
+        endforeach; ?>
       </div>
     </fieldset>
     <div class="catalogSortOverlay"></div>
   </div>
   <div class="catalogNavChoices">
+    <!-- Выбранные фильтры -->
     <button type="button" class="catalogNavChoice">
       <span>Белое золото 585 пробы</span>
       <span class="iconfont icon-close"></span>
@@ -69,9 +73,5 @@
       <span>Круг-57</span>
       <span class="iconfont icon-close"></span>
     </button>
-    <!--    <button type="button" class="catalogNavReset">-->
-    <!--      <span class="iconfont icon-refresh"></span>-->
-    <!--      <span>СБРОСИТЬ ВСе</span>-->
-    <!--    </button>-->
   </div>
 </div>

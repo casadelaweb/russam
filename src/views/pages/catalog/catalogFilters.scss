@@ -124,14 +124,13 @@
     pointer-events: none;
     opacity: 0;
     border-radius: $brM;
-    @include mediaTabletL {
-      display: block;
-    }
-
+    
     &._active {
-      display: block;
-      pointer-events: auto;
-      opacity: 1;
+      @include mediaTabletL {
+        display: block;
+        pointer-events: auto;
+        opacity: 1;
+      }
     }
 
     &::before {
