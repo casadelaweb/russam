@@ -37,10 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const groupElements: HTMLElement[] = Array.from(collectionElement.querySelectorAll('.sectionCollectionsSlider'))
       groupElements.forEach((groupElement, index) => {
-        // const prevButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonPrev'))
-        // const nextButtons: HTMLElement[] = Array.from(groupElement.querySelectorAll('.sectionCollectionsSlideButtonNext'))
-        // console.log(prevButtons, nextButtons)
-
         const slider = new Swiper(groupElement, {
           modules: [Navigation, EffectFade],
           speed: 333,
@@ -72,26 +68,20 @@ document.addEventListener('DOMContentLoaded', () => {
               slidesPerView: 3.5,
             },
             1440: {
-              effect: 'fade',
+              //effect: 'fade',
+              speed: 0,
               slidesPerView: 1,
               spaceBetween: 40,
-              // navigation: {
-              //   enabled: true,
-              //   prevEl: '.sectionCollectionsSlideButtonPrev',
-              //   nextEl: '.sectionCollectionsSlideButtonNext',
+              // fadeEffect: {
+              //   crossFade: true,
               // },
-              fadeEffect: {
-                crossFade: true,
-              },
             }
           },
           on: {
             slideChange(swiper) {
-              //console.log(index, swiper.activeIndex)
               swiperNames[index].slideTo(swiper.activeIndex)
               swiperNames[index].slides.forEach((slide, index) => {
                 const name: HTMLElement | null = slide.querySelector('.sectionCollectionsName')
-                //console.log(index, swiper.activeIndex)
                 if (index === swiper.activeIndex) {
                   slide.classList.add('_active')
                   name?.classList.add('_active')
@@ -100,40 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
                   name?.classList.remove('_active')
                 }
               })
-
-              // if (swiper.isBeginning) {
-              //   prevButtons.forEach((button) => {
-              //     button.setAttribute('disabled', 'disabled')
-              //   })
-              // } else if (swiper.isEnd) {
-              //   nextButtons.forEach((button) => {
-              //     button.setAttribute('disabled', 'disabled')
-              //   })
-              // } else {
-              //   prevButtons.forEach((button) => {
-              //     button.removeAttribute('disabled')
-              //   })
-              //   nextButtons.forEach((button) => {
-              //     button.removeAttribute('disabled')
-              //   })
-              // }
             },
           },
         })
-        // prevButtons.forEach((button) => {
-        //   button.addEventListener('click', (event) => {
-        //     //event.preventDefault()
-        //     slider.slidePrev()
-        //     console.log('click prev')
-        //   })
-        // })
-        // nextButtons.forEach((button) => {
-        //   button.addEventListener('click', (event) => {
-        //     //event.preventDefault()
-        //     slider.slideNext()
-        //     console.log('click next')
-        //   })
-        // })
         swiperGroups.push(slider)
       })
 
@@ -158,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     function calcSlideTitleOffset() {
-      const titles = Array.from(body.querySelectorAll('.sectionCollectionsSlideTitle'))
+      const titles: HTMLElement[] = Array.from(body.querySelectorAll('.sectionCollectionsSlideTitle'))
       titles.forEach((el: HTMLElement) => {
         const height = el.offsetHeight
         const marginTop = Math.floor(Math.max(-180, Math.min(-(height * 0.33), -16)))
@@ -184,18 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
           if (index === indexToSet) el.classList.add('_active')
         })
       }
-
-      // if (target.closest('.sectionCollectionsSlideButtonNext')) {
-      //   const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonNext')
-      //   const index = parseInt(button.getAttribute('data-index'))
-      //   swiperGroups[index].slideNext()
-      //   console.log('Button Index:', index)
-      //   console.log('Swiper Instance:', swiperGroups[index])
-      // } else if (target.closest('.sectionCollectionsSlideButtonPrev')) {
-      //   const button: HTMLElement = target.closest('.sectionCollectionsSlideButtonPrev')
-      //   const index = parseInt(button.getAttribute('data-index'))
-      //   swiperGroups[index].slidePrev()
-      // }
     })
   },
   {

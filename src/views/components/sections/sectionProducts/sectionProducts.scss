@@ -52,10 +52,10 @@
     @include mediaTabletM {
       padding-left: 32px;
     }
-    @include mediaTabletL {
-      margin: -12px;
-      padding: 12px 12px 12px 32px;
-    }
+    //@include mediaTabletL {
+    //margin: -12px;
+    //padding: 12px 12px 12px 40px;
+    //}
 
     &Gradient {
       position: absolute;
@@ -97,23 +97,5 @@
         }
       }
     }
-
-    //&-pagination {
-    //  position: static;
-    //  margin: 32px auto 0;
-    //  transition: background-color 0.33s;
-    //
-    //  &-bullet {
-    //    width: 24px;
-    //    height: 2px;
-    //    margin: 0 !important;
-    //    opacity: 1 !important;
-    //    background: #d9d9d9;
-    //
-    //    &-active {
-    //      background: #11111180;
-    //    }
-    //  }
-    //}
   }
 }

@@ -252,7 +252,10 @@
         bottom: 130px;
         //display: none;
         @include mediaTabletM {
+          top: 50%;
+          bottom: auto;
           display: flex;
+          //transform: translate(0, -50%);
         }
       }
 

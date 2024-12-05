@@ -170,12 +170,21 @@
 
   &Slide {
     background: white;
+    will-change: transform, opacity;
     @include flex($d: column);
     @include mediaLaptopL {
       position: relative;
       flex-direction: row;
+      transition-duration: 0s;
+      opacity: 0;
       background: none;
       column-gap: 60px;
+    }
+
+    &.swiper-slide-active {
+      @include mediaLaptopL {
+        opacity: 1;
+      }
     }
 
     &Buttons {
@@ -324,7 +333,7 @@
       line-height: calc(84 / 80);
       height: fit-content;
       transition: color 0.33s, transform 0.33s;
-      transform: translate3d(0, 0, -100px);
+      //transform: translate3d(0, 0, -100px);
       letter-spacing: -0.03em;
       text-transform: uppercase;
       color: #1111111a;
@@ -337,7 +346,7 @@
     }
 
     &.swiper-slide-active, &._active {
-      transform: translate3d(0, 0, 100px);
+      //transform: translate3d(0, 0, 100px);
       color: #c1a778;
       // background-position: 0 0;
     }
