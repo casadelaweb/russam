@@ -39,39 +39,59 @@
     </fieldset>
     <div class="catalogSortOverlay"></div>
   </div>
-  <div class="catalogNavChoices">
-    <!-- Выбранные фильтры -->
-    <button type="button" class="catalogNavChoice">
-      <span>Белое золото 585 пробы</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Белое золото 750 пробы</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Белый</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Mix</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Бесцветный</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Голубой</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Круг</span>
-      <span class="iconfont icon-close"></span>
-    </button>
-    <button type="button" class="catalogNavChoice">
-      <span>Круг-57</span>
-      <span class="iconfont icon-close"></span>
-    </button>
+  <div class="catalogNavTabs">
+    <?php $categories = [
+      'С бриллиантами',
+      'С хризолитом',
+      'С кварцем',
+      'С турмалином',
+      'С морганитом',
+      'С фианитом',
+      'С аметистом',
+      'С родолитом',
+      'С цитрином',
+      'Со шпинелью',
+      'С аквамарином',
+      'С бирюзой',
+      'С агатом',
+      'С кораллом',
+      'С халцедоном',
+      'С хризопразом',
+      'С опалом',
+      'С натуральными камнями',
+      'По цвету',
+      'По форме',
+      'С танзанитом',
+      'С сапфиром',
+      'С гранатом',
+      'С рубином',
+      'С жемчугом',
+      'С изумрудом',
+      'С топазом',
+      'С полудрагоценными камнями',
+      'С альмандинами',
+      'С цирконом',
+      'С горным хрусталем',
+    ];
+    for ($i = 0; $i < 5; $i++):
+      $category = $categories[$i]; ?>
+      <button type="button" class="catalogNavTab">
+        <?= $category; ?>
+      </button>
+    <?php endfor; ?>
+    <div class="catalogNavTabsInner">
+      <button class="catalogNavTab catalogNavTabMore" type="button">
+        <span class="catalogNavTabMoreText">Ещё</span>
+        <span class="catalogNavTabMoreIcon iconfont icon-arrow-up"></span>
+      </button>
+      <div class="catalogNavTabsHidden">
+        <?php for ($i = 5; $i < (count($categories) - 5); $i++):
+          $category = $categories[$i]; ?>
+          <button type="button" class="catalogNavTab _hidden">
+            <?= $category; ?>
+          </button>
+        <?php endfor; ?>
+      </div>
+    </div>
   </div>
 </div>

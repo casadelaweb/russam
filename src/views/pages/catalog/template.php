@@ -385,7 +385,7 @@ $products = [
     <div class="catalogMain">
       <?php include_once __DIR__ . '/catalogNav.php'; ?>
 
-      <div class="catalogProducts" data-catalog="products">
+      <div class="catalogProducts">
         <?php foreach ($products as $product):
           Render::component('cards/productCard', $product);
         endforeach; ?>

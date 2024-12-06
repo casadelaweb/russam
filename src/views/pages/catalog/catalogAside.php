@@ -11,6 +11,40 @@ use Middlewares\Render; ?>
           <span class="iconfont icon-close"></span>
         </button>
       </div>
+      <div class="catalogFiltersChoices">
+        <button type="button" class="catalogFiltersChoice">
+          <span>Белое золото 585 пробы</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Белое золото 750 пробы</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Белый</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Mix</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Бесцветный</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Голубой</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Круг</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+        <button type="button" class="catalogFiltersChoice">
+          <span>Круг-57</span>
+          <span class="iconfont icon-close"></span>
+        </button>
+      </div>
     </div>
     <div class="catalogFiltersBody">
       <?php Render::component('catalog/catalogFilterBool', [

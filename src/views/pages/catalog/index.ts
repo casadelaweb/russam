@@ -1,6 +1,7 @@
 import './catalogFilters'
 import './catalogFilter'
 import './catalogAside'
+import './catalogNav'
 
 import './catalog.scss'
 import './catalogFilters.scss'
@@ -24,3 +25,4 @@ import 'src/assets/img/catalog/shape-radiant.svg'
 import 'src/assets/img/catalog/shape-triangulo.svg'
 import 'src/assets/img/catalog/multicolor.png'
 import 'src/assets/img/catalog/transparent.png'
+

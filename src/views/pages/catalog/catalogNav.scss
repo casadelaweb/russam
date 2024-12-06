@@ -1,9 +1,11 @@
 @use "src/styles/shared" as *;
 
 .catalogNav {
+  display: flex;
+  flex-direction: column;
   @include resetFlex;
   @include mediaTabletL {
-    @include flex;
+    flex-direction: row;
   }
 
   &Top {
@@ -50,45 +52,113 @@
     }
   }
 
-  &Choices {
-    @include flex($w: wrap);
+  &Tabs {
+    display: flex;
+    overflow-y: auto;
+    order: -1;
+    margin-bottom: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
     column-gap: 8px;
     row-gap: 8px;
     @include mediaTabletL {
+      position: relative;
+      z-index: 3;
+      overflow-y: hidden;
+      flex-wrap: wrap;
       order: -1;
       margin-right: auto;
+      padding: 0 0 0 16px;
+    }
+
+    &._active {
+      overflow-y: unset;
+      flex-wrap: wrap;
+      padding: 0;
+      @include mediaTabletL {
+        padding: 0 0 0 16px;
+      }
+    }
+
+    &Inner {
+      display: contents;
+    }
+
+    &Hidden {
+      display: none;
+      flex-wrap: wrap;
+      background: white;
+      column-gap: 8px;
+      row-gap: 8px;
+      @include mediaTabletL {
+        position: absolute;
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 8px 16px 16px;
+        border: 1px solid #eff1f3;
+        border-top: 0;
+        border-radius: 0 0 12px 12px;
+      }
+
+      &._active {
+        display: flex;
+      }
     }
   }
 
-  &Choice {
-    @include resetFlex;
-    @include flex(baseline);
-    font-size: 12px;
+  &Tab {
+    font-size: 13px;
+    font-weight: 500;
     line-height: 1;
-    padding: 4px 6px;
-    color: #111111;
+    padding: 4px 8px 2px;
+    text-transform: uppercase;
+    color: #11111180;
+    border: 1px solid #11111180;
     border-radius: 12px;
-    background: rgba(#a39d94, 0.2);
     column-gap: 4px;
-    @include mediaTabletL {
-      font-size: 13px;
-    }
-    @include mediaLaptopL {
+    @include resetFlex;
+    @include flex(center, center);
+    @include mediaMobileM {
       font-size: 14px;
-      padding: 4px 8px;
+      padding: 6px 12px 3px;
     }
     @include responsiveHover {
-      background: rgba(#a39d94, 0.4);
+      color: white;
+      background: #11111180;
     }
 
-    .iconfont {
-      @include flex(center, center);
-      font-size: 8px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: white;
+    &More {
+      order: 1;
+      min-width: 54px;
+      //padding-bottom: 4px;
+      //@include mediaMobileM {
+      //  padding-bottom: 6px;
+      //}
+
+      &Text {
+        display: inline-block;
+      }
+
+      &Icon {
+        display: none;
+      }
+
+      &._active {
+        .catalogNavTabMoreText {
+          display: none;
+        }
+
+        .catalogNavTabMoreIcon {
+          display: inline-block;
+        }
+      }
     }
+
+    //&._hidden {
+    //  display: none;
+    //}
   }
 
   &Reset {

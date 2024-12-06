@@ -25,12 +25,53 @@
     border: 0;
     row-gap: 8px;
     @include flex($d: column);
-    @include mediaTabletL {
-      display: none;
-    }
 
     &Row {
       @include flex(center, space-between);
+      @include mediaTabletL {
+        display: none;
+      }
+    }
+  }
+
+  &Choices {
+    @include flex($w: wrap);
+    column-gap: 8px;
+    row-gap: 8px;
+    @include mediaTabletL {
+      order: -1;
+      margin-right: auto;
+    }
+  }
+
+  &Choice {
+    @include resetFlex;
+    @include flex(baseline);
+    font-size: 12px;
+    line-height: 1;
+    padding: 4px 6px;
+    color: #111111;
+    border-radius: 12px;
+    background: rgba(#a39d94, 0.2);
+    column-gap: 4px;
+    //@include mediaTabletL {
+    //font-size: 13px;
+    //}
+    @include mediaLaptopL {
+      //font-size: 14px;
+      padding: 4px 8px;
+    }
+    @include responsiveHover {
+      background: rgba(#a39d94, 0.4);
+    }
+
+    .iconfont {
+      @include flex(center, center);
+      font-size: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: white;
     }
   }
 
@@ -124,7 +165,7 @@
     pointer-events: none;
     opacity: 0;
     border-radius: $brM;
-    
+
     &._active {
       @include mediaTabletL {
         display: block;

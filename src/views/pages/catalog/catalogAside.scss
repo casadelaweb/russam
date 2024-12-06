@@ -42,10 +42,10 @@
 
   &Overlay {
     @include overlay;
-    //@include mediaTabletL {
-    //  display: none;
-    //  pointer-events: none;
-    //  opacity: 0;
-    //}
+    @include mediaTabletL {
+      display: none;
+      pointer-events: none;
+      opacity: 0;
+    }
   }
 }
