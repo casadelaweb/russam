@@ -74,6 +74,31 @@ use Middlewares\Render; ?>
           'Помолвочное кольцо',
         ],
       ]) ?>
+      <?php Render::component('catalog/catalogFilterInlay', [
+        'filterTitle' => 'Вставка',
+        'inputType' => 'checkbox',
+        'inputName' => 'inlay',
+        'hasSearch' => true,
+        'options' => [
+          "Агат",
+          "Аквамарин",
+          "Альмандин",
+          "Аметист",
+          "Бирюза",
+          "Бриллиант",
+          "Горный хрусталь",
+          "Гранат",
+          "Жемчуг",
+          "Изумруд",
+          "Кварц",
+          "Коралл",
+          "Лунный камень",
+          "Морганит",
+          "Опал",
+          "Перламутр",
+          "Родолит",
+        ],
+      ]); ?>
       <?php Render::component('catalog/catalogFilterShape', [
         'filterTitle' => 'Форма камня',
         'inputType' => 'checkbox',
@@ -94,22 +119,22 @@ use Middlewares\Render; ?>
           '/assets/img/catalog/shape-triangulo.svg',
         ],
       ]) ?>
-      <?php Render::component('catalog/catalogFilter', [
+      <?php /*Render::component('catalog/catalogFilter', [
         'filterTitle' => 'Фильтр с радио',
         'inputType' => 'radio',
         'inputName' => 'filter_test_1',
         'filterType' => 'row',
         'hasSearch' => false,
         'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
-      ]) ?>
-      <?php Render::component('catalog/catalogFilter', [
+      ]) */ ?>
+      <?php /*Render::component('catalog/catalogFilter', [
         'filterTitle' => 'Фильтр с большим количеством опций',
         'inputType' => 'radio',
         'inputName' => 'filter_test_1',
         'filterType' => 'row',
         'hasSearch' => false,
         'options' => ['Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой', 'Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой', 'Круглый', 'Плоский', 'Третий', 'Четвертый', 'Пятый', 'Шестой'],
-      ]) ?>
+      ])*/ ?>
       <?php Render::component('catalog/catalogFilter', [
         'filterTitle' => 'Фильтр с поиском и списком',
         'inputType' => 'checkbox',
@@ -201,15 +226,16 @@ use Middlewares\Render; ?>
     searchElements.forEach((searchElement) => {
       const filter = searchElement.closest('.catalogFilter')
       const searchInput = searchElement.querySelector('.catalogFilterSearchInput')
-      const options = filter.querySelectorAll('.catalogFilterLabel')
+      const options = filter.querySelectorAll('[data-search=label]')
 
       searchInput.addEventListener('input', () => {
         /** получаем поисковый запрос */
         const value = searchInput.value.trim().toLowerCase()
 
         options.forEach((option) => {
-          const input = option.querySelector('.catalogFilterInput')
-          const title = option.querySelector('.catalogFilterTitle')
+          const input = option.querySelector('[data-search=input]')
+          const title = option.querySelector('[data-search=title]')
+          console.log(option, input, title)
 
           if (value.length === 0) {
             /** если поисковый запрос пустой, показываем все */

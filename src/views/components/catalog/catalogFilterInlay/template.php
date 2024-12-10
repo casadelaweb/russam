@@ -18,7 +18,7 @@
       </button>
     </div>
   </div>
-  <div class="catalogFilterBody <?= $filterType === 'grid' ? '_grid' : ''; ?>">
+  <div class="catalogFilterBody">
     <?php if ($hasSearch) : ?>
       <label class="catalogFilterSearch">
         <span class="catalogFilterSearchIcon iconfont icon-search"></span>
@@ -27,6 +27,16 @@
       </label>
     <?php endif; ?>
 
+    <label class="catalogFilterLabel">
+      <span class="catalogFilterTitle">
+        Только выбранные
+      </span>
+      <input type="checkbox" class="catalogFilterBoolInput" name="only_selected">
+    </label>
+
+    <div class="catalogFilterNote">
+      Позволяет найти изделие, только с выбранными камнями
+    </div>
     <?php foreach ($options as $option):
       $title = $option; ?>
       <label class="catalogFilterLabel" data-search="label">

@@ -158,6 +158,13 @@
     }
   }
 
+  &Note {
+    font-family: "TTCommons", sans-serif;
+    font-size: 12px;
+    text-transform: none;
+    color: #11111180;
+  }
+
   &Search {
     position: sticky;
     z-index: 2;
