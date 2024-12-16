@@ -9,23 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
         nextEl: '.swiper-button-next',
         enabled: true,
       },
-      slidesPerView: 2.4,
-      spaceBetween: 24,
+      slidesPerView: 1.56,
+      spaceBetween: 10,
       effect: 'slide',
       speed: 1000,
       freeMode: true,
       centeredSlides: false,
       grabCursor: true,
       breakpoints: {
+        375: {
+          spaceBetween: 12,
+        },
         540: {
-          slidesPerView: 3
+          slidesPerView: 3,
+          spaceBetween: 12,
         },
         768: {
-          slidesPerView: 4.5,
-          spaceBetween: 32,
+          slidesPerView: 4.7,
         },
-        1024: { slidesPerView: 5.5, },
-        1180: { slidesPerView: 6, },
       }
     })
   },

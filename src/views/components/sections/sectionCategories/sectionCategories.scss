@@ -47,21 +47,51 @@
   }
 
   &Slider {
-    max-width: calc(1120px - 32px);
-    margin: 0 auto;
+    //max-width: calc(1120px - 32px);
+    //margin: 0 auto;
+    @include mediaTabletM {
+      padding-left: 32px;
+    }
     @include mediaLaptopS {
       position: static;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -40px;
+      width: 120px;
+      height: 100%;
+      content: " ";
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(white, 0.14) 0%, white 57.28%);
+      @include mediaTabletL {
+        width: 170px;
+      }
     }
   }
 
   .swiper {
-    overflow: unset;
-    @include mediaLaptopS {
-      overflow: hidden;
-    }
+    //overflow: unset;
+    //@include mediaLaptopS {
+    //  overflow: hidden;
+    //}
 
     &-button {
       @include swiperNavigationButtons;
+
+      &-prev, {
+        @include mediaTabletM {
+          left: -12px;
+        }
+      }
+
+      &-next {
+        @include mediaTabletM {
+          right: -16px;
+        }
+      }
     }
   }
 }
