@@ -49,6 +49,7 @@ public/assets/js/*.map
 *.todo
 .todo
 test.txt
+dist.zip
 
 # Prepros
 prepros.cfg
