@@ -53,7 +53,7 @@
     width: 100%;
     padding: 14px;
     transition: opacity $trM, transform $trM;
-    transform: translate(0, 100%);
+    transform: translate(100%, 0);
     pointer-events: none;
     border: 1px solid #eff1f3;
     border-radius: 0;

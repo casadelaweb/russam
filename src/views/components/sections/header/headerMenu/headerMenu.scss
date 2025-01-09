@@ -226,13 +226,13 @@
       &Back {
         font-size: 14px;
         line-height: calc(20 / 14);
-        display: flex;
-        align-items: center;
         width: fit-content;
         margin-bottom: 32px;
         margin-left: -10px;
         text-transform: uppercase;
         color: #111111;
+        @include resetFlex;
+        @include flex(center);
 
         .iconfont {
           margin-top: -4px;
@@ -280,7 +280,6 @@
   @include mediaLaptopS {
     & {
       padding: 14px 0;
-
       column-gap: 28px;
       @include flex(center, center);
 

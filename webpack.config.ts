@@ -27,21 +27,25 @@ function config(env: iEnvVariables): Configuration {
       minimize: isProductionMode,
       minimizer: [
         new EsbuildPlugin({
-          target: 'es2015',
+          target: 'es2022',
           css: true,
           legalComments: 'none',
+          minifyWhitespace: false,
+          minifyIdentifiers: false,
+          minifySyntax: false,
+          treeShaking: true,
         }),
       ],
     },
-    entry: { main: rootPath + 'src/main.ts' },
+    entry: {
+      main: rootPath + 'src/main.ts',
+      //home: rootPath + 'src/home.ts',
+      catalog: rootPath + 'src/catalog.ts',
+    },
     output: {
       path: rootPath + 'public/assets',
       filename: 'js/[name].js?v=[contenthash:8]',
-      clean: isProductionMode
-        ? {
-          keep: 'index.php',
-        }
-        : false,
+      clean: isProductionMode ? { keep: 'index.php', } : false,
     },
     resolve: {
       alias: { src: rootPath + 'src' },
@@ -60,7 +64,8 @@ function config(env: iEnvVariables): Configuration {
         ruleFavicon(),
         ruleImages(),
         ruleVideos(),
-        ruleStyles(isDevelopmentMode),
+        //ruleStyles(isDevelopmentMode),
+        ruleStyles(true),
         ruleScripts(),
       ],
     },

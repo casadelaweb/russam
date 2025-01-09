@@ -3,17 +3,17 @@
     <div class="footerMain">
       <div class="footerList _catalog open" open>
         <div class="footerListHead">
-          <a href="#">КАТАЛОГ</a>
+          <a href="/catalog">КАТАЛОГ</a>
           <button type="button" class="footerListButton">
             <span class="iconfont icon-arrow-down"></span>
           </button>
         </div>
         <div class="footerListBody">
-          <a href="#">украшения</a>
-          <a href="#">дом & аксессуары</a>
-          <a href="#">high jewelry</a>
-          <a href="#">new</a>
-          <a href="#">камни</a>
+          <a href="/catalog">украшения</a>
+          <a href="/catalog">дом & аксессуары</a>
+          <a href="/catalog">high jewelry</a>
+          <a href="/catalog">new</a>
+          <a href="/catalog">камни</a>
         </div>
       </div>
       <div class="footerList _sitemap">

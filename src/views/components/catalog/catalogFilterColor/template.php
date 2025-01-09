@@ -24,7 +24,7 @@
       ?>
       <label class="catalogFilterLabel">
         <input class="catalogFilterInput" type="<?= $inputType ?>" name="<?= $inputName ?>">
-        <span class="catalogFilterColor" style="<?= $style; ?>;"></span>
+        <span class="catalogFilterColor" style="<?= $style; ?>"></span>
         <span class="catalogFilterTitle"><?= $title ?></span>
       </label>
     <?php endforeach; ?>

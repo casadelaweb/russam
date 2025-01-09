@@ -1,3 +1,3 @@
 import './cards'
-import './catalog'
+//import './catalog'
 import './sections'
