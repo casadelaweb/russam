@@ -16,8 +16,5 @@
     {
       "name": "cdlw.ru"
     }
-  ],
-  "require": {
-    "illuminate/database": "^11.33"
-  }
+  ]
 }

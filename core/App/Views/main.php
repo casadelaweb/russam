@@ -19,6 +19,7 @@ use Middlewares\Render;
     <meta name="description"
           content="<?= Page->description ?>">
     <link rel="stylesheet" href="<?= Helpers::getFilePathWithHash('/assets/css/main.css'); ?>">
+    <link rel="stylesheet" href="<?= Helpers::getFilePathWithHash('/assets/css/catalog.css'); ?>">
   </head>
   <body>
     <div id="app">
@@ -31,6 +32,7 @@ use Middlewares\Render;
       </div>
     </div>
     <script src="<?= Helpers::getFilePathWithHash('/assets/js/main.js'); ?>"></script>
+    <script src="<?= Helpers::getFilePathWithHash('/assets/js/catalog.js'); ?>"></script>
   </body>
 </html>
 

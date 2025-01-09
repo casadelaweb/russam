@@ -4,14 +4,10 @@ require_once __DIR__ . '/../core/Kernel/Router.php';
 require_once __DIR__ . '/../core/Kernel/Controller.php';
 require_once __DIR__ . '/../core/Kernel/Model.php';
 require_once __DIR__ . '/../core/Kernel/View.php';
-require_once __DIR__ . '/../database/bootstrap.php';
 
 use App\App;
 use App\Controllers\PageController;
 use App\Models\PageModel;
-
-//use App\Models\ProductModel;
-//use App\Models\User;
 
 $app = new App();
 
