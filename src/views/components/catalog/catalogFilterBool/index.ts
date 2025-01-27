@@ -1,1 +1,0 @@
-import './catalogFilterBool.scss'
