@@ -40,7 +40,6 @@ $RECYCLE.BIN/
 .yarn/install-state.gz
 _config.yml
 package-lock.json
-/dist
 node_modules
 public/assets/css/*.map
 public/assets/js/*.map
